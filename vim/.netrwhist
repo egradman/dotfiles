@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/egradman/dev/gc_backyard/webapps/scooper/src'
+let g:netrw_dirhist_2='/Users/egradman/dev/gc_backyard/functions'
+let g:netrw_dirhist_3='/Users/egradman/dev/gc_backyard/webapps/scooper/src'
+let g:netrw_dirhist_4='scp://twobit@192.168.1.9//opt/bpop/src/'

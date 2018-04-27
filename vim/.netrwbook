@@ -1,0 +1,1 @@
+let g:netrw_bookmarklist= ['scp://10.0.0.1//opt/kyogen/kyogen/', 'scp://s//opt/kyogen/']
