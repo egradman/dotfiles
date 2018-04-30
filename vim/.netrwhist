@@ -1,6 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/egradman/dev/gc_backyard/webapps/scooper/src'
-let g:netrw_dirhist_2='/Users/egradman/dev/gc_backyard/functions'
-let g:netrw_dirhist_3='/Users/egradman/dev/gc_backyard/webapps/scooper/src'
-let g:netrw_dirhist_4='scp://twobit@192.168.1.9//opt/bpop/src/'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/fakeopt/gc_backyard'
+let g:netrw_dirhist_2='/fakeopt/gc_backyard/webapps'
+let g:netrw_dirhist_3='/fakeopt/gc_backyard/webapps/scooper'
+let g:netrw_dirhist_4='/fakeopt/gc_backyard/webapps/scooper/src'
+let g:netrw_dirhist_5='/fakeopt/gc_backyard/gctool'
+let g:netrw_dirhist_6='/fakeopt/gc_backyard/functions'
+let g:netrw_dirhist_7='/Users/egradman/.dotfiles/vim/snippets'
