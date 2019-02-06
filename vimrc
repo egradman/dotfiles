@@ -17,6 +17,7 @@ se expandtab
 se lazyredraw
 se ttyfast
 
+set clipboard=unnamed
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
 set viewoptions=options,cursor,unix,slash " better unix / windows compatibility
 set virtualedit=onemore         " allow for cursor beyond last character
@@ -121,58 +122,32 @@ nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
 
+let g:rerun_pane=2
+let g:rerun_command="echo 'use let g:rerun_command to set your command'"
 
+map <Leader>r :let g:VimuxRunnerPaneId=g:rerun_pane<CR>:call VimuxSendKeys("C-c")<CR>:call VimuxRunCommand(g:rerun_command)<CR>
 
+autocmd BufRead scp://* :set bt=acwrite
+autocmd BufWritePost scp://* :set bt=
 
-"let g:vimwiki_list = [{'path':'~/Dropbox/notes', 'path_html':'~/Dropbox/wiki_export/', 'syntax':'markdown'}]
-"let g:vimwiki_folding = 'expr'
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
 
-"http://stackoverflow.com/questions/5006950/setting-netrw-like-nerdtree
-"com!  -nargs=* -bar -bang -complete=dir  Lexplore  call netrw#Lexplore(<q-args>, <bang>0)
-"
-"fun! Lexplore(dir, right)
-"  if exists("t:netrw_lexbufnr")
-"  " close down netrw explorer window
-"  let lexwinnr = bufwinnr(t:netrw_lexbufnr)
-"  if lexwinnr != -1
-"    let curwin = winnr()
-"    exe lexwinnr."wincmd w"
-"    close
-"    exe curwin."wincmd w"
-"  endif
-"  unlet t:netrw_lexbufnr
-"
-"  else
-"    " open netrw explorer window in the dir of current file
-"    " (even on remote files)
-"    let path = substitute(exists("b:netrw_curdir")? b:netrw_curdir : expand("%:p"), '^\(.*[/\\]\)[^/\\]*$','\1','e')
-"    exe (a:right? "botright" : "topleft")." vertical ".((g:netrw_winsize > 0)? (g:netrw_winsize*winwidth(0))/100 : -g:netrw_winsize) . " new"
-"    if a:dir != ""
-"      exe "Explore ".a:dir
-"    else
-"      exe "Explore ".path
-"    endif
-"    setlocal winfixwidth
-"    let t:netrw_lexbufnr = bufnr("%")
-"  endif
-"endfun
-"
-"" absolute width of netrw window
-"let g:netrw_winsize = -28
-"
-"" do not display info on the top of window
-"let g:netrw_banner = 0
-"
-"" tree-view
-"let g:netrw_liststyle = 0
-"
-"" sort is affecting only: directories on the top, files below
-"let g:netrw_sort_sequence = '[\/]$,*'
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
 
-" use the previous window to open file
-"let g:netrw_altv = 4
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
 
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
 
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
 
-
-
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
