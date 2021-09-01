@@ -17,7 +17,6 @@ se expandtab
 se lazyredraw
 se ttyfast
 
-set clipboard=unnamed
 set shortmess+=filmnrxoOtT      " abbrev. of messages (avoids 'hit enter')
 set viewoptions=options,cursor,unix,slash " better unix / windows compatibility
 set virtualedit=onemore         " allow for cursor beyond last character
@@ -130,19 +129,10 @@ map <Leader>r :let g:VimuxRunnerPaneId=g:rerun_pane<CR>:call VimuxSendKeys("C-c"
 autocmd BufRead scp://* :set bt=acwrite
 autocmd BufWritePost scp://* :set bt=
 
-function! WrapForTmux(s)
-  if !exists('$TMUX')
-    return a:s
-  endif
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
 
-  let tmux_start = "\<Esc>Ptmux;"
-  let tmux_end = "\<Esc>\\"
-
-  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
-endfunction
-
-let &t_SI .= WrapForTmux("\<Esc>[?2004h")
-let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 function! XTermPasteBegin()
   set pastetoggle=<Esc>[201~
@@ -150,4 +140,5 @@ function! XTermPasteBegin()
   return ""
 endfunction
 
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+set autoread
+au CursorHold,CursorHoldI * checktime
