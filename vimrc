@@ -97,11 +97,9 @@ nmap <leader>c <C-w>c
 nmap <leader>n :bn<CR>
 
 nmap <leader>h :A<CR>
-nnoremap <Leader>g :Gstatus<CR><C-w><C-o>
+nnoremap <Leader>g :Git<CR>
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$|node_modules$',
-  \ 'file': '\.exe$\|\.so$\|\.dll$' }
+let g:ctrlp_custom_ignore = '\v[\/]\.(DS_Storegit|hg|svn|optimized|compiled|node_modules)$'
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_mruf_relative = 1
 let g:ctrlp_working_path_mode = 0
@@ -142,3 +140,12 @@ endfunction
 
 set autoread
 au CursorHold,CursorHoldI * checktime
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
