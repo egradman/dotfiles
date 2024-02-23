@@ -10,6 +10,7 @@ fi
 
 alias vim=nvim
 alias vi=nvim
-echo "SOURCED ZPROFILE"
+alias cat=bat
+alias less=bat
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
