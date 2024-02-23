@@ -1,8 +1,10 @@
 - clean: ['~']
+- create:
+    - ~/.config_egradman
 - link:
-    ~/.tmux: tmux
-    ~/.tmux.conf: tmux.conf
-    ~/.config/nvim: nvim
+    ~/.config_egradman/tmux: tmux
+    ~/.config_egradman/nvim: nvim
+    ~/.config_egradman/zsh: zsh
 - shell: 
     - [git submodule update --init --recursive, Installing submodules]
 
