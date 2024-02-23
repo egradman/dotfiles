@@ -1,2 +1,0 @@
-
-echo "SOURCED ZSHRC"
