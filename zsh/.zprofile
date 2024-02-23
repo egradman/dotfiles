@@ -10,7 +10,7 @@ fi
 
 alias vim=nvim
 alias vi=nvim
-alias cat=bat
-alias less=bat
+alias cat="bat -n"
+alias less="bat -n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
