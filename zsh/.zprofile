@@ -5,7 +5,7 @@ if [ "$IS_MAC_LAPTOP" = true ] ; then
 
   ssh-add ~/.ssh/id_rsa
 
-  export JIRA_API_TOKEN="ATATT3xFfGF0sMF-jaCUMpbrkFKDp04QDKo-CPNlFP8iAFhkBFboTHi4aEltKAgUCYxQHv33y6Li3sZYa-EB5Zi6CXHw-lpVwJg7jvgRbAeyEpqCMSGm6wFfvZvJ6a-nn_ZEeurqUzvBylxgxYC5-yt9MdrTKIHozCs81gCVxOfAxBJFsnO6zWM=26301091"
+  source ~/.zprofile_local
 fi
 
 alias vim=nvim
@@ -14,3 +14,5 @@ alias cat="bat -n"
 alias less="bat -n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH=~/bin/nvim-linux64/bin:$PATH
