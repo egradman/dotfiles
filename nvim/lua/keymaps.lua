@@ -13,4 +13,3 @@ vim.g.maplocalleader = " "
 keymap("", "-", ":Ex<cr>", {})
 
 
-

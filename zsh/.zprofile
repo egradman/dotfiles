@@ -6,11 +6,12 @@ if [ "$IS_MAC_LAPTOP" = true ] ; then
   source ~/.zprofile_local
 fi
 
-alias vim=nvim
-alias vi=nvim
+alias vim=nvimserver
+alias vi=nvimserver
+alias ed=nvimclient
 alias cat="bat -n"
 alias less="bat -n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH=~/bin/nvim-linux64/bin:$PATH
+export PATH=~/.config_egradman/bin:~/bin:$PATH

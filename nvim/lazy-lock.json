@@ -1,13 +1,17 @@
 {
   "gruvbox.nvim": { "branch": "main", "commit": "6e4027ae957cddf7b193adfaec4a8f9e03b4555f" },
-  "lazy.nvim": { "branch": "main", "commit": "28126922c9b54e35a192ac415788f202c3944c9f" },
+  "lazy.nvim": { "branch": "main", "commit": "96584866b9c5e998cbae300594d0ccfd0c464627" },
   "lualine.nvim": { "branch": "master", "commit": "566b7036f717f3d676362742630518a47f132fff" },
+  "nui.nvim": { "branch": "main", "commit": "b81333d12f824dbed5eb231c8a4409a290fdd848" },
   "nvim-surround": { "branch": "main", "commit": "703ec63aa798e5e07d309b35e42def34bebe0174" },
+  "nvim-tree.lua": { "branch": "master", "commit": "d52fdeb0a300ac42b9cfa65ae0600a299f8e8677" },
   "nvim-web-devicons": { "branch": "master", "commit": "3e24abe1ae66532135cec911562f553fe247cb56" },
   "oil.nvim": { "branch": "master", "commit": "bf753c3e3f8736939ad5597f92329dfe7b1df4f5" },
   "plenary.nvim": { "branch": "master", "commit": "55d9fe89e33efd26f532ef20223e5f9430c8b0c0" },
+  "substitute.nvim": { "branch": "main", "commit": "17ffaeb5a1dc2dbef39cf0865d8a4b6000836714" },
   "tagbar": { "branch": "master", "commit": "12edcb59449b335555652898f82dd6d5c59d519a" },
   "telescope-file-browser.nvim": { "branch": "master", "commit": "6dd6522bc1a4cbe5883eb0272f5cc7a54ae3858b" },
   "telescope.nvim": { "branch": "master", "commit": "87e92ea31b2b61d45ad044cf7b2d9b66dad2a618" },
-  "vim-fugitive": { "branch": "master", "commit": "9f92ff14d9d1169e08f197a2250fcaea88e9c767" }
+  "vim-fugitive": { "branch": "master", "commit": "9f92ff14d9d1169e08f197a2250fcaea88e9c767" },
+  "xcodebuild.nvim": { "branch": "main", "commit": "83331327d72c7426a3988927486dda19cde77c39" }
 }
