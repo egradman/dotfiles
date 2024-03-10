@@ -13,5 +13,6 @@ alias cat="bat -n"
 alias less="bat -n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 
 export PATH=~/.config_egradman/bin:~/bin:$PATH
