@@ -25,27 +25,11 @@ vim.api.nvim_set_keymap(
   { noremap = true }
 )
 
-vim.api.nvim_set_keymap(
-  "n",
-  "<space>t",
-  ":TagbarToggle<CR>",
-  { noremap = true }
-)
 
-vim.cmd("let g:tagbar_type_ansible = { 'ctagstype' : 'ansible', 'kinds' : [ 't:tasks' ], 'sort' : 0 }")
-
-require("oil").setup()
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
-require("nvim-surround").setup()
 
 --vim.keymap.set("n", "s", require('substitute').operator, { noremap = true })
 --vim.keymap.set("n", "ss", require('substitute').line, { noremap = true })
 --vim.keymap.set("n", "S", require('substitute').eol, { noremap = true })
 --vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
 
-require("luasnip.loaders.from_snipmate").load({ path = { "~/.config_egradman/nvim/snippets/" } })
 
-require("mason").setup()
-require("mason-lspconfig").setup {
-    ensure_installed = { "pyright" },
-}
