@@ -5,13 +5,14 @@ if [ "$IS_MAC_LAPTOP" = true ] ; then
 
 fi
 
-alias vim=nvim
-alias vi=nvim
+alias vim=nvimserver
+alias vi=nvimserver
+alias ed=nvimclient
 alias cat="bat -n"
 alias less="bat -n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
 
-export PATH=~/bin/nvim-linux64/bin:$PATH
 source ~/.zprofile_local
+export PATH=~/.config_egradman/bin:~/bin:$PATH
