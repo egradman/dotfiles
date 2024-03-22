@@ -5,9 +5,8 @@ if [ "$IS_MAC_LAPTOP" = true ] ; then
 
 fi
 
-alias vim=nvimserver
-alias vi=nvimserver
-alias ed=nvimclient
+alias vim=nvim
+alias vi=nvim
 alias cat="bat -n"
 alias less="bat -n"
 
