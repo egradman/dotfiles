@@ -146,7 +146,6 @@ return {
             "pyright",
             "ansiblels",
             "arduino_language_server",
-            "clangd",
             "html",
           },
       })
@@ -217,10 +216,6 @@ return {
         on_attach = on_attach,
       })
       lspconfig["arduino_language_server"].setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
-      lspconfig["clangd"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
