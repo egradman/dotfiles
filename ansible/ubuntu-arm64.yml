@@ -16,6 +16,13 @@
           - zsh
           - nodejs
           - npm
+          - universal-ctags
+
+    - name: make batcat bat
+      file:
+        src: /usr/bin/batcat
+        dest: /usr/bin/bat
+        state: link
 
     - name: download neovim
       unarchive:
