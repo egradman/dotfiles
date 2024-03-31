@@ -13,9 +13,9 @@ setopt appendhistory
 setopt INC_APPEND_HISTORY  
 setopt SHARE_HISTORY
 
-alias vim=nvimserver
-alias vi=nvimserver
-alias ed=nvimclient
+alias vim=nvim
+alias vi=nvim
+
 alias cat="bat -n"
 alias less="bat -n"
 
