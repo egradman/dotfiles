@@ -1,0 +1,50 @@
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - name: packages
+      become: true
+      ansible.builtin.apt:
+        pkg:
+          - build-essential
+          - ripgrep
+          - tmux
+          - git
+          - lnav
+          - bat
+          - gettext
+          - zsh
+          - nodejs
+          - npm
+          - universal-ctags
+          - entr
+
+    - name: make batcat bat
+      file:
+        src: /usr/bin/batcat
+        dest: /usr/bin/bat
+        state: link
+
+    - name: download neovim
+      unarchive:
+        remote_src: yes
+        src: https://github.com/neovim/neovim/archive/refs/tags/stable.tar.gz
+        dest: /tmp
+    - name: build neovim
+      command:
+        chdir: /tmp/neovim-stable
+        cmd: make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.dotfiles/neovim
+    - name: install neovim
+      command:
+        chdir: /tmp/neovim-stable
+        cmd: make install
+    - name: link neovim
+      file:
+        src: ~/.dotfiles/neovim/bin/nvim
+        dest: ~/.dotfiles/bin/nvim
+        state: link
+
+    - name: fetch modern fzf
+      unarchive:
+        remote_src: yes
+        src: https://github.com/junegunn/fzf/releases/download/0.48.1/fzf-0.48.1-linux_arm64.tar.gz
+        dest: ~/.dotfiles/bin
