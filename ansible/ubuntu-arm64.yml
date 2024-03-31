@@ -6,7 +6,6 @@
       ansible.builtin.apt:
         pkg:
           - build-essential
-          - fzf
           - ripgrep
           - tmux
           - git
@@ -17,6 +16,7 @@
           - nodejs
           - npm
           - universal-ctags
+          - entr
 
     - name: make batcat bat
       file:
@@ -43,3 +43,8 @@
         dest: ~/.dotfiles/bin/nvim
         state: link
 
+    - name: fetch modern fzf
+      unarchive:
+        remote_src: yes
+        src: https://github.com/junegunn/fzf/releases/download/0.48.1/fzf-0.48.1-linux_arm64.tar.gz
+        dest: ~/.dotfiles/bin

@@ -1,5 +1,7 @@
-zsh/.zsh_history
+zsh/.zhistory
 neovim
 nvim/lazy-lock.json
 bin/nvim
 zsh/.zcompdump
+
+
