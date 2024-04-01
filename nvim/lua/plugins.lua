@@ -16,6 +16,23 @@ return {
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
   {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+      "TmuxNavigatePrevious",
+    },
+    keys = {
+      { "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+      { "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+      { "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+      { "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+      { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+    },
+  },
+  {
     "ellisonleao/gruvbox.nvim",
     priority = 1000 , config = true,
     opts = { contrast = "hard" }
@@ -146,7 +163,6 @@ return {
             "pyright",
             "ansiblels",
             "arduino_language_server",
-            "clangd",
             "html",
           },
       })
@@ -217,10 +233,6 @@ return {
         on_attach = on_attach,
       })
       lspconfig["arduino_language_server"].setup({
-        capabilities = capabilities,
-        on_attach = on_attach,
-      })
-      lspconfig["clangd"].setup({
         capabilities = capabilities,
         on_attach = on_attach,
       })
