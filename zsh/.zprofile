@@ -15,13 +15,13 @@ setopt SHARE_HISTORY
 
 alias vim=nvim
 alias vi=nvim
-
 alias cat="bat -n"
 alias less="bat -n"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 source $ZDOTDIR/fzf-key-bindings.zsh
 
+source ~/.zprofile_local
 export PATH=~/.config_egradman/bin:~/bin:$PATH
 source ~/.zprofile_local
 
