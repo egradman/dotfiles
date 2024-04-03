@@ -1,7 +1,7 @@
 local opt = vim.opt
 
 --opt.autowrite = true -- Enable auto write
-opt.clipboard = "unnamedplus" -- Sync with system clipboard
+--opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = "longest,menuone"
 opt.conceallevel = 3 -- Hide * markup for bold and italic
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
@@ -49,5 +49,3 @@ opt.wrap = true -- line wrap
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
-
-

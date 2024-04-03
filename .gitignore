@@ -3,6 +3,9 @@ neovim
 nvim/lazy-lock.json
 bin/nvim
 zsh/.zcompdump
+zsh/.zsh_history
+zsh/.zsh_sessions
 
 
 bin/fzf
+tmux/plugins

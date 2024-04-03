@@ -11,8 +11,6 @@ vim.keymap.set('n', '\\', builtin.buffers, {})
 vim.keymap.set('n', '<leader><Space>', ':w<cr>')
 vim.keymap.set('n', '<leader>w', ':w<cr>')
 
-vim.cmd([[colorscheme gruvbox]])
-
 vim.api.nvim_set_keymap('c', '<Up>', 'wildmenumode() ? "<Left>" : "<Up>"', {expr = true, noremap=true})
 vim.api.nvim_set_keymap('c', '<Down>', 'wildmenumode() ? "<Right>" : "<Down>"', {expr = true, noremap=true})
 vim.api.nvim_set_keymap('c', '<Left>', 'wildmenumode() ? "<Up>" : "<Left>"', {expr = true, noremap=true})
@@ -33,3 +31,6 @@ vim.api.nvim_set_keymap(
 --vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
 
 
+vim.cmd("let g:gruvbox_transparent_bg = 1")
+vim.cmd("autocmd VimEnter * hi Normal ctermbg=NONE guibg=NONE")
+vim.cmd("colorscheme gruvbox")
