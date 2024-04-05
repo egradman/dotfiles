@@ -10,7 +10,7 @@ export HISTSIZE=500000
 export SAVEHIST=500000
 
 setopt appendhistory
-setopt INC_APPEND_HISTORY  
+setopt APPEND_HISTORY  
 setopt SHARE_HISTORY
 
 alias vim=nvim
@@ -26,3 +26,4 @@ export PATH=~/.config_egradman/bin:~/bin:$PATH
 source ~/.zprofile_local
 
 export PS1='%m:%~$ '
+eval "$(direnv hook zsh)"
