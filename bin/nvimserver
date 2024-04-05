@@ -1,7 +1,0 @@
-#!/bin/sh
-
-WINDOW_IDX=`tmux display-message -p -F '#{window_index}'`
-NVIM_PIPE=~/.cache/nvim/server-${WINDOW_IDX}.pipe 
-
-
-nvim --listen $NVIM_PIPE $@
