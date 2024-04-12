@@ -28,15 +28,15 @@
         dest: /usr/bin/bat
         state: link
 
-          #- name: download neovim
-          #  unarchive:
-          #    remote_src: yes
-          #    src: https://github.com/neovim/neovim/archive/refs/tags/stable.tar.gz
-          #    dest: /tmp
-          #- name: build neovim
-          #  command:
-          #    chdir: /tmp/neovim-stable
-          #    cmd: make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.dotfiles/neovim
+    - name: download neovim
+      unarchive:
+        remote_src: yes
+        src: https://github.com/neovim/neovim/archive/refs/tags/stable.tar.gz
+        dest: /tmp
+    - name: build neovim
+      command:
+        chdir: /tmp/neovim-stable
+        cmd: make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=~/.dotfiles/neovim
     - name: install neovim
       command:
         chdir: /tmp/neovim-stable
