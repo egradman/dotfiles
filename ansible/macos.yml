@@ -5,7 +5,6 @@
       community.general.homebrew:
         name:
           - neovim
-          - cmake
           - ripgrep
           - tmux
           - git
@@ -24,12 +23,12 @@
           - homebrew/cask/obsidian
           - homebrew/cask/launchbar
           - homebrew/cask/moom
-          - homebrew/cask/rhino8
-          - homebrew/cask/teams
-          - homebrew/cask/outlook
+          - homebrew/cask/microsoft-teams
+          - homebrew/cask/microsoft-outlook
           - homebrew/cask/iterm2
           - homebrew/cask/kicad
           - homebrew/cask/karabiner-elements
--
+          - homebrew/cask/keyboard-maestro
+          - homebrew/cask/google-chrome
         state: present
 
