@@ -1,12 +1,18 @@
+vim.keymap.set("", "<Space>", "<Nop>", {noremap=true, silent=true})
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+
 require "keymaps"
 require "options"
 require "lazy-config"
 require "lualine-config"
 require "telescope-config"
+local keymap = vim.api.nvim_set_keymap
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', function() builtin.find_files({path_display="truncate"}) end, {})
 vim.keymap.set('n', '\\', builtin.buffers, {})
+
 
 vim.keymap.set('n', '<leader><Space>', ':w<cr>')
 vim.keymap.set('n', '<leader>w', ':w<cr>')
