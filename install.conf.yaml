@@ -5,6 +5,7 @@
     ~/.config_egradman/tmux: tmux
     ~/.config_egradman/nvim: nvim
     ~/.config_egradman/zsh: zsh
+    ~/.config_egradman/direnv: direnv
     ~/.config_egradman/bin: bin
 - shell: 
     - [git submodule update --init --recursive, Installing submodules]
