@@ -1,6 +1,5 @@
 if [ "$IS_MAC_LAPTOP" = true ] ; then
-  eval $(/opt/homebrew/bin/brew shellenv)
-
+  eval "$(/opt/homebrew/bin/brew shellenv)"
   ssh-add --apple-use-keychain ~/.ssh/id_rsa
 
 fi
