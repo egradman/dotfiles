@@ -24,5 +24,9 @@ source ~/.zprofile_local
 export PATH=~/.config_egradman/bin:~/bin:$PATH
 source ~/.zprofile_local
 
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^X^E' edit-command-line
+
 export PS1='%m:%~$ '
 eval "$(direnv hook zsh)"
+

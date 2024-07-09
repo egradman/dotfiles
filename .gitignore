@@ -9,3 +9,7 @@ zsh/.zsh_sessions
 
 bin/fzf
 tmux/plugins
+
+.DS_Store
+
+__pycache__
