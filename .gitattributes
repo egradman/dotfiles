@@ -1,1 +1,2 @@
 iterm2/prof.py filter=git-crypt diff=git-crypt
+iterm2/test-encryption filter=git-crypt diff=git-crypt
