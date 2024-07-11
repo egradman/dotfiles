@@ -1,6 +1,7 @@
 - clean: ['~']
 - create:
     - ~/.config_egradman
+    - ~/.zprofile_local
 - link:
     ~/.config_egradman/tmux: tmux
     ~/.config_egradman/nvim: nvim
