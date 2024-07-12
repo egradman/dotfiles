@@ -10,3 +10,5 @@ keymap("", "-", ":Ex<cr>", {})
 vim.cmd(":nnoremap <Leader>w <C-w>")
 vim.cmd(":nnoremap <C-s> :split<cr>")
 --vim.cmd(":nnoremap <C-o> :only<cr>")
+
+vim.api.nvim_set_keymap('n', ':plugins', ':e ~/.dotfiles/nvim/lua/plugins.lua<CR>', { noremap = true, silent = true })

@@ -3,6 +3,7 @@ return {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
   },
+
   {
     'nvim-telescope/telescope.nvim',
     lazy = true,
@@ -10,10 +11,12 @@ return {
       {'nvim-lua/plenary.nvim'},
     }
   },
+
   {
     "nvim-telescope/telescope-file-browser.nvim",
     dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
   },
+
   {
     "christoomey/vim-tmux-navigator",
     cmd = {
@@ -31,26 +34,51 @@ return {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
+
   {
   'stevearc/dressing.nvim',
   opts = {},
   },
+
   {
     "ellisonleao/gruvbox.nvim",
     priority = 1000 , config = true,
     opts = { contrast = "hard" },
   },
+
   {
-    "jpalardy/vim-slime",
-    init = function()
-      vim.g.slime_target = "tmux"
-    end
+    'samharju/yeet.nvim',
+    dependencies = {
+        "stevearc/dressing.nvim" -- optional, provides sane UX
+    },
+    cmd = 'Yeet',
+    opts = {},
+    keys = {
+        {
+            -- Open target selection
+            "<leader>yt", function() require("yeet").select_target() end,
+        },
+        {
+            -- Update yeeted command
+            "<leader>yc", function() require("yeet").set_cmd() end,
+        },
+        {
+            -- Douple tap \ to yeet at something
+            "\\\\", function() require("yeet").execute() end,
+        },
+        {
+            -- Toggle autocommand for yeeting after write.
+            "<leader>yo", function() require("yeet").toggle_post_write() end,
+        },
+        {
+            -- Run command without clearing terminal
+            "<leader>\\", function()
+                require("yeet").execute(nil, { clear_before_yeet = false})
+            end,
+        }
+    }
   },
-  {
-    "tpope/vim-dispatch",
-    init = function()
-    end
-  },
+
   {
     "preservim/tagbar",
     config = function()
@@ -252,7 +280,7 @@ return {
           ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
           ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
           ["<C-e>"] = cmp.mapping.abort(), -- close completion window
-          ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
+          ["<Tab>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
           ["<C-b>"] = cmp.mapping(function(fallback)
             if luasnip.jumpable(-1) then
               luasnip.jump(-1)
