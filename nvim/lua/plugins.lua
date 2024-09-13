@@ -177,7 +177,6 @@ return {
         opts.buffer = bufnr
   
         opts.desc = "Show line diagnostics"
-        vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
   
         --opts.desc = "Show documentation for what is under cursor"
         --vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
@@ -402,5 +401,106 @@ return {
           indent = { enable = true },  
         })
     end
-  }
+  },
+
+
+  { -- requires plugins in lua/plugins/treesitter.lua and lua/plugins/lsp.lua
+    'quarto-dev/quarto-nvim',
+    ft = { 'quarto' },
+    dev = false,
+    opts = {},
+    dependencies = {
+      -- for language features in code cells
+      -- configured in lua/plugins/lsp.lua and
+      -- added as a nvim-cmp source in lua/plugins/completion.lua
+      'jmbuhr/otter.nvim',
+    },
+    config = function()
+      local quarto = require("quarto")
+      quarto.setup({
+        lspFeatures = {
+            -- NOTE: put whatever languages you want here:
+            languages = { "r", "python", "rust" },
+            chunks = "all",
+            diagnostics = {
+                enabled = true,
+                triggers = { "BufWritePost" },
+            },
+            completion = {
+                enabled = true,
+            },
+        },
+        keymap = {
+            -- NOTE: setup your own keymaps:
+            hover = "H",
+            definition = "gd",
+            rename = "<leader>rn",
+            references = "gr",
+            format = "<leader>gf",
+        },
+        codeRunner = {
+            enabled = true,
+            default_method = "molten",
+        },
+    })
+    local runner = require("quarto.runner")
+    vim.keymap.set("n", "<localleader>rc", runner.run_cell,  { desc = "run cell", silent = true })
+    vim.keymap.set("n", "<localleader>ra", runner.run_above, { desc = "run cell and above", silent = true })
+    vim.keymap.set("n", "<localleader>rA", runner.run_all,   { desc = "run all cells", silent = true })
+    vim.keymap.set("n", "<localleader>rl", runner.run_line,  { desc = "run line", silent = true })
+    vim.keymap.set("v", "<localleader>r",  runner.run_range, { desc = "run visual range", silent = true })
+    vim.keymap.set("n", "<localleader>RA", function()
+      runner.run_all(true)
+    end, { desc = "run all cells of all languages", silent = true })
+    end
+  },
+
+  { -- directly open ipynb files as quarto docuements
+    -- and convert back behind the scenes
+    'GCBallesteros/jupytext.nvim',
+    opts = {
+      custom_language_formatting = {
+        python = {
+          extension = 'qmd',
+          style = 'quarto',
+          force_ft = 'quarto',
+        },
+        r = {
+          extension = 'qmd',
+          style = 'quarto',
+          force_ft = 'quarto',
+        },
+      },
+    },
+  },
+
+  { -- preview equations
+    'jbyuki/nabla.nvim',
+    keys = {
+      { '<leader>qm', ':lua require"nabla".toggle_virt()<cr>', desc = 'toggle [m]ath equations' },
+    },
+  },
+
+  {
+    'benlubas/molten-nvim',
+    build = ':UpdateRemotePlugins',
+    init = function()
+      --vim.g.molten_image_provider = 'image.nvim'
+      vim.g.molten_output_win_max_height = 20
+      vim.g.molten_auto_open_output = false
+      vim.g.molten_virt_text_output = true
+      vim.g.molten_virt_text_max_lines = 100
+    end,
+    keys = {
+      { '<leader>mi', ':MoltenInit<cr>', desc = '[m]olten [i]nit' },
+      {
+        '<leader>mv',
+        ':<C-u>MoltenEvaluateVisual<cr>',
+        mode = 'v',
+        desc = 'molten eval visual',
+      },
+      { '<leader>mr', ':MoltenReevaluateCell<cr>', desc = 'molten re-eval cell' },
+    },
+  },
+
 }
