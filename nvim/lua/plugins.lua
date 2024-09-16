@@ -80,17 +80,16 @@ return {
   },
 
   {
-    "preservim/tagbar",
-    config = function()
-      vim.api.nvim_set_keymap(
-        "n",
-        "<space>t",
-        ":TagbarToggle<CR>",
-        { noremap = true }
-      )
-
-      vim.cmd("let g:tagbar_type_ansible = { 'ctagstype' : 'ansible', 'kinds' : [ 't:tasks' ], 'sort' : 0 }")
-    end,
+    'stevearc/aerial.nvim',
+    opts = {},
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
+    },
+    keys = {
+      {"<leader>t", "<cmd>AerialToggle!<CR>"}
+    }
   },
   {
     'stevearc/oil.nvim',
@@ -423,4 +422,76 @@ vim.keymap.set("v", "<localleader>r", ":<C-u>MoltenEvaluateVisual<CR>gv",
     { silent = true, desc = "evaluate visual selection" })
     end,
   },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    init = function()
+      local harpoon = require("harpoon")
+
+      -- REQUIRED
+      harpoon:setup()
+      -- REQUIRED
+
+      vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
+      vim.keymap.set("n", "<C-y>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+      vim.keymap.set("n", "<C-u>", function() harpoon:list():select(1) end)
+      vim.keymap.set("n", "<C-i>", function() harpoon:list():select(2) end)
+      vim.keymap.set("n", "<C-o>", function() harpoon:list():select(3) end)
+      vim.keymap.set("n", "<C-p>", function() harpoon:list():select(4) end)
+
+      -- Toggle previous & next buffers stored within Harpoon list
+      vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
+      vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+    end  
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",  -- recommended, use latest release instead of latest commit
+    lazy = false,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      {"<localleader>oo", "<cmd>ObsidianQuickSwitch<CR>"},
+      {"<localleader>os", "<cmd>ObsidianSearch<CR>"},
+      {"<localleader>op", "<cmd>ObsidianOpen<CR>"},
+      {"<localleader>ow", "<cmd>ObsidianWorkspace<CR>"},
+      {"<localleader>oc", "<cmd>ObsidianNew<CR>"},
+    },
+    opts = {
+      workspaces = {
+        {
+          name = "egradman",
+          path = "/Users/egradman/Documents/Documents - Eric’s MacBook Air/egradman",
+        },
+        {
+          name = "red6",
+          path = "/Users/egradman/Documents/Documents - Eric’s MacBook Air/red6",
+        },
+      },
+
+
+			note_id_func = function(title)
+				local suffix = ""
+				if title ~= nil then
+					-- If title is given, transform it into valid file name.
+					suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", "")
+				else
+					-- If title is nil, just add 4 random uppercase letters to the suffix.
+					for _ = 1, 4 do
+						suffix = suffix .. string.char(math.random(65, 90))
+					end
+				end
+				return tostring(os.time()) .. "-" .. suffix
+			end,
+
+
+    },
+    init = function()
+      vim.opt.conceallevel = 1
+    end
+  }
 }
