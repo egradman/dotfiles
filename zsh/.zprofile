@@ -30,4 +30,3 @@ bindkey '^X^E' edit-command-line
 export PS1='%m:%~$ '
 eval "$(direnv hook zsh)"
 
-bindkey -v
