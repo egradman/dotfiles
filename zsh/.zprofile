@@ -21,7 +21,7 @@ alias less="bat -n"
 source $ZDOTDIR/fzf-key-bindings.zsh
 
 source ~/.zprofile_local
-export PATH=~/.dotfiles/bin:~/bin:$PATH
+export PATH=$PATH:~/.dotfiles/bin:~/.dotfiles/scripts
 source ~/.zprofile_local
 
 autoload edit-command-line; zle -N edit-command-line
