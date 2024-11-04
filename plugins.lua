@@ -211,8 +211,8 @@ return {
         --opts.desc = "See available code actions"
         --vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts) -- see available code actions, in visual mode will apply to selection
 
-        --opts.desc = "Smart rename"
-        --vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
+        opts.desc = "Smart rename"
+        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts) -- smart rename
 
         opts.desc = "Show buffer diagnostics"
         vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
@@ -229,8 +229,8 @@ return {
         opts.desc = "Show documentation for what is under cursor"
         vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
-        --opts.desc = "Restart LSP"
-        --vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
+        opts.desc = "Restart LSP"
+        vim.keymap.set("n", "<leader>rs", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
 
       end
   
@@ -360,11 +360,11 @@ return {
         "<cmd>Trouble loclist toggle<cr>",
         desc = "Location List (Trouble)",
       },
-      {
-        "<leader>q",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
-      },
+      --{
+      --  "<leader>q",
+      --  "<cmd>Trouble qflist toggle<cr>",
+      --  desc = "Quickfix List (Trouble)",
+      --},
     },
   },
   {
@@ -413,9 +413,9 @@ return {
         vim.keymap.set("n", "<localleader>mi", ":MoltenInit<CR>",
     { silent = true, desc = "Initialize the plugin" })
 --vim.keymap.set("n", "<localleader>e", ":MoltenEvaluateOperator<CR>",
---    { silent = true, desc = "run operator selection" })
---vim.keymap.set("n", "<localleader>rl", ":MoltenEvaluateLine<CR>",
---    { silent = true, desc = "evaluate line" })
+    --{ silent = true, desc = "run operator selection" })
+vim.keymap.set("n", "<localleader>rl", ":MoltenEvaluateLine<CR>",
+    { silent = true, desc = "evaluate line" })
 --vim.keymap.set("n", "<localleader>rr", ":MoltenReevaluateCell<CR>",
 --    { silent = true, desc = "re-evaluate cell" })
 --vim.keymap.set("v", "<localleader>r", ":<C-u>MoltenEvaluateVisual<CR>gv",
