@@ -15,7 +15,6 @@ vim.keymap.set('n', '\\', builtin.buffers, {})
 
 
 vim.keymap.set('n', '<leader><Space>', ':w<cr>')
-vim.keymap.set('n', '<leader>w', ':w<cr>')
 
 vim.api.nvim_set_keymap('c', '<Up>', 'wildmenumode() ? "<Left>" : "<Up>"', {expr = true, noremap=true})
 vim.api.nvim_set_keymap('c', '<Down>', 'wildmenumode() ? "<Right>" : "<Down>"', {expr = true, noremap=true})

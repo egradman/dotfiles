@@ -21,7 +21,7 @@ alias less="bat -n"
 source $ZDOTDIR/fzf-key-bindings.zsh
 
 source ~/.zprofile_local
-export PATH=$PATH:~/.dotfiles/bin:~/.dotfiles/scripts
+export PATH=$PATH:~/.dotfiles/bin:~/.dotfiles/scripts:~/.local/bin
 source ~/.zprofile_local
 
 autoload edit-command-line; zle -N edit-command-line
@@ -29,4 +29,6 @@ bindkey '^X^E' edit-command-line
 
 export PS1='%m:%~$ '
 eval "$(direnv hook zsh)"
+
+export SHELL=$(which nu)
 

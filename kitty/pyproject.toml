@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Default template for PDM package"
 authors = [
     {name = "egradman", email = "eric@gradman.com"},
+    {name = "eric.gradman", email = "eric.gradman@red6ar.com"},
 ]
 dependencies = [
     "pydantic>=2.9.2",
@@ -11,7 +12,7 @@ dependencies = [
     "uuid>=1.30",
     "jinja2>=3.1.4",
 ]
-requires-python = "==3.13.*"
+requires-python = "==3.12.*"
 readme = "README.md"
 license = {text = "MIT"}
 

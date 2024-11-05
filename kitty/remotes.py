@@ -5,6 +5,47 @@ import os
 from uuid import uuid4
 import jinja2
 
+def _profiles():
+    return Profiles(
+        Profiles=[
+            Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=True),
+            Profile.for_ssh(
+                "minecraft",
+                "root@minecraft.gradman.com",
+                COLOR_PERSONAL_PRODUCTION,
+                tmux=True,
+            ),
+            Profile.for_ssh(
+                "homeassistant", "egradman@192.168.68.63", COLOR_PERSONAL_PRODUCTION
+            ),
+            Profile.for_ssh(
+                "ECHT Raspberry Pi",
+                "ubuntu@192.168.2.130",
+                COLOR_WORK_PRODUCTION,
+                tmux=True,
+            ),
+            Profile.for_ssh(
+                "ACU",
+                "rsadmi@192.168.2.1",
+                COLOR_WORK_PRODUCTION,
+                tmux=True,
+            ),
+            Profile.for_ssh(
+                "credence",
+                "rsadmi@192.168.8.8",
+                COLOR_WORK_PRODUCTION,
+                tmux=True,
+            ),
+            Profile.for_ssh(
+                "eyecap",
+                "rsadmi@172.16.186.128",
+                COLOR_WORK_PRODUCTION,
+                tmux=True,
+            ),
+        ]
+    )
+
+
 
 def to_space_case(string: str) -> str:
     return string.replace("_", " ")
@@ -39,7 +80,7 @@ class Profile(BaseModel):
         # color = webcolors.hex_to_rgb(color)
 
         if tmux:
-            command = f"ssh -t {user_at_host} tmux new-session -A -s main"
+            command = f"""ssh -t {user_at_host} zsh -l -c "tmux -u new-session -A -s main" """
         else:
             command = f"ssh -t {user_at_host}"
 
@@ -54,45 +95,7 @@ COLOR_DEV = "#002200"
 COLOR_WORK_PRODUCTION = "#220000"
 COLOR_PERSONAL_PRODUCTION = "#000022"
 
-
-profiles = Profiles(
-    Profiles=[
-        Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=True),
-        Profile.for_ssh(
-            "minecraft",
-            "root@minecraft.gradman.com",
-            COLOR_PERSONAL_PRODUCTION,
-            tmux=True,
-        ),
-        Profile.for_ssh(
-            "homeassistant", "egradman@192.168.68.63", COLOR_PERSONAL_PRODUCTION
-        ),
-        Profile.for_ssh(
-            "ECHT Raspberry Pi",
-            "ubuntu@192.168.2.130",
-            COLOR_WORK_PRODUCTION,
-            tmux=True,
-        ),
-        Profile.for_ssh(
-            "ACU",
-            "rsadmi@192.168.2.1",
-            COLOR_WORK_PRODUCTION,
-            tmux=True,
-        ),
-        Profile.for_ssh(
-            "credence",
-            "rsadmi@192.168.8.8",
-            COLOR_WORK_PRODUCTION,
-            tmux=True,
-        ),
-        Profile.for_ssh(
-            "eyecap",
-            "rsadmi@192.168.2.2",
-            COLOR_WORK_PRODUCTION,
-            tmux=True,
-        ),
-    ]
-)
+profiles = _profiles()
 
 out = jinja2.Template(
     """#!/opt/homebrew/bin/python3
@@ -115,5 +118,5 @@ subprocess.run(cmd, shell=True)
 """
 ).render(profiles=profiles.Profiles)
 
-with open("~/.dotfiles/raycast_scripts/kitty.py", "w") as f:
+with open("../raycast_scripts/kitty.py", "w") as f:
     f.write(out)

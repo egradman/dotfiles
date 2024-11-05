@@ -1,0 +1,222 @@
+cd ..
+cd kitty/
+ls
+pdm run remotes.py
+pdm update
+pdm init
+pdm run remotes.py
+ls
+pdm add pydantic uuid jinja2 webcolors
+ls
+vi pyproject.toml
+ls
+rm pdm.lock
+pdm add pydantic uuid jinja2 webcolors
+ls
+pdm run remotes.py
+ls ~/.dotfiles/raycast_scripts/kitty.py
+cat ~/.dotfiles/raycast_scripts/kitty.py
+vi remotes.py
+pdm run remotes.py
+ls
+cat remotes.py
+ls
+vi remotes.py
+pdm run remotes.py
+vi remotes.py
+pdm run remotes.py
+less ../raycast_scripts/kitty.py
+ls
+less ../raycast_scripts/kitty.py
+vi ../raycast_scripts/kitty.py
+ls
+pdm run remotes.py
+vi remotes.py
+vi ../raycast_scripts/kitty.py
+ls
+vi ssh.conf
+vi ../raycast_scripts/kitty.py
+vi ssh.conf
+git diff ssh.conf
+vi ssh.conf
+ls
+cd .dotfiles/kitty/
+ls
+vi ssh.conf
+vi remotes.py
+pdm run remotes.py
+ls
+command
+command exists
+command
+man command
+help command
+command
+command -h
+which command
+which direnv
+"direnv" in which direnv
+"direnv" in `which direnv`
+ls
+which bat
+source ~/.dotfiles/nushell/custom.nu
+source ~/.dotfiles/nushell/custom.nuk
+source ~/.dotfiles/nushell/custom.nu
+vi ~/.dotfiles/nushell/custom.nu
+ls
+vi ~/.dotfiles/nushell/custom.nu
+help aliases
+_bat foo
+vi ~/.dotfiles/nushell/custom.nu
+source ~/.dotfiles/nushell/custom.nu
+ls | to nuon
+ls | to nuon | from nuon
+source ~/.dotfiles/nushell/custom.nu
+source ~/.dotfiles/nushell/custom.nuj
+source ~/.dotfiles/nushell/custom.nu
+which bat | is-empty 
+expected valid variable name with the first which bat
+source ~/.dotfiles/nushell/custom.nu
+bat_cmd 
+ls
+bat_cmd /etc/passwd
+vi ~/.dotfiles/nushell/custom.nu
+ls
+less ../raycast_scripts/kitty.py
+less .dotfiles/install_dnf.sh
+ls
+pwd
+which bat
+which batdd
+which batdd == null
+ls
+ls
+pwd
+clear
+ls
+pwd
+ls
+cd ~/.dotfiles
+git help subtree
+git subtree
+git subtree add --prefix tmux/plugins/tpm https://github.com/tmux-plugins/tpm main
+cd tmux/
+ls
+cd plugins/
+ls
+ls -a
+ls
+cd}.
+cd ..
+ls
+cd ..
+ls
+git subtree add --prefix tmux/plugins/tpm https://github.com/tmux-plugins/tpm main
+ls tmux/plugins/tpm/
+cd tmux/plugins/tpm/
+ls
+ls tmux/plugins/tpm/
+cd ..
+ls tmux/plugins/tpm/
+resewt
+reset
+ls tmux/plugins/tpm/
+pwd
+cd .dotfiles/tmux/plugins/
+ls
+ls tpm
+cd tpm
+ls
+ls
+ls tpm
+ls tmux/plugins/tpm/
+ls tmux/plugins/tpm
+ls tmux/plugins/tpm | explore
+clear
+ls tmux/plugins/tpm | explore
+ls tmux/plugins/tpm 
+ls .
+cd ..
+ls tmux/plugins/tpm 
+cd .dotfiles/
+ls tmux/plugins/tpm 
+ls tmux/plugins/
+vi kitty/ssh.conf
+$env.config.table.mode
+$env.config.table.mode="basic"
+$env.config.table.mode = basic
+$env.config.table.mode = "basic"
+ls
+$env.config.table.mode = "compact"
+ls
+$env.config.table.mode = "compact_double"
+ls
+$env.config.table.mode = "light"
+ls
+$env.config.table.mode = "thin"
+ls
+$env.config.table.mode = "compact"
+ls
+$env.config.table.mode = "with_lovew"
+$env.config.table.mode = "with_love"
+ls
+$env.config.table.mode = "compact"
+ls
+vi ~/.dotfiles/nushell/custom.nu
+ls
+cd nushell/
+ls
+http https://raw.githubusercontent.com/tesujimath/bash-env-nushell/refs/heads/main/bash-env.nu
+http get https://raw.githubusercontent.com/tesujimath/bash-env-nushell/refs/heads/main/bash-env.nu
+http get https://raw.githubusercontent.com/tesujimath/bash-env-nushell/refs/heads/main/bash-env.nu | save
+http get https://raw.githubusercontent.com/tesujimath/bash-env-nushell/refs/heads/main/bash-env.nu | save bash-env.nu
+ls
+open bash-env.nu
+ls
+cd .dotfiles/
+ls
+vi nushell/config.nu
+ls
+env
+vi nushell/custom.nu
+bash-env
+ls
+cd .dotfiles/bin
+ls
+http get https://raw.githubusercontent.com/tesujimath/bash-env-json/refs/heads/main/bash-env-json --save
+http get https://raw.githubusercontent.com/tesujimath/bash-env-json/refs/heads/main/bash-env-json | save bash-env-json
+wget
+ls
+chmod +x bash-env-json
+bash-env
+ls
+brew shellenv
+brew shellenv | bash-env-json 
+brew shellenv
+bash
+ls
+cd ..
+ls
+stor open
+ls
+ls
+pwd
+ls
+cd dev
+l
+ls
+git clone git@github.com:red6-aerospace/sisyphus.git
+cd sisyphus/
+direnv allow
+ls
+cd ..
+cd sisyphus/
+pdm update
+cd ~/.dotfiles
+ls
+git status
+gstat
+ls
+git status
+cat bin/panes.sh
+git rm bin/panes.sh
