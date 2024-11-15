@@ -156,7 +156,7 @@ return {
     "L3MON4D3/LuaSnip",
     version = "v2.*", 
     config = function()
-      require("luasnip.loaders.from_snipmate").load({ path = { "~/.config_egradman/nvim/snippets/" } })
+      require("luasnip.loaders.from_snipmate").load({ path = { "~/.dotfiles/nvim/snippets/" } })
     end
   },
   {
@@ -395,10 +395,10 @@ return {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "html", "python" },
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "html", "python", "tsx" },
           sync_install = false,
           highlight = { enable = true },
-          indent = { enable = true },  
+          indent = { enable = false },  
         })
     end
   },
@@ -445,6 +445,29 @@ return {
       vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
       vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
     end  
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
+    init = function()
+      require('nvim-ts-autotag').setup({
+        opts = {
+          -- Defaults
+          enable_close = true, -- Auto close tags
+          enable_rename = true, -- Auto rename pairs of tags
+          enable_close_on_slash = false -- Auto close on trailing </
+        },
+        -- Also override individual filetype configs, these take priority.
+        -- Empty by default, useful if one of the "opts" global settings
+        -- doesn't work well in a specific filetype
+        per_filetype = {
+          ["html"] = {
+            enable_close = false
+          }
+        }
+})
+    end
+
   },
   --{
   --  "epwalsh/obsidian.nvim",

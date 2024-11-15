@@ -28,6 +28,11 @@ def less [args: string] {
     }
 }
 
+def watchdir [dirname: string] {
+  clear
+  loop { clear ; ls $dirname | print ; sleep 1sec }
+}
+
 # Update PATH
 $env.PATH = (
   $env.PATH
@@ -35,6 +40,7 @@ $env.PATH = (
   | append ~/.dotfiles/bin
   | append ~/bin
   | append ~/.local/bin
+  | append ~/go/bin
   | uniq 
 )
 

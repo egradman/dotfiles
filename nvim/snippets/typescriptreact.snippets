@@ -1,0 +1,43 @@
+snippet component
+	import { useState, useRef, useEffect } from 'react'
+
+	interface ${1}Props{
+	}
+
+	function ${1}({}: ${1}Props) {
+		const styles = {
+		}
+
+		return (
+			<div>
+			</div>
+		)
+	}
+
+	export default ${1}
+
+snippet story
+	import type { Meta, StoryObj } from '@storybook/react';
+	import { fn } from '@storybook/test';
+
+	import ${1} from '@/components/${1}';
+
+	const meta = {
+		title: '${1}',
+		component: ${1},
+		decorators: [
+			(Story, context)=>{
+				return (
+					<Story/>
+				)
+			}
+		]
+	} satisfies Meta<typeof ${1}>;
+
+	export default meta;
+	type Story = StoryObj<typeof meta>;
+
+	export const Primary: Story = {
+		args: {
+		},
+	};
