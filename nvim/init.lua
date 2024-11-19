@@ -13,8 +13,9 @@ local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', function() builtin.find_files({path_display="truncate"}) end, {})
 vim.keymap.set('n', '\\', builtin.buffers, {})
 
-
 vim.keymap.set('n', '<leader><Space>', ':w<cr>')
+
+vim.api.nvim_set_keymap('v', 'Y', '"*y', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('c', '<Up>', 'wildmenumode() ? "<Left>" : "<Up>"', {expr = true, noremap=true})
 vim.api.nvim_set_keymap('c', '<Down>', 'wildmenumode() ? "<Right>" : "<Down>"', {expr = true, noremap=true})
