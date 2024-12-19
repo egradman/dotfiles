@@ -8,7 +8,7 @@ import jinja2
 def _profiles():
     return Profiles(
         Profiles=[
-            Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=True),
+            Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=False),
             Profile.for_ssh(
                 "minecraft",
                 "root@minecraft.gradman.com",
