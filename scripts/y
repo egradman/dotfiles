@@ -1,0 +1,2 @@
+#!/bin/sh
+kitten @launch --type tab --title yazi yazi `pwd`

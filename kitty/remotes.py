@@ -29,12 +29,9 @@ def _profiles():
                 "rsadmi@192.168.2.1",
                 COLOR_WORK_PRODUCTION,
                 tmux=True,
-            ),
-            Profile.for_ssh(
-                "credence",
-                "rsadmi@192.168.8.8",
-                COLOR_WORK_PRODUCTION,
-                tmux=True,
+                env={
+                    "_SHELL": "./.eric_tools/bin/nu"
+                }
             ),
             Profile.for_ssh(
                 "eyecap",
@@ -76,16 +73,18 @@ class Profile(BaseModel):
         populate_by_name = True
 
     @classmethod
-    def for_ssh(cls, name, user_at_host, color, tmux=False):
+    def for_ssh(cls, name, user_at_host, color, tmux=False, shell="zsh", env=None):
+        if not env: env = {}
+        env = " ".join(["=".join((key, value)) for key, value in env.items()])
+
         # color = webcolors.hex_to_rgb(color)
 
         if tmux:
-            command = f"""ssh -t {user_at_host} zsh -l -c "tmux -u new-session -A -s main" """
+            command = f"""ssh -t {user_at_host} {env} {shell} -l -c "tmux -u new-session -A -s main" """
         else:
             command = f"ssh -t {user_at_host}"
 
         return Profile(Name="!" + name, Command=command, Background_Color=color)
-
 
 class Profiles(BaseModel):
     Profiles: List[Profile] = []
