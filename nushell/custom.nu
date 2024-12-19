@@ -1,7 +1,10 @@
 # Check if running on Mac laptop and configure Homebrew and SSH
 if ("IS_MAC_LAPTOP" in $env) {
+    use bash-env.nu
     # Add SSH key to macOS Keychain
     ssh-add --apple-use-keychain ~/.ssh/id_rsa
+    ^ssh-agent | bash-env | load-env
+
     $env.HOMEBREW_PREFIX = "/opt/homebrew"
     $env.HOMEBREW_CELLAR = "/opt/homebrew/Cellar"
     $env.HOMEBREW_REPOSITORY = "/opt/homebrew"
@@ -37,11 +40,14 @@ def watchdir [dirname: string] {
 $env.PATH = (
   $env.PATH
   | split row (char esep)
-  | append ~/.dotfiles/bin
-  | append ~/bin
-  | append ~/.local/bin
+  | prepend ~/.eric_tools/bin
+  | prepend ~/.dotfiles/bin
+  | prepend ~/bin
+  | prepend ~/.local/bin
   | append ~/go/bin
   | uniq 
 )
 
-use bash-env.nu
+$env.XDG_CONFIG_HOME = "~/.dotfiles"
+
+
