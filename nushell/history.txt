@@ -1359,3 +1359,54 @@ ssh rsadmi@192.168.2.1 .eric_tools/bin/nu
 vi zsh/.zprofile
 echo $env.XDG_CONFIG_HOME
 vi nushell/custom.nu
+ls
+cd /tmp
+vi test.py
+cd bin
+ls
+ls -l
+rm nvim fzf
+vi test.py
+env
+echo $env.XDG_CONFIG_HOME
+vi
+which nvim
+vi
+cd nvim/
+ls
+find .
+fd .
+vi
+vi init.lua
+vi
+cat /tmp/c
+neovim -V
+nvim -V
+ls
+pwd
+ls
+nvim -V
+echo $env.XDG_CONFIG_HOME
+ls $env.XDG_CONFIG_HOME
+echo $env.XDG_CONFIG_HOME
+bash
+cd ..
+rg XDG_CONFIG_
+vi nushell/custom.nu
+echo $env.XDG_CONFIG_HOME
+cd .dotfiles/
+ls
+vi nushell/custom.nu
+echo $env.XDG_CONFIG_HOME
+vi nushell/custom.nu
+vi .dotfiles/nushell/custom.nu
+echo $env.XDG_CONFIG_HOME
+vi .dotfiles/nushell/custom.nu
+vim
+vi
+ls
+pwd
+clear
+ls
+cd .dotfiles/
+git status

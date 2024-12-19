@@ -48,6 +48,6 @@ $env.PATH = (
   | uniq 
 )
 
-$env.XDG_CONFIG_HOME = "~/.dotfiles"
+$env.XDG_CONFIG_HOME = $"($env.HOME)/.dotfiles"
 
 
