@@ -13,3 +13,4 @@ tmux/plugins
 .DS_Store
 
 __pycache__
+nushell/history.txt
