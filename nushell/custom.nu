@@ -45,6 +45,7 @@ $env.PATH = (
   | prepend ~/bin
   | prepend ~/.local/bin
   | append ~/go/bin
+  | append /nix/var/nix/profiles/default/bin/
   | uniq 
 )
 

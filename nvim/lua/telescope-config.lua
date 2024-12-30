@@ -11,11 +11,12 @@ require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
+    layout_strategy = 'vertical',
+    layout_config = { height = 0.95 },
 
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-
 
     mappings = {
       i = {
@@ -27,19 +28,19 @@ require('telescope').setup{
 
         ["<C-c>"] = actions.close,
 
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
+        ["<Right>"] = actions.move_selection_next,
+        ["<Left>"] = actions.move_selection_previous,
 
         ["<CR>"] = actions.select_default,
         ["<C-x>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<C-Left>"] = actions.preview_scrolling_up,
+        ["<C-Right>"] = actions.preview_scrolling_down,
 
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
+        ["<PageUp>"] = actions.move_selection_previous,
+        ["<PageDown>"] = actions.move_selection_next,
 
         ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
         ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -67,16 +68,16 @@ require('telescope').setup{
         ["M"] = actions.move_to_middle,
         ["L"] = actions.move_to_bottom,
 
-        ["<Down>"] = actions.move_selection_next,
-        ["<Up>"] = actions.move_selection_previous,
+        ["<Right>"] = actions.move_selection_next,
+        ["<Left>"] = actions.move_selection_previous,
         ["gg"] = actions.move_to_top,
         ["G"] = actions.move_to_bottom,
 
-        ["<C-u>"] = actions.preview_scrolling_up,
-        ["<C-d>"] = actions.preview_scrolling_down,
+        ["<C-Left>"] = actions.preview_scrolling_up,
+        ["<C-Right>"] = actions.preview_scrolling_down,
 
-        ["<PageUp>"] = actions.results_scrolling_up,
-        ["<PageDown>"] = actions.results_scrolling_down,
+        ["<PageUp>"] = actions.move_selection_previous,
+        ["<PageDown>"] = actions.move_selection_next,
 
         ["?"] = actions.which_key,
       },
@@ -101,3 +102,4 @@ require('telescope').setup{
 }
 local ts = require('telescope.builtin')
 vim.keymap.set('n', '<leader>g', ts.live_grep, {})
+vim.keymap.set('n', '<leader>s', ts.grep_string, {})

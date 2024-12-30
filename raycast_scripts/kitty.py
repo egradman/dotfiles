@@ -10,23 +10,24 @@ import subprocess
 match sys.argv[1].lower():
 
     case "dmz":
-        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "dmz" --color background="#002200" -- kitten ssh -t egradman@dmz.gradman.com  zsh -l -c "tmux -u new-session -A -s main"  '''
+        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "dmz" --color background="#002200" -- kitten ssh -t egradman@dmz.gradman.com  zsh -l -c ".dotfiles/scripts/tmux-resume-main.sh"  '''
 
     case "minecraft":
-        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "minecraft" --color background="#000022" -- kitten ssh -t root@minecraft.gradman.com  zsh -l -c "tmux -u new-session -A -s main"  '''
+        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "minecraft" --color background="#000022" -- kitten ssh -t root@minecraft.gradman.com  zsh -l -c ".dotfiles/scripts/tmux-resume-main.sh"  '''
 
     case "homeassistant":
         cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "homeassistant" --color background="#000022" -- kitten ssh -t egradman@192.168.68.63 '''
 
     case "echt raspberry pi":
-        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "ECHT Raspberry Pi" --color background="#220000" -- kitten ssh -t ubuntu@192.168.2.130  zsh -l -c "tmux -u new-session -A -s main"  '''
+        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "ECHT Raspberry Pi" --color background="#220000" -- kitten ssh -t ubuntu@192.168.2.130  zsh -l -c ".dotfiles/scripts/tmux-resume-main.sh"  '''
 
     case "acu":
-        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "ACU" --color background="#220000" -- kitten ssh -t rsadmi@192.168.2.1 _SHELL=./.eric_tools/bin/nu zsh -l -c "tmux -u new-session -A -s main"  '''
+        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "ACU" --color background="#220000" -- kitten ssh -t rsadmi@192.168.2.1 _SHELL=./.eric_tools/bin/nu zsh -l -c ".dotfiles/scripts/tmux-resume-main.sh"  '''
 
     case "eyecap":
-        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "eyecap" --color background="#220000" -- kitten ssh -t rsadmi@172.16.186.128  zsh -l -c "tmux -u new-session -A -s main"  '''
+        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "eyecap" --color background="#220000" -- kitten ssh -t rsadmi@172.16.186.128  zsh -l -c ".dotfiles/scripts/tmux-resume-main.sh"  '''
 
 
-print(cmd)
+with open("/tmp/last_kitten_tab_command.txt", "w") as f:
+    f.write(cmd)
 subprocess.run(cmd, shell=True)

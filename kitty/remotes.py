@@ -8,7 +8,7 @@ import jinja2
 def _profiles():
     return Profiles(
         Profiles=[
-            Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=False),
+            Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=True),
             Profile.for_ssh(
                 "minecraft",
                 "root@minecraft.gradman.com",
@@ -80,7 +80,7 @@ class Profile(BaseModel):
         # color = webcolors.hex_to_rgb(color)
 
         if tmux:
-            command = f"""ssh -t {user_at_host} {env} {shell} -l -c "tmux -u new-session -A -s main" """
+            command = f"""ssh -t {user_at_host} {env} {shell} -l -c ".dotfiles/scripts/tmux-resume-main.sh" """
         else:
             command = f"ssh -t {user_at_host}"
 
@@ -112,7 +112,8 @@ match sys.argv[1].lower():
         cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "{{profile.Name[1:]}}" --color background="{{profile.Background_Color}}" -- kitten {{profile.Command}} '''
 {% endfor %}
 
-print(cmd)
+with open("/tmp/last_kitten_tab_command.txt", "w") as f:
+    f.write(cmd)
 subprocess.run(cmd, shell=True)
 """
 ).render(profiles=profiles.Profiles)
