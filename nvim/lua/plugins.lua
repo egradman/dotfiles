@@ -88,7 +88,7 @@ return {
       "nvim-tree/nvim-web-devicons"
     },
     keys = {
-      --{"<leader>t", "<cmd>AerialToggle!<CR>"}
+      {"<leader>a", "<cmd>AerialToggle!<CR>"}
     }
   },
   {
@@ -115,51 +115,12 @@ return {
     event = 'BufWinEnter',
   },
   {
-    "wojciech-kulik/xcodebuild.nvim",
-    branch = 'main',
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "MunifTanjim/nui.nvim",
-      "nvim-tree/nvim-tree.lua", -- if you want the integration with file tree
-    },
-    config = function()
-      require("xcodebuild").setup({
-      })
-          -- put some options here or leave it empty to use default settings
-      vim.keymap.set("n", "<leader>X", "<cmd>XcodebuildPicker<cr>", { desc = "Show Xcodebuild Actions" })
-      vim.keymap.set("n", "<leader>xf", "<cmd>XcodebuildProjectManager<cr>", { desc = "Show Project Manager Actions" })
-
-      vim.keymap.set("n", "<leader>xb", "<cmd>XcodebuildBuild<cr>", { desc = "Build Project" })
-      vim.keymap.set("n", "<leader>xB", "<cmd>XcodebuildBuildForTesting<cr>", { desc = "Build For Testing" })
-      vim.keymap.set("n", "<leader>xr", "<cmd>XcodebuildBuildRun<cr>", { desc = "Build & Run Project" })
-
-      vim.keymap.set("n", "<leader>xt", "<cmd>XcodebuildTest<cr>", { desc = "Run Tests" })
-      vim.keymap.set("v", "<leader>xt", "<cmd>XcodebuildTestSelected<cr>", { desc = "Run Selected Tests" })
-      vim.keymap.set("n", "<leader>xT", "<cmd>XcodebuildTestClass<cr>", { desc = "Run Current Test Class" })
-      vim.keymap.set("n", "<leader>x.", "<cmd>XcodebuildTestRepeat<cr>", { desc = "Repeat Last Test Run" })
-
-      vim.keymap.set("n", "<leader>xl", "<cmd>XcodebuildToggleLogs<cr>", { desc = "Toggle Xcodebuild Logs" })
-      vim.keymap.set("n", "<leader>xc", "<cmd>XcodebuildToggleCodeCoverage<cr>", { desc = "Toggle Code Coverage" })
-      vim.keymap.set("n", "<leader>xC", "<cmd>XcodebuildShowCodeCoverageReport<cr>", { desc = "Show Code Coverage Report" })
-      vim.keymap.set("n", "<leader>xe", "<cmd>XcodebuildTestExplorerToggle<cr>", { desc = "Toggle Test Explorer" })
-      vim.keymap.set("n", "<leader>xs", "<cmd>XcodebuildFailingSnapshots<cr>", { desc = "Show Failing Snapshots" })
-
-      vim.keymap.set("n", "<leader>xd", "<cmd>XcodebuildSelectDevice<cr>", { desc = "Select Device" })
-      vim.keymap.set("n", "<leader>xp", "<cmd>XcodebuildSelectTestPlan<cr>", { desc = "Select Test Plan" })
-      vim.keymap.set("n", "<leader>xq", "<cmd>Telescope quickfix<cr>", { desc = "Show QuickFix List" })
-
-      --vim.keymap.set("n", "<leader>xx", "<cmd>XcodebuildQuickfixLine<cr>", { desc = "Quickfix Line" })
-      --vim.keymap.set("n", "<leader>xa", "<cmd>XcodebuildCodeActions<cr>", { desc = "Show Code Actions" })
-    end
-  },
-  {
     "L3MON4D3/LuaSnip",
     version = "v2.*", 
     config = function()
       require("luasnip.loaders.from_snipmate").load({ path = { "~/.dotfiles/nvim/snippets/" } })
     end
   },
-
   {
     "dundalek/lazy-lsp.nvim",
     dependencies = { "neovim/nvim-lspconfig" },
@@ -203,8 +164,8 @@ return {
               opts.desc = "Show LSP implementations"
               vim.keymap.set("n", "<leader>li", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
 
-              opts.desc = "Show LSP type definitions"
-              vim.keymap.set("n", "<leader>lt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- show lsp type definitions
+              opts.desc = "Show LSP tags in buffer"
+              vim.keymap.set("n", "<leader>lt", "<cmd>Telescope lsp_document_symbols<CR>", opts) -- show lsp doc symbols
 
               opts.desc = "Show buffer diagnostics"
               vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
@@ -360,18 +321,19 @@ return {
       },
     },
   },
-  {
-    "sbdchd/neoformat",
-    config = function()
+  --{
+  --  "sbdchd/neoformat",
+  --  config = function()
 
-      vim.cmd([[
-        augroup fmt
-          autocmd!
-          autocmd BufWritePre *.py,*.swift undojoin | Neoformat
-        augroup END
-      ]])
-    end
-  },{
+  --    vim.cmd([[
+  --      augroup fmt
+  --        autocmd!
+  --        autocmd BufWritePre *.py,*.swift undojoin | Neoformat
+  --      augroup END
+  --    ]])
+  --  end
+  --},
+  {
     "norcalli/nvim-colorizer.lua",
     init = function()
       require('colorizer').setup()
@@ -458,79 +420,26 @@ return {
             enable_close = false
           }
         }
-})
+      })
     end
-
   },
-  --{
-  --  "epwalsh/obsidian.nvim",
-  --  version = "*",  -- recommended, use latest release instead of latest commit
-  --  lazy = false,
-  --  ft = "markdown",
-  --  dependencies = {
-  --    "nvim-lua/plenary.nvim",
-  --  },
-  --  keys = {
-  --    {"<localleader>oo", "<cmd>ObsidianQuickSwitch<CR>"},
-  --    {"<localleader>os", "<cmd>ObsidianSearch<CR>"},
-  --    {"<localleader>op", "<cmd>ObsidianOpen<CR>"},
-  --    {"<localleader>ow", "<cmd>ObsidianWorkspace<CR>"},
-  --    {"<localleader>oc", "<cmd>ObsidianNew<CR>"},
-  --  },
-  --  opts = {
-  --    workspaces = {
-  --      {
-  --        name = "egradman",
-  --        path = "/Users/egradman/Documents/egradman",
-  --      },
-  --      {
-  --        name = "red6",
-  --        path = "/Users/egradman/Documents/red6",
-  --      },
-  --    },
+  {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  },
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
+}
 
-  --    mappings = {
-  --      -- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
-  --      ["gf"] = {
-  --        action = function()
-  --          return require("obsidian").util.gf_passthrough()
-  --        end,
-  --        opts = { noremap = false, expr = true, buffer = true },
-  --      },
-  --      -- Toggle check-boxes.
-  --      ["<leader>ch"] = {
-  --        action = function()
-  --          return require("obsidian").util.toggle_checkbox()
-  --        end,
-  --        opts = { buffer = true },
-  --      },
-  --      -- Smart action depending on context, either follow link or toggle checkbox.
-  --      ["<cr>"] = {
-  --        action = function()
-  --        end,
-  --        opts = { buffer = true, expr = true },
-  --      }
-  --    },
-
-
-  --    note_id_func = function(title)
-  --      local suffix = ""
-  --      if title ~= nil then
-  --        -- If title is given, transform it into valid file name.
-  --        suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", "")
-  --      else
-  --        -- If title is nil, just add 4 random uppercase letters to the suffix.
-  --        for _ = 1, 4 do
-  --          suffix = suffix .. string.char(math.random(65, 90))
-  --        end
-  --      end
-  --      return tostring(os.time()) .. "-" .. suffix
-  --    end,
-
-
-  --  },
-  --  init = function()
-  --    vim.opt.conceallevel = 1
-  --  end
-  --}
 }

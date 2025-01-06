@@ -103,3 +103,6 @@ require('telescope').setup{
 local ts = require('telescope.builtin')
 vim.keymap.set('n', '<leader>g', ts.live_grep, {})
 vim.keymap.set('n', '<leader>s', ts.grep_string, {})
+vim.keymap.set('n', '<leader>j', ts.jumplist, {})
+vim.keymap.set('n', '<leader>k', ts.keymaps, {})
+
