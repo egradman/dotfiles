@@ -1,12 +1,5 @@
 {
-  description = "osx personal";
-
-  ##################################################################################################################
-  #
-  # Want to know Nix in details? Looking for a beginner-friendly tutorial?
-  # Check out https://github.com/ryan4yin/nixos-and-flakes-book !
-  #
-  ##################################################################################################################
+  description = "osx";
 
   # the nixConfig here only affects the flake itself, not the system configuration!
   nixConfig = {
@@ -16,11 +9,12 @@
   # Each item in `inputs` will be passed as a parameter to the `outputs` function after being pulled and built.
   inputs = {
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    #nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.05-darwin";
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs-darwin";
     };
+    #nixpkgs.config.allowUnfree = true;
+    #nixpkgs.config.allowUnfreePredicate = _: true;
   };
 
   # The `outputs` function will return all the build results of the flake.
@@ -34,26 +28,35 @@
     darwin,
     ...
   }: let
-    # TODO replace with your own username, system and hostname
-    username = "egradman";
     system = "aarch64-darwin"; # aarch64-darwin or x86_64-darwin
-    hostname = "egradman-personal";
 
-    specialArgs =
-      inputs
-      // {
-        inherit username hostname;
-      };
-  in {
-    darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {
-      inherit system specialArgs;
-      modules = [
+    modules = [
         ./modules/nix-core.nix
         ./modules/system.nix
         ./modules/apps.nix
-
         ./modules/host-users.nix
-      ];
+    ];
+
+
+  in {
+    darwinConfigurations."personal" = darwin.lib.darwinSystem {
+      inherit system;
+      inherit modules;
+      specialArgs = {
+        username = "egradman";
+        hostname = "air";
+        inherit inputs;
+      };
+    };
+
+    darwinConfigurations."red6" = darwin.lib.darwinSystem {
+      inherit system;
+      inherit modules;
+      specialArgs = {
+        username = "eric.gradman";
+        hostname = "smo-adm512";
+        inherit inputs;
+      };
     };
     # nix code formatter
     formatter.${system} = nixpkgs.legacyPackages.${system}.alejandra;

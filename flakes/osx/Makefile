@@ -1,5 +1,20 @@
-deploy:
-	nix build .#darwinConfigurations.egradman-personal.system \
-	   --extra-experimental-features 'nix-command flakes'
+run::
+	echo "must run personal or red6"
 
-	./result/sw/bin/darwin-rebuild switch --flake .#egradman-personal
+build_personal::
+	NIXPKGS_ALLOW_UNFREE=1 \
+	nix build .#darwinConfigurations.personal.system \
+	   --impure --extra-experimental-features 'nix-command flakes'
+
+build_red6:
+	NIXPKGS_ALLOW_UNFREE=1 \
+	nix build .#darwinConfigurations.red6.system \
+	   --impure --extra-experimental-features 'nix-command flakes'
+
+personal: build_personal
+	NIXPKGS_ALLOW_UNFREE=1 \
+	./result/sw/bin/darwin-rebuild switch --impure --flake .#personal
+
+red6: build_red6
+	NIXPKGS_ALLOW_UNFREE=1 \
+	./result/sw/bin/darwin-rebuild switch --impure --flake .#red6

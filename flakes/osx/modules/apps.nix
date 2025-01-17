@@ -17,6 +17,7 @@
   # But on macOS, it's less stable than homebrew.
   #
   # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
+
   environment.systemPackages = with pkgs; [
     git
     sshpass
@@ -48,6 +49,9 @@
     wget
     yazi
     zoxide
+
+    obsidian
+    kitty
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
@@ -59,8 +63,7 @@
 
     onActivation = {
       autoUpdate = false;
-      # 'zap': uninstalls all formulae(and related files) not listed here.
-      # cleanup = "zap";
+      cleanup = "zap";
     };
 
     taps = [
@@ -76,7 +79,12 @@
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
-      # "google-chrome"
+      "raycast"
+      "foxglove-studio"
+      "1password"
+      "balenaetcher"
+      "karabiner-elements"
+      "homerow"
     ];
   };
 }
