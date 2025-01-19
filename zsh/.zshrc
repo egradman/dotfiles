@@ -10,4 +10,6 @@ alias less="bat -n"
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
+source <(fzf --zsh)
+eval "$(zoxide init zsh)"
 eval "$(direnv hook zsh)"

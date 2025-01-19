@@ -24,8 +24,8 @@ opt.scrolloff = 5 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
 
 opt.shiftround = true -- Round indent
-opt.shiftwidth = 2 -- Size of an indent
-opt.tabstop = 2 -- Number of spaces tabs count for
+opt.shiftwidth = 4 -- Size of an indent
+opt.tabstop = 4 -- Number of spaces tabs count for
 opt.expandtab = true -- Use spaces instead of tabs
 
 opt.shortmess:append { W = true, I = true, c = true }
@@ -50,21 +50,21 @@ opt.wrap = true -- line wrap
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
+vim.diagnostic.config({
+  virtual_text = {
+    severity = {
+      min = vim.diagnostic.severity.ERROR, -- Only show errors, hide warnings, info, and hints
+    },
+  },
+  signs = {
+    severity = {
+      min = vim.diagnostic.severity.WARNING, -- Only show signs for errors
+    },
+  },
+  underline = {
+    severity = {
+      min = vim.diagnostic.severity.ERROR, -- Only underline errors
+    },
+  },
+})
 
---local swift_lsp = vim.api.nvim_create_augroup("swift_lsp", { clear = true })
--- vim.api.nvim_create_autocmd("FileType", {
--- 	pattern = { "swift" },
--- 	callback = function()
--- 		local root_dir = vim.fs.dirname(vim.fs.find({
--- 			"Package.swift",
--- 			".git",
--- 		}, { upward = true })[1])
--- 		local client = vim.lsp.start({
--- 			name = "sourcekit-lsp",
--- 			cmd = { "sourcekit-lsp" },
--- 			root_dir = root_dir,
--- 		})
--- 		vim.lsp.buf_attach_client(0, client)
--- 	end,
--- 	group = swift_lsp,
--- })

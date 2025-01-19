@@ -6,15 +6,15 @@ build_personal::
 	nix build .#darwinConfigurations.personal.system \
 	   --impure --extra-experimental-features 'nix-command flakes'
 
-build_red6:
+build_red6::
 	NIXPKGS_ALLOW_UNFREE=1 \
 	nix build .#darwinConfigurations.red6.system \
 	   --impure --extra-experimental-features 'nix-command flakes'
 
-personal: build_personal
+personal::
 	NIXPKGS_ALLOW_UNFREE=1 \
 	./result/sw/bin/darwin-rebuild switch --impure --flake .#personal
 
-red6: build_red6
+red6::
 	NIXPKGS_ALLOW_UNFREE=1 \
 	./result/sw/bin/darwin-rebuild switch --impure --flake .#red6

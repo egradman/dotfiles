@@ -52,6 +52,10 @@
 
     obsidian
     kitty
+    discord
+    spotify
+    tigervnc
+    zoom-us
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
@@ -63,7 +67,7 @@
 
     onActivation = {
       autoUpdate = false;
-      cleanup = "zap";
+      #cleanup = "zap";
     };
 
     taps = [
@@ -85,6 +89,14 @@
       "balenaetcher"
       "karabiner-elements"
       "homerow"
+      "daisydisk"
+      "localsend"
+      "blender"
+      "qgis"
+      "chatgpt"
+      "fantastical"
+      "qlab"
+      "signal"
     ];
   };
 }

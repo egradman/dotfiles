@@ -1,7 +1,12 @@
 -- Lualine Configuration 
 -- This configuration is mainly implemented from their github repository.
 
+local function foo()
+  return [[hello world]]
+end
+
 require('lualine').setup {
+
   options = {
     icons_enabled = true,
     theme = 'auto',
@@ -26,7 +31,7 @@ require('lualine').setup {
     lualine_c = {{'filename', path=1}},
     lualine_x = {},
     lualine_y = {'progress'},
-    lualine_z = {}
+    lualine_z = {foo}
   },
   inactive_sections = {
     lualine_a = {},

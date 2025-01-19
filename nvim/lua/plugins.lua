@@ -1,7 +1,7 @@
 return { 
   {
     'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
+    dependencies = { 'nvim-qtree/nvim-web-devicons' },
   },
 
   {
@@ -96,7 +96,15 @@ return {
     opts = {},
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require("oil").setup()
+      require("oil").setup({
+        view_options = {
+            show_hidden = false,
+            is_hidden_file = function(name, bufnr)
+                local m = name:match("^%.")
+                return m ~= nil
+            end,
+        }
+      })
       vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
     end,
   },
@@ -276,7 +284,7 @@ return {
             any = {
               buf = 0, -- current buffer
               {
-                severity = vim.diagnostic.severity.ERROR, -- errors only
+                severity = vim.diagnostic.severity.WARNING, -- errors only
                 -- limit to files in the current project
                 function(item)
                   return item.filename:find((vim.loop or vim.uv).cwd(), 1, true)
@@ -290,8 +298,8 @@ return {
     cmd = "Trouble",
     keys = {
       {
-        "<leader>xx",
-        "<cmd>Trouble diagnostics toggle<cr>",
+        "<leader>lx",
+        "<cmd>Trouble mydiags toggle<cr>",
         desc = "Diagnostics (Trouble)",
       },
       {
@@ -353,7 +361,7 @@ return {
           ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "html", "python", "tsx", "dart" },
           sync_install = false,
           highlight = { enable = true },
-          indent = { enable = false },  
+          indent = { enable = true },
         })
     end
   },
@@ -424,22 +432,21 @@ return {
     end
   },
   {
-  "folke/which-key.nvim",
-  event = "VeryLazy",
-  opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-  },
-  keys = {
-    {
-      "<leader>?",
-      function()
-        require("which-key").show({ global = false })
-      end,
-      desc = "Buffer Local Keymaps (which-key)",
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
     },
   },
-}
-
 }
