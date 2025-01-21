@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=ulauncher
+Exec=/home/eric.gradman@red6ar.com/.nix-profile/bin/ulauncher
+StartupNotify=false
+Terminal=false

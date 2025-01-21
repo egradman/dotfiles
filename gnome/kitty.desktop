@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=kitty
+Exec=/home/eric.gradman@red6ar.com/.nix-profile/bin/nixGLIntel /home/eric.gradman@red6ar.com/.nix-profile/bin/kitty
+StartupNotify=false
+Terminal=false
