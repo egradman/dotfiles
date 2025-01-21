@@ -1,0 +1,40 @@
+{pkgs}:
+  with pkgs; [
+    git
+    sshpass
+    ansible
+    bat
+    cmake
+    colima
+    direnv
+    entr
+    fd
+    ffmpeg
+    fzf
+    git
+    git-crypt
+    git-lfs
+    htop
+    imagemagick
+    just
+    lnav
+    neovim
+    pdm
+    redis
+    ripgrep
+    sqlite
+    tmate
+    tmux
+    tree-sitter
+    watch
+    wget
+    yazi
+    zoxide
+
+    obsidian
+    kitty
+    discord
+    spotify
+    tigervnc
+    zoom-us
+  ]
