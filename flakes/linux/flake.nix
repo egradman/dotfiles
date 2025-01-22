@@ -19,7 +19,8 @@
           pkgs.ulauncher
           pkgs.gnome-tweaks
           pkgs.zsh
-          "pkgs.google-chrome-stable"
+          pkgs.cowsay
+          pkgs.ungoogled-chromium
         ];
       };
     };
