@@ -1,5 +1,4 @@
 install::
-	nix profile remove linux/flake
 	nix profile  install './#default'
 
 build::
