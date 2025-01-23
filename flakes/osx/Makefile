@@ -18,3 +18,6 @@ personal::
 red6::
 	NIXPKGS_ALLOW_UNFREE=1 \
 	./result/sw/bin/darwin-rebuild switch --impure --flake .#red6
+
+update::
+	nix-channel --update

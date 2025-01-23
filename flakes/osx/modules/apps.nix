@@ -49,6 +49,8 @@
     wget
     yazi
     zoxide
+    python312Full
+
 
     obsidian
     kitty

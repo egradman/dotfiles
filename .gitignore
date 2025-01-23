@@ -6,6 +6,8 @@ zsh/.zcompdump
 zsh/.zsh_history
 zsh/.zsh_sessions
 
+raycast_scripts/hosts
+
 
 bin/fzf
 tmux/plugins

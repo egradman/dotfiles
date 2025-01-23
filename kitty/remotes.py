@@ -9,12 +9,7 @@ def _profiles():
     return Profiles(
         Profiles=[
             Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=True),
-            Profile.for_ssh(
-                "minecraft",
-                "root@minecraft.gradman.com",
-                COLOR_PERSONAL_PRODUCTION,
-                tmux=True,
-            ),
+            Profile.for_ssh("proxbox", "rsadmin@10.1.20.71", COLOR_WORK_PRODUCTION, tmux=True),
             Profile.for_ssh(
                 "homeassistant", "egradman@192.168.68.63", COLOR_PERSONAL_PRODUCTION
             ),
@@ -29,9 +24,6 @@ def _profiles():
                 "rsadmi@192.168.2.1",
                 COLOR_WORK_PRODUCTION,
                 tmux=True,
-                env={
-                    "_SHELL": "./.eric_tools/bin/nu"
-                }
             ),
             Profile.for_ssh(
                 "eyecap",
@@ -96,27 +88,21 @@ COLOR_PERSONAL_PRODUCTION = "#000022"
 
 profiles = _profiles()
 
-out = jinja2.Template(
-    """#!/opt/homebrew/bin/python3
+for profile in profiles.Profiles:
+    out = jinja2.Template(
+"""#!/run/current-system/sw/bin/python3.12
 # @raycast.schemaVersion 1
-# @raycast.title Kitty tab
+# @raycast.title {{profile.Name[1:]}} kitten tab
 # @raycast.mode silent
-# @raycast.argument1 { "type": "dropdown", "placeholder": "host", "data": [ {% for profile in profiles %} {"title": "{{profile.Name[1:]}}", "value": "{{profile.Name[1:]}}"}, {% endfor %} ] }
 
 import sys
 import subprocess
 
-match sys.argv[1].lower():
-{% for profile in profiles %}
-    case "{{profile.Name[1:].lower()}}":
-        cmd = '''kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "{{profile.Name[1:]}}" --color background="{{profile.Background_Color}}" -- kitten {{profile.Command}} '''
-{% endfor %}
+cmd = '''/run/current-system/sw/bin/kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "{{profile.Name[1:]}}" --color background="{{profile.Background_Color}}" -- /run/current-system/sw/bin/kitten {{profile.Command}} '''
 
-with open("/tmp/last_kitten_tab_command.txt", "w") as f:
-    f.write(cmd)
 subprocess.run(cmd, shell=True)
 """
-).render(profiles=profiles.Profiles)
+    ).render(profile=profile)
 
-with open("../raycast_scripts/kitty.py", "w") as f:
-    f.write(out)
+    with open(f"../raycast_scripts/hosts/{profile.Name[1:]}.py", "w") as f:
+        f.write(out)
