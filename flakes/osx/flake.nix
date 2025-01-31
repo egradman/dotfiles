@@ -34,6 +34,7 @@
         ./modules/system.nix
         ./modules/apps.nix
         ./modules/host-users.nix
+        #./modules/services.nix
     ];
 
 

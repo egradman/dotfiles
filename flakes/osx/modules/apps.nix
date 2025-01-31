@@ -50,6 +50,8 @@
     yazi
     zoxide
     python312Full
+    nodejs
+    oh-my-posh
 
 
     obsidian
@@ -58,6 +60,17 @@
     spotify
     tigervnc
     zoom-us
+  ];
+
+  # install a list of fonts
+  
+
+  fonts.packages = with pkgs; [
+     fira-code
+     nerd-fonts.hack
+     pkgs.nerd-fonts.fira-code
+     pkgs.nerd-fonts.fira-mono
+     pkgs.nerd-fonts.meslo-lg
   ];
 
   # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
@@ -69,21 +82,22 @@
 
     onActivation = {
       autoUpdate = false;
-      #cleanup = "zap";
+      cleanup = "zap";
     };
 
     taps = [
       "homebrew/services"
+      "FelixKratz/formulae"
+
     ];
 
     # `brew install`
-    # TODO Feel free to add your favorite apps here.
     brews = [
-      # "aria2"  # download tool
+      "sketchybar"
+      "ical-buddy"
     ];
 
     # `brew install --cask`
-    # TODO Feel free to add your favorite apps here.
     casks = [
       "raycast"
       "foxglove-studio"

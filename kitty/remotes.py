@@ -9,7 +9,7 @@ def _profiles():
     return Profiles(
         Profiles=[
             Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=True),
-            Profile.for_ssh("proxbox", "rsadmin@10.1.20.71", COLOR_WORK_PRODUCTION, tmux=True),
+            Profile.for_ssh("proxbox", "rsadmin@192.168.2.200", COLOR_WORK_PRODUCTION, tmux=True),
             Profile.for_ssh(
                 "homeassistant", "egradman@192.168.68.63", COLOR_PERSONAL_PRODUCTION
             ),
@@ -72,9 +72,9 @@ class Profile(BaseModel):
         # color = webcolors.hex_to_rgb(color)
 
         if tmux:
-            command = f"""ssh -t {user_at_host} {env} {shell} -l -c ".dotfiles/scripts/tmux-resume-main.sh" """
+            command = f"""ssh -A -t {user_at_host} {env} {shell} -l -c ".dotfiles/scripts/tmux-resume-main.sh" """
         else:
-            command = f"ssh -t {user_at_host}"
+            command = f"ssh -A -t {user_at_host}"
 
         return Profile(Name="!" + name, Command=command, Background_Color=color)
 
