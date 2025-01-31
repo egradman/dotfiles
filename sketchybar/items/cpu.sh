@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
-COLOR="$YELLOW"
+COLOR="$BLUE"
 
-sketchybar --add item cpu right \
+sketchybar \
+    --add item cpu right \
 	--set cpu \
 	update_freq=3 \
 	icon.color="$COLOR" \

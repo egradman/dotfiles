@@ -1,6 +1,9 @@
 run::
 	echo "must run personal or red6"
 
+install::
+	nix run nix-darwin/master#darwin-rebuild -- switch
+
 build_personal::
 	NIXPKGS_ALLOW_UNFREE=1 \
 	nix build .#darwinConfigurations.personal.system \

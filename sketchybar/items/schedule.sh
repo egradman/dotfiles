@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-COLOR="$CYAN"
+COLOR="$RED"
 
 sketchybar \
 	--add item schedule left \

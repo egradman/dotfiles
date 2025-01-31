@@ -49,7 +49,9 @@
     wget
     yazi
     zoxide
-    python312Full
+    python312
+    python312Packages.pip
+    python312Packages.virtualenv
     nodejs
     oh-my-posh
 
@@ -113,6 +115,7 @@
       "fantastical"
       "qlab"
       "signal"
+      "rectangle"
     ];
   };
 }
