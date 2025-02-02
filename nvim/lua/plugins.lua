@@ -510,4 +510,69 @@ return {
       end,
     },
   },
+  {
+    "egradman/obsidian.nvim",
+    version = "*",  -- recommended, use latest release instead of latest commit
+    lazy = false,
+    ft = "markdown",
+    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+    -- event = {
+    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
+    --   -- refer to `:h file-pattern` for more examples
+    --   "BufReadPre path/to/my-vault/*.md",
+    --   "BufNewFile path/to/my-vault/*.md",
+    -- },
+    dependencies = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+    },
+    opts = {
+      use_advanced_uri = true,
+      app_path = "/Applications/Nix Apps/Obsidian.app",
+      open_app_foreground = true,
+      workspaces = {
+        {
+          name = "egradman",
+          path = "~/Documents/egradman",
+        },
+        {
+          name = "red6",
+          path = "~/Documents/red6",
+        },
+      },
+    },
+    keys = {
+        {
+            "<leader>oo",
+            "<cmd>ObsidianQuickSwitch<cr>",
+            desc="obsidian quick switch"
+        },
+        {
+            "<leader>ov",
+            "<cmd>ObsidianWorkspace<cr>",
+            desc="obsidian select vault"
+        },
+        {
+            "<leader>og",
+            "<cmd>ObsidianSearch<cr>",
+            desc="obsidian grep"
+        },
+        {
+            "<leader>on",
+            "<cmd>ObsidianNew<cr>",
+            desc="obsidian new file"
+        },
+        {
+            "<leader>or",
+            "<cmd>ObsidianRename<cr>",
+            desc="obsidian rename"
+        },
+        {
+            "<leader>oa",
+            "<cmd>ObsidianOpen<cr>",
+            desc="obsidian open app"
+        },
+    }
+  }
 }
