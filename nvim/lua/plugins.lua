@@ -541,6 +541,22 @@ return {
           path = "~/Documents/red6",
         },
       },
+      mappings = {
+        ["<cr>"] = {
+            action = function()
+                return require("obsidian").util.smart_action()
+            end,
+            opts = { buffer = true, expr = true },
+        },
+        
+
+      },
+      ui = {
+        checkboxes = {
+            [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+            ["x"] = { char = "", hl_group = "ObsidianDone" },
+        },
+      },
     },
     keys = {
         {
@@ -572,6 +588,17 @@ return {
             "<leader>oa",
             "<cmd>ObsidianOpen<cr>",
             desc="obsidian open app"
+        },
+        {
+            "<leader>od",
+            "<cmd>ObsidianWorkspace red6<cr><cmd>ObsidianDailies<cr>",
+            desc="obsidian today"
+        },
+        {
+            "<C-S-l>",
+            function() require("obsidian.util").toggle_checkbox() end,
+            mode="i",
+            desc="obsidian checkbox"
         },
     }
   }
