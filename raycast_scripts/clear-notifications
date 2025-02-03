@@ -27,10 +27,10 @@ tell application "System Events"
     
   end try
   
-  set processName to "Microsoft Outlook"
-  set matchedProcess to first process whose name is processName
   
   try
+    set processName to "Microsoft Outlook"
+    set matchedProcess to first process whose name is processName
     repeat with theWindow in (every window of matchedProcess)
       set windowName to name of theWindow
       if windowName contains "Reminder" then
