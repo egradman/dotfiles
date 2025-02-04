@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-COLOR="$RED"
+COLOR="$BLUE"
 
 sketchybar \
-	--add item schedule left \
-	--set schedule script="$PLUGIN_DIR/schedule.py" \
-	--set schedule update_freq=30 \
+	--add item ip left \
+	--set ip script="$PLUGIN_DIR/ip.py" \
+	--set ip update_freq=30 \
 	icon.drawing=off \
 	background.height=26 \
 	background.padding_left=0 \
