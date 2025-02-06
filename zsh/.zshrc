@@ -9,8 +9,10 @@ alias vim=nvim
 alias vi=nvim
 #alias cat="bat -n"
 #alias less="bat -n"
-alias pdm_init="nix-shell -p python312Packages.virtualenv --run 'pdm init'"
+alias pdm_shell="nix-shell -p python312Packages.virtualenv"
 alias apps="vi ~/.dotfiles/flakes/osx/modules/apps.nix"
+alias nix_personal="make -C ~/.dotfiles/flakes/osx personal"
+alias nix_red6="make -C ~/.dotfiles/flakes/osx red6"
 
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^X^E' edit-command-line

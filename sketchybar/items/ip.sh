@@ -5,7 +5,7 @@ COLOR="$BLUE"
 sketchybar \
 	--add item ip left \
 	--set ip script="$PLUGIN_DIR/ip.py" \
-	--set ip update_freq=30 \
+	--set ip update_freq=10 \
 	icon.drawing=off \
 	background.height=26 \
 	background.padding_left=0 \
