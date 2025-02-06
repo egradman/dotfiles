@@ -23,4 +23,5 @@ red6::
 	./result/sw/bin/darwin-rebuild switch --impure --flake .#red6
 
 update::
-	nix-channel --update
+	#nix-channel --update
+	nix flake update

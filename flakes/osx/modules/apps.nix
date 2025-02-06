@@ -1,44 +1,48 @@
 { pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    coreutils
-    git
-    sshpass
     ansible
     bat
     cmake
     colima
+    coreutils
     direnv
     entr
     fd
     ffmpeg
+    flutter
     fzf
+    gh
+    git
     git
     git-crypt
     git-lfs
     htop
+    httpie
     imagemagick
     just
     lnav
     neovim
-    pdm
+    ngrok
+    nodejs
+    oh-my-posh
+    parallel
     redis
     ripgrep
     sqlite
+    sshpass
     tmate
     tmux
     tree-sitter
+    vivid
     watch
     wget
     yazi
     zoxide
+
+    pdm
     python312
     python312Packages.pip
     python312Packages.virtualenv
-    nodejs
-    oh-my-posh
-    vivid
-    httpie
-
 
     obsidian
     kitty
@@ -73,6 +77,7 @@
       "sketchybar"
       "ical-buddy"
       "blueutil"
+      "opus"
     ];
 
     # `brew install --cask`
@@ -93,6 +98,6 @@
       "signal"
       "rectangle"
       "prusaslicer"
-    ];
+     ];
   };
 }
