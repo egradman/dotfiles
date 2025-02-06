@@ -26,6 +26,13 @@ def _profiles():
                 tmux=True,
             ),
             Profile.for_ssh(
+                "ACU through proxy",
+                "rsadmi@192.168.2.1",
+                COLOR_WORK_PRODUCTION,
+                tmux=True,
+                jumphost="rsadmin@10.1.20.71"
+            ),
+            Profile.for_ssh(
                 "eyecap",
                 "rsadmi@172.16.186.128",
                 COLOR_WORK_PRODUCTION,
@@ -65,14 +72,14 @@ class Profile(BaseModel):
         populate_by_name = True
 
     @classmethod
-    def for_ssh(cls, name, user_at_host, color, tmux=False, shell="zsh", env=None):
+    def for_ssh(cls, name, user_at_host, color, tmux=False, shell="zsh", jumphost=None, env=None):
         if not env: env = {}
         env = " ".join(["=".join((key, value)) for key, value in env.items()])
 
         # color = webcolors.hex_to_rgb(color)
 
         if tmux:
-            command = f"""ssh -A -t {user_at_host} {env} {shell} -l -c ".dotfiles/scripts/tmux-resume-main.sh" """
+            command = f"""ssh -A {jumphost and "-J " + jumphost or ""} -t {user_at_host} {env} {shell} -l -c ".dotfiles/scripts/tmux-resume-main.sh" """
         else:
             command = f"ssh -A -t {user_at_host}"
 
@@ -92,7 +99,7 @@ for profile in profiles.Profiles:
     out = jinja2.Template(
 """#!/run/current-system/sw/bin/python3.12
 # @raycast.schemaVersion 1
-# @raycast.title {{profile.Name[1:]}} kitten tab
+# @raycast.title {{profile.Name[1:]}} terminal
 # @raycast.mode silent
 
 import sys
