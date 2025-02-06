@@ -105,7 +105,7 @@ for profile in profiles.Profiles:
 import sys
 import subprocess
 
-cmd = '''/run/current-system/sw/bin/kitten @ launch --to=unix:`ls /tmp/kitty-* | tail -1` --type=tab --tab-title "{{profile.Name[1:]}}" --color background="{{profile.Background_Color}}" -- /run/current-system/sw/bin/kitten {{profile.Command}} '''
+cmd = '''/run/current-system/sw/bin/kitten @ launch --to=unix:`ls -tr /tmp/kitty-* | tail -1` --type=tab --tab-title "{{profile.Name[1:]}}" --color background="{{profile.Background_Color}}" -- /run/current-system/sw/bin/kitten {{profile.Command}} '''
 
 subprocess.run(cmd, shell=True)
 """
