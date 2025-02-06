@@ -1,3 +1,4 @@
+-- vim: set tabstop=2 shiftwidth=2 :
 return { 
   {
     'nvim-lualine/lualine.nvim',
@@ -249,7 +250,7 @@ return {
         -- sources for autocompletion
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
-          { name = "copilot" },
+          --{ name = "copilot" },
           { name = "luasnip" }, -- snippets
           { name = "buffer" }, -- text within current buffer
           { name = "path" }, -- file system paths
@@ -440,53 +441,107 @@ return {
     },
   },
   {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    lazy = false,
-    version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
-    opts = {
-      -- add any opts here
-    },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = "make",
-    -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+    "olimorris/codecompanion.nvim",
     dependencies = {
-      "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      --- The below dependencies are optional,
-      "echasnovski/mini.pick", -- for file_selector provider mini.pick
-      "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-      "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-      "ibhagwan/fzf-lua", -- for file_selector provider fzf
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      {
-        -- support for image pasting
-        "HakonHarnes/img-clip.nvim",
-        event = "VeryLazy",
-        opts = {
-          -- recommended settings
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      strategies = {
+        chat = {
+          adapter = "anthropic",
+        },
+        inline = {
+          adapter = "anthropic",
+          keymaps = {
+            accept_change = {
+              modes = { n = "ga" },
+              description = "Accept the suggested change",
             },
-            -- required for Windows users
-            use_absolute_path = true,
+            reject_change = {
+              modes = { n = "gr" },
+              description = "Reject the suggested change",
+            },
           },
         },
       },
-      {
-        -- Make sure to set this up properly if you have lazy=true
-        'MeanderingProgrammer/render-markdown.nvim',
-        opts = {
-          file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
+      opts = {
       },
     },
+    keys = {
+        {
+            "<leader>al",
+            "<cmd>CodeCompanionActions<cr>",
+            desc="code companion actions",
+            mode={"n", "v"}
+        },
+        {
+            "<leader>ac",
+            "<cmd>CodeCompanionChat<cr>",
+            desc="code companion chat"
+        },
+        {
+            "<leader>ay",
+            "<cmd>CodeCompanionChat Add<cr>",
+            desc="code companion add",
+            mode="v"
+        },
+        {
+            "<leader>ai",
+            ":CodeCompanion /buffer ",
+            desc="code companion inline",
+            mode={"v", "n"}
+        },
+    }
   },
+  -- {
+  --   "yetone/avante.nvim",
+  --   event = "VeryLazy",
+  --   lazy = false,
+  --   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
+  --   opts = {
+  --     -- add any opts here
+  --   },
+  --   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+  --   build = "make",
+  --   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+  --   dependencies = {
+  --     "stevearc/dressing.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "MunifTanjim/nui.nvim",
+  --     --- The below dependencies are optional,
+  --     "echasnovski/mini.pick", -- for file_selector provider mini.pick
+  --     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
+  --     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
+  --     "ibhagwan/fzf-lua", -- for file_selector provider fzf
+  --     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+  --     {
+  --       -- support for image pasting
+  --       "HakonHarnes/img-clip.nvim",
+  --       event = "VeryLazy",
+  --       opts = {
+  --         -- recommended settings
+  --         default = {
+  --           embed_image_as_base64 = false,
+  --           prompt_for_file_name = false,
+  --           drag_and_drop = {
+  --             insert_mode = true,
+  --           },
+  --           -- required for Windows users
+  --           use_absolute_path = true,
+  --         },
+  --       },
+  --     },
+  --     {
+  --       -- Make sure to set this up properly if you have lazy=true
+  --       'MeanderingProgrammer/render-markdown.nvim',
+  --       opts = {
+  --         file_types = { "markdown", "Avante" },
+  --       },
+  --       ft = { "markdown", "Avante" },
+  --     },
+  --   },
+  -- },
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -494,22 +549,27 @@ return {
     config = function()
       require("copilot").setup({})
     end,
+    keys = {
+        {
+            "<leader>as", function() require("copilot.suggestion").toggle_auto_trigger() end, desc="toggle auto suggestion"
+        },
+    }
   },
-  {
-    "zbirenbaum/copilot-cmp",
-    event = "InsertEnter",
-    config = function () require("copilot_cmp").setup() end,
-    dependencies = {
-      "zbirenbaum/copilot.lua",
-      cmd = "Copilot",
-      config = function()
-        require("copilot").setup({
-          suggestion = { enabled = false },
-          panel = { enabled = false },
-        })
-      end,
-    },
-  },
+  --{
+  --  "zbirenbaum/copilot-cmp",
+  --  event = "InsertEnter",
+  --  config = function () require("copilot_cmp").setup() end,
+  --  dependencies = {
+  --    "zbirenbaum/copilot.lua",
+  --    cmd = "Copilot",
+  --    config = function()
+  --      require("copilot").setup({
+  --        suggestion = { enabled = false },
+  --        panel = { enabled = false },
+  --      })
+  --    end,
+  --  },
+  --},
   {
     "egradman/obsidian.nvim",
     version = "*",  -- recommended, use latest release instead of latest commit
