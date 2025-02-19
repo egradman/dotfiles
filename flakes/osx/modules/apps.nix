@@ -4,12 +4,14 @@
     bat
     cmake
     colima
+    cocoapods
     coreutils
     direnv
+    docker
+    docker-compose
     entr
     fd
     ffmpeg
-    flutter
     fzf
     gh
     git
@@ -26,7 +28,6 @@
     nodejs
     oh-my-posh
     parallel
-    redis
     ripgrep
     sqlite
     sshpass
@@ -40,7 +41,8 @@
     yazi
     zoxide
 
-    pdm
+    firebase-tools
+
     python312
     python312Packages.pip
     python312Packages.virtualenv
@@ -78,7 +80,7 @@
       "sketchybar"
       "ical-buddy"
       "blueutil"
-      "opus"
+      "redis"
     ];
 
     # `brew install --cask`
@@ -99,6 +101,7 @@
       "signal"
       "rectangle"
       "prusaslicer"
+      "flutter"
      ];
   };
 }

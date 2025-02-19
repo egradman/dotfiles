@@ -2,13 +2,12 @@ setopt appendhistory
 setopt APPEND_HISTORY  
 setopt SHARE_HISTORY
 
-export PATH=/run/current-system/sw/bin:~/.nix-profile/bin:/opt/homebrew/bin:~/.eric_tools/bin:~/.dotfiles/bin:~/.dotfiles/scripts:~/.local/bin::$PATH
+export PATH=/run/current-system/sw/bin:~/.nix-profile/bin:~/.eric_tools/bin:~/.dotfiles/bin:~/.dotfiles/scripts:~/.local/bin::$PATH
 
+eval "$(brew shellenv)" || true
 
 alias vim=nvim
 alias vi=nvim
-#alias cat="bat -n"
-#alias less="bat -n"
 alias pdm_shell="nix-shell -p python312Packages.virtualenv"
 alias apps="vi ~/.dotfiles/flakes/osx/modules/apps.nix"
 alias nix_personal="make -C ~/.dotfiles/flakes/osx personal"
