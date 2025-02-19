@@ -33,6 +33,7 @@
     tmate
     tmux
     tree-sitter
+    uv
     vivid
     watch
     wget
