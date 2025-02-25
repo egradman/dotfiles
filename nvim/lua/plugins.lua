@@ -661,5 +661,5 @@ return {
             desc="obsidian checkbox"
         },
     }
-  }
+  }, 
 }
