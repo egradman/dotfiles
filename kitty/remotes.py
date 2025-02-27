@@ -30,7 +30,7 @@ def _profiles():
                 "rsadmi@192.168.2.1",
                 COLOR_WORK_PRODUCTION,
                 tmux=True,
-                jumphost="rsadmin@10.1.20.71"
+                extra_args="-J rsadmin@10.1.20.71 -L61000:localhost:61000 -L60000:localhost:60000"
             ),
             Profile.for_ssh(
                 "eyecap",
@@ -72,16 +72,16 @@ class Profile(BaseModel):
         populate_by_name = True
 
     @classmethod
-    def for_ssh(cls, name, user_at_host, color, tmux=False, shell="zsh", jumphost=None, env=None):
+    def for_ssh(cls, name, user_at_host, color, tmux=False, shell="zsh", extra_args=None, env=None):
         if not env: env = {}
         env = " ".join(["=".join((key, value)) for key, value in env.items()])
 
         # color = webcolors.hex_to_rgb(color)
 
         if tmux:
-            command = f"""ssh -A {jumphost and "-J " + jumphost or ""} -t {user_at_host} {env} {shell} -l -c ".dotfiles/scripts/tmux-resume-main.sh" """
+            command = f"""ssh -A {extra_args} -t {user_at_host} {env} {shell} -l -c ".dotfiles/scripts/tmux-resume-main.sh" """
         else:
-            command = f"ssh -A -t {user_at_host}"
+            command = f"ssh -A {extra_args} -t {user_at_host}"
 
         return Profile(Name="!" + name, Command=command, Background_Color=color)
 
