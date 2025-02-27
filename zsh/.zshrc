@@ -4,7 +4,7 @@ setopt SHARE_HISTORY
 
 export PATH=/run/current-system/sw/bin:~/.nix-profile/bin:~/.eric_tools/bin:~/.dotfiles/bin:~/.dotfiles/scripts:~/.local/bin::$PATH
 
-eval "$(brew shellenv)" || true
+eval "$(/opt/homebrew/bin/brew shellenv)" || true
 
 alias vim=nvim
 alias vi=nvim
