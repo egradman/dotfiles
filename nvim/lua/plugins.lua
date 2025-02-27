@@ -683,5 +683,84 @@ return {
       },
     },
     cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
+  }, 
+  {
+    "3rd/image.nvim",
+    opts = {
+      processor = "magick_cli", -- or "magick_cli"
+        backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
+        integrations = {}, -- do whatever you want with image.nvim's integrations
+        max_width = 100, -- tweak to preference
+        max_height = 12, -- ^
+        max_height_window_percentage = math.huge, -- this is necessary for a good experience
+        max_width_window_percentage = math.huge,
+        window_overlap_clear_enabled = true,
+        window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+    }
+  },
+  {
+      "benlubas/molten-nvim",
+      version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
+      dependencies = { "3rd/image.nvim" },
+      build = ":UpdateRemotePlugins",
+      init = function()
+          -- these are examples, not defaults. Please see the readme
+          vim.g.molten_image_provider = "image.nvim"
+          vim.g.molten_output_win_max_height = 20
+          vim.g.molten_auto_open_output = false
+          vim.g.molten_wrap_output = true
+          vim.g.molten_virt_text_output = true
+          vim.g.molten_virt_lines_off_by_1 = true
+      end,
+  },
+  {
+    "quarto-dev/quarto-nvim",
+    dependencies = {
+      "jmbuhr/otter.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    init = function()
+      local quarto = require("quarto")
+      quarto.setup({
+          --lspFeatures = {
+          --    -- NOTE: put whatever languages you want here:
+          --    languages = { "python" },
+          --    chunks = "all",
+          --    diagnostics = {
+          --        enabled = true,
+          --        triggers = { "BufWritePost" },
+          --    },
+          --    completion = {
+          --        enabled = true,
+          --    },
+          --},
+          keymap = {
+          },
+          codeRunner = {
+              enabled = true,
+              default_method = "molten",
+          },
+      })
+      local runner = require("quarto.runner")
+      vim.keymap.set("n", "<localleader>rr", runner.run_cell,  { desc = "run cell", silent = true })
+      vim.keymap.set("n", "<localleader>ra", runner.run_above, { desc = "run cell and above", silent = true })
+      vim.keymap.set("n", "<localleader>rA", runner.run_all,   { desc = "run all cells", silent = true })
+      vim.keymap.set("n", "<localleader>rl", runner.run_line,  { desc = "run line", silent = true })
+      vim.keymap.set("v", "<localleader>r",  runner.run_range, { desc = "run visual range", silent = true })
+      vim.keymap.set("n", "<localleader>RA", function()
+        runner.run_all(true)
+      end, { desc = "run all cells of all languages", silent = true })
+    end,
+  },
+  {
+    'MeanderingProgrammer/render-markdown.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {},
+    ft = { 'markdown', 'quarto' },
+
   }
 }

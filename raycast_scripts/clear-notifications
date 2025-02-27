@@ -27,21 +27,5 @@ tell application "System Events"
     
   end try
   
-  
-  try
-    set processName to "Microsoft Outlook"
-    set matchedProcess to first process whose name is processName
-    repeat with theWindow in (every window of matchedProcess)
-      set windowName to name of theWindow
-      if windowName contains "Reminder" then
-        repeat with btn in buttons of theWindow
-          if description of btn is "close button" then
-            click btn
-            exit repeat
-          end if
-        end repeat
-      end if
-    end repeat
-  end try
 end tell
 

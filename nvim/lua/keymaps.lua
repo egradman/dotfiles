@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+    local keymap = vim.api.nvim_set_keymap
 
 keymap("", "-", ":Ex<cr>", {})
 
@@ -18,3 +18,14 @@ vim.api.nvim_create_user_command(
     {}
 )
 
+vim.api.nvim_set_keymap('n', '<M-Tab>', '<<', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<S-Tab>', '>>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('v', '<M-Tab>', '<', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '<S-Tab>', '>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('i', '<M-Tab>', '<C-d>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('i', '<S-Tab>', '<C-t>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<PageDown>', '<C-d>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<PageUp>', '<C-u>', { noremap = true, silent = true })
