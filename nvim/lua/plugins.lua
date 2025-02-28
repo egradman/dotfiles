@@ -151,7 +151,7 @@ return {
 
               -- set keybinds
               opts.desc = "Show LSP references"
-              vim.keymap.set("n", "<leader>r", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
+              vim.keymap.set("n", "<leader>f", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
 
               opts.desc = "Go to declaration"
               vim.keymap.set("n", "<leader>c", vim.lsp.buf.declaration, opts) -- go to declaration
@@ -357,48 +357,22 @@ return {
     end
   },
   {
-    "benlubas/molten-nvim",
-    version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
-    build = ":UpdateRemotePlugins",
-    init = function()
-        -- this is an example, not a default. Please see the readme for more configuration options
-        vim.g.molten_output_win_max_height = 12
-
-        vim.keymap.set("n", "<localleader>mi", ":MoltenInit<CR>",
-    { silent = true, desc = "Initialize the plugin" })
---vim.keymap.set("n", "<localleader>e", ":MoltenEvaluateOperator<CR>",
---    { silent = true, desc = "run operator selection" })
---vim.keymap.set("n", "<localleader>rl", ":MoltenEvaluateLine<CR>",
---    { silent = true, desc = "evaluate line" })
---vim.keymap.set("n", "<localleader>rr", ":MoltenReevaluateCell<CR>",
---    { silent = true, desc = "re-evaluate cell" })
---vim.keymap.set("v", "<localleader>r", ":<C-u>MoltenEvaluateVisual<CR>gv",
---    { silent = true, desc = "evaluate visual selection" })
-    end,
-  },
-  {
     "ThePrimeagen/harpoon",
     branch = "harpoon2",
     dependencies = { "nvim-lua/plenary.nvim" },
-    init = function()
-      local harpoon = require("harpoon")
+    keys = {
+      {"<leader>ta", function() require("harpoon"):list():add() end, desc="harpoon  add"},
+      {"<leader>tl", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, desc="harpoon list"},
 
-      -- REQUIRED
-      harpoon:setup()
-      -- REQUIRED
+      {"<leader>tq", function() require("harpoon"):list():select(1) end, desc="buffer 1"},
+      {"<leader>tw", function() require("harpoon"):list():select(2) end, desc="buffer 2"},
+      {"<leader>te", function() require("harpoon"):list():select(3) end, desc="buffer 3"},
+      {"<leader>tr", function() require("harpoon"):list():select(4) end, desc="buffer 4"},
 
-      vim.keymap.set("n", "<leader>hd", function() harpoon:list():add() end)
-      vim.keymap.set("n", "<leader>ha", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+      {"<C-S-P>", function() require("harpoon"):list():prev() end, desc="previous"},
+      {"<C-S-N>", function() require("harpoon"):list():next() end, desc="next"},
+    }
 
-      vim.keymap.set("n", "<leader>w", function() harpoon:list():select(1) end)
-      vim.keymap.set("n", "<leader>e", function() harpoon:list():select(2) end)
-      vim.keymap.set("n", "<leader>r", function() harpoon:list():select(3) end)
-      vim.keymap.set("n", "<leader>t", function() harpoon:list():select(4) end)
-
-      -- Toggle previous & next buffers stored within Harpoon list
-      vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
-      vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
-    end  
   },
   {
     "windwp/nvim-ts-autotag",
@@ -711,56 +685,126 @@ return {
           vim.g.molten_wrap_output = true
           vim.g.molten_virt_text_output = true
           vim.g.molten_virt_lines_off_by_1 = true
+          vim.g.molten_cover_empty_lines = true
+          vim.g.molten_cover_lines_starting_with = {"# %%"}
       end,
   },
   {
-    "quarto-dev/quarto-nvim",
-    dependencies = {
-      "jmbuhr/otter.nvim",
-      "nvim-treesitter/nvim-treesitter",
+    "GCBallesteros/NotebookNavigator.nvim",
+    keys = {
+      { "<leader>r<Up>", function() require("notebook-navigator").move_cell "u" end },
+      { "<leader>r<Down>", function() require("notebook-navigator").move_cell "d" end },
+      { "<leader>rr", "<cmd>lua require('notebook-navigator').run_cell()<cr>" },
+      { "<leader>rt", "<cmd>lua require('notebook-navigator').run_and_move()<cr>" },
+      { "<leader>rs", "<cmd>lua require('notebook-navigator').split_cell()<cr>" },
     },
-    init = function()
-      local quarto = require("quarto")
-      quarto.setup({
-          --lspFeatures = {
-          --    -- NOTE: put whatever languages you want here:
-          --    languages = { "python" },
-          --    chunks = "all",
-          --    diagnostics = {
-          --        enabled = true,
-          --        triggers = { "BufWritePost" },
-          --    },
-          --    completion = {
-          --        enabled = true,
-          --    },
-          --},
-          keymap = {
-          },
-          codeRunner = {
-              enabled = true,
-              default_method = "molten",
-          },
-      })
-      local runner = require("quarto.runner")
-      vim.keymap.set("n", "<localleader>rr", runner.run_cell,  { desc = "run cell", silent = true })
-      vim.keymap.set("n", "<localleader>ra", runner.run_above, { desc = "run cell and above", silent = true })
-      vim.keymap.set("n", "<localleader>rA", runner.run_all,   { desc = "run all cells", silent = true })
-      vim.keymap.set("n", "<localleader>rl", runner.run_line,  { desc = "run line", silent = true })
-      vim.keymap.set("v", "<localleader>r",  runner.run_range, { desc = "run visual range", silent = true })
-      vim.keymap.set("n", "<localleader>RA", function()
-        runner.run_all(true)
-      end, { desc = "run all cells of all languages", silent = true })
-    end,
+    dependencies = {
+      "echasnovski/mini.comment",
+      "benlubas/molten-nvim",
+      "anuvyklack/hydra.nvim",
+    },
+    opts = {
+      syntax_highlight = true
+    },
+    event = "VeryLazy",
   },
   {
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
-    opts = {},
+    opts = {
+    },
     ft = { 'markdown', 'quarto' },
+
+  },
+  { 'echasnovski/mini.comment', version = "*" },
+  {
+    "echasnovski/mini.ai",
+    event = "VeryLazy",
+    dependencies = { "GCBallesteros/NotebookNavigator.nvim" },
+    opts = function()
+      local nn = require "notebook-navigator"
+
+      local opts = { custom_textobjects = { h = nn.miniai_spec } }
+      return opts
+    end,
+  },
+  {
+    "echasnovski/mini.hipatterns",
+    event = "VeryLazy",
+    dependencies = { "GCBallesteros/NotebookNavigator.nvim" },
+    opts = function()
+      local nn = require "notebook-navigator"
+
+      local opts = { highlighters = { cells = nn.minihipatterns_spec } }
+      return opts
+    end,
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = {'kevinhwang91/promise-async'},
+    keys = {
+       { "z<Right>", "zo" },
+       { "z<Left>", "zc" },
+       { "z<Down>", function() require('ufo').openAllFolds() end },
+       { "z<Up>", function() require('ufo').closeAllFolds() end },
+
+       { "zp", function()
+        local winid = require('ufo').peekFoldedLinesUnderCursor()
+        if not winid then
+            -- choose one of coc.nvim and nvim lsp
+            vim.fn.CocActionAsync('definitionHover') -- coc.nvim
+            vim.lsp.buf.hover()
+        end
+      end }
+    },
+    lazy = false,
+    config = function()
+      vim.print("hello")
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true
+      }
+      local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
+      for _, ls in ipairs(language_servers) do
+          require('lspconfig')[ls].setup({
+              capabilities = capabilities
+              -- you can add other fields for setting up lsp server in this table
+          })
+      end
+      local handler = function(virtText, lnum, endLnum, width, truncate)
+        local newVirtText = {}
+        local suffix = (' 󰁂 %d '):format(endLnum - lnum)
+        local sufWidth = vim.fn.strdisplaywidth(suffix)
+        local targetWidth = width - sufWidth
+        local curWidth = 0
+        for _, chunk in ipairs(virtText) do
+            local chunkText = chunk[1]
+            local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+            if targetWidth > curWidth + chunkWidth then
+                table.insert(newVirtText, chunk)
+            else
+                chunkText = truncate(chunkText, targetWidth - curWidth)
+                local hlGroup = chunk[2]
+                table.insert(newVirtText, {chunkText, hlGroup})
+                chunkWidth = vim.fn.strdisplaywidth(chunkText)
+                -- str width returned from truncate() may less than 2nd argument, need padding
+                if curWidth + chunkWidth < targetWidth then
+                    suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+                end
+                break
+            end
+            curWidth = curWidth + chunkWidth
+        end
+        table.insert(newVirtText, {suffix, 'MoreMsg'})
+        return newVirtText
+      end
+      require('ufo').setup({
+          fold_virt_text_handler = handler
+      })
+    end
 
   }
 }
