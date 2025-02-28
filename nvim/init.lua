@@ -5,8 +5,6 @@ vim.g.maplocalleader = " "
 vim.g.python3_host_prog=vim.fn.expand("~/.dotfiles/nvim_venv/.venv/bin/python3")
 
 
-require "notebook"
-
 require "keymaps"
 require "options"
 require "lazy-config"
