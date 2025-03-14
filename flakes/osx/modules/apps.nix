@@ -23,6 +23,7 @@
     imagemagick
     just
     lnav
+    luajitPackages.magick
     neovim
     ngrok
     nodejs
@@ -33,6 +34,7 @@
     sshpass
     tmate
     tmux
+    quarto
     tree-sitter
     uv
     vivid
@@ -81,6 +83,10 @@
       "ical-buddy"
       "blueutil"
       "redis"
+      "ollama"
+      "wireshark"
+      "tcpreplay"
+      "whisper-cpp"
     ];
 
     # `brew install --cask`
@@ -102,6 +108,8 @@
       "rectangle"
       "prusaslicer"
       "flutter"
+      "slack"
+      "keyboard-maestro"
      ];
   };
 }
