@@ -2,7 +2,7 @@ setopt appendhistory
 setopt APPEND_HISTORY  
 setopt SHARE_HISTORY
 
-export PATH=/run/current-system/sw/bin:~/.nix-profile/bin:~/.eric_tools/bin:~/.dotfiles/bin:~/.dotfiles/scripts:~/.local/bin::$PATH
+export PATH=/run/current-system/sw/bin:~/.nix-profile/bin:~/.eric_tools/bin:~/.dotfiles/bin:~/.dotfiles/scripts:~/.npm-global/bin:~/.local/bin:$PATH
 
 eval "$(/opt/homebrew/bin/brew shellenv)" || true
 
