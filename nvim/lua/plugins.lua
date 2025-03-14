@@ -109,6 +109,21 @@ return {
     end
   },
   {
+    'Wansmer/treesj',
+    keys = {
+      {
+        "g,",
+        function() require('treesj').toggle() end,
+        desc = "toggle list split",
+      },
+    },
+    dependencies = { 'nvim-treesitter/nvim-treesitter' }, -- if you install parsers with `nvim-treesitter`
+    config = function()
+      require('treesj').setup({
+      })
+    end,
+  },
+  {
     'tpope/vim-fugitive',
     event = 'BufWinEnter',
   },
@@ -122,8 +137,9 @@ return {
   {
     "dundalek/lazy-lsp.nvim",
     dependencies = { "neovim/nvim-lspconfig" },
-    config = function()
+    init = function()
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
+
       require("lazy-lsp").setup {
         excluded_servers = {
             "ccls",                            -- prefer clangd
@@ -150,11 +166,6 @@ return {
               opts.buffer = bufnr
 
               -- set keybinds
-              opts.desc = "Show LSP references"
-              vim.keymap.set("n", "<leader>f", "<cmd>Telescope lsp_references<CR>", opts) -- show definition, references
-
-              opts.desc = "Go to declaration"
-              vim.keymap.set("n", "<leader>c", vim.lsp.buf.declaration, opts) -- go to declaration
 
               opts.desc = "Show LSP definitions"
               vim.keymap.set("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
@@ -165,20 +176,6 @@ return {
               opts.desc = "Show LSP tags in buffer"
               vim.keymap.set("n", "<leader>lt", "<cmd>Telescope lsp_document_symbols<CR>", opts) -- show lsp doc symbols
 
-              opts.desc = "Show buffer diagnostics"
-              vim.keymap.set("n", "<leader>D", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
-
-              opts.desc = "Show line diagnostics"
-              vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts) -- show diagnostics for line
-
-              opts.desc = "Go to previous diagnostic"
-              vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, opts) -- jump to previous diagnostic in buffer
-
-              opts.desc = "Go to next diagnostic"
-              vim.keymap.set("n", "]d", vim.diagnostic.goto_next, opts) -- jump to next diagnostic in buffer
-
-              opts.desc = "Show documentation for what is under cursor"
-              vim.keymap.set("n", "K", vim.lsp.buf.hover, opts) -- show documentation for what is under cursor
 
               opts.desc = "Restart LSP"
               vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
@@ -265,61 +262,61 @@ return {
       })
     end,
   },
-  {
-    "folke/trouble.nvim",
-    opts = {
-      modes = {
-        mydiags = {
-          mode = "diagnostics", -- inherit from diagnostics mode
-          filter = {
-            any = {
-              buf = 0, -- current buffer
-              {
-                severity = vim.diagnostic.severity.WARNING, -- errors only
-                -- limit to files in the current project
-                function(item)
-                  return item.filename:find((vim.loop or vim.uv).cwd(), 1, true)
-                end,
-              },
-            },
-          },
-        }
-      }
-    }, -- for default options, refer to the configuration section for custom setup.
-    cmd = "Trouble",
-    keys = {
-      {
-        "<leader>lx",
-        "<cmd>Trouble mydiags toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-      {
-        "<leader>xX",
-        "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols toggle focus=false<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>xL",
-        "<cmd>Trouble loclist toggle<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>q",
-        "<cmd>Trouble qflist toggle<cr>",
-        desc = "Quickfix List (Trouble)",
-      },
-    },
-  },
+  -- {
+  --   "folke/trouble.nvim",
+  --   opts = {
+  --     modes = {
+  --       mydiags = {
+  --         mode = "diagnostics", -- inherit from diagnostics mode
+  --         filter = {
+  --           any = {
+  --             buf = 0, -- current buffer
+  --             {
+  --               severity = vim.diagnostic.severity.WARNING, -- errors only
+  --               -- limit to files in the current project
+  --               function(item)
+  --                 return item.filename:find((vim.loop or vim.uv).cwd(), 1, true)
+  --               end,
+  --             },
+  --           },
+  --         },
+  --       }
+  --     }
+  --   }, -- for default options, refer to the configuration section for custom setup.
+  --   cmd = "Trouble",
+  --   keys = {
+  --     {
+  --       "<leader>lx",
+  --       "<cmd>Trouble mydiags toggle<cr>",
+  --       desc = "Diagnostics (Trouble)",
+  --     },
+  --     {
+  --       "<leader>xX",
+  --       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+  --       desc = "Buffer Diagnostics (Trouble)",
+  --     },
+  --     {
+  --       "<leader>cs",
+  --       "<cmd>Trouble symbols toggle focus=false<cr>",
+  --       desc = "Symbols (Trouble)",
+  --     },
+  --     {
+  --       "<leader>cl",
+  --       "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+  --       desc = "LSP Definitions / references / ... (Trouble)",
+  --     },
+  --     {
+  --       "<leader>xL",
+  --       "<cmd>Trouble loclist toggle<cr>",
+  --       desc = "Location List (Trouble)",
+  --     },
+  --     {
+  --       "<leader>q",
+  --       "<cmd>Trouble qflist toggle<cr>",
+  --       desc = "Quickfix List (Trouble)",
+  --     },
+  --   },
+  -- },
   --{
   --  "sbdchd/neoformat",
   --  config = function()
@@ -349,7 +346,7 @@ return {
       local configs = require("nvim-treesitter.configs")
 
       configs.setup({
-          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "html", "python", "tsx", "dart" },
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "javascript", "html", "python", "tsx", "dart", "yaml" },
           sync_install = false,
           highlight = { enable = true },
           indent = { enable = true },
@@ -468,54 +465,6 @@ return {
         },
     }
   },
-  -- {
-  --   "yetone/avante.nvim",
-  --   event = "VeryLazy",
-  --   lazy = false,
-  --   version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
-  --   opts = {
-  --     -- add any opts here
-  --   },
-  --   -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  --   build = "make",
-  --   -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-  --   dependencies = {
-  --     "stevearc/dressing.nvim",
-  --     "nvim-lua/plenary.nvim",
-  --     "MunifTanjim/nui.nvim",
-  --     --- The below dependencies are optional,
-  --     "echasnovski/mini.pick", -- for file_selector provider mini.pick
-  --     "nvim-telescope/telescope.nvim", -- for file_selector provider telescope
-  --     "hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
-  --     "ibhagwan/fzf-lua", -- for file_selector provider fzf
-  --     "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-  --     {
-  --       -- support for image pasting
-  --       "HakonHarnes/img-clip.nvim",
-  --       event = "VeryLazy",
-  --       opts = {
-  --         -- recommended settings
-  --         default = {
-  --           embed_image_as_base64 = false,
-  --           prompt_for_file_name = false,
-  --           drag_and_drop = {
-  --             insert_mode = true,
-  --           },
-  --           -- required for Windows users
-  --           use_absolute_path = true,
-  --         },
-  --       },
-  --     },
-  --     {
-  --       -- Make sure to set this up properly if you have lazy=true
-  --       'MeanderingProgrammer/render-markdown.nvim',
-  --       opts = {
-  --         file_types = { "markdown", "Avante" },
-  --       },
-  --       ft = { "markdown", "Avante" },
-  --     },
-  --   },
-  -- },
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
@@ -759,9 +708,8 @@ return {
         end
       end }
     },
-    lazy = false,
+    lazy = true,
     config = function()
-      vim.print("hello")
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.foldingRange = {
           dynamicRegistration = false,
