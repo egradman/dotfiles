@@ -110,6 +110,9 @@
       "flutter"
       "slack"
       "keyboard-maestro"
+      "zen-browser"
+      "cleanshot"
+      "forklift"
      ];
   };
 }

@@ -67,7 +67,7 @@ return {
         },
         {
             -- Douple tap \ to yeet at something
-            "\\\\", function() require("yeet").execute(nil, { clear_before_yeet = false, interrupt_before_yeet=true }) end,
+            "<leader>yy", function() require("yeet").execute(nil, { clear_before_yeet = false, interrupt_before_yeet=true }) end,
         },
         {
             -- Toggle autocommand for yeeting after write.
@@ -514,6 +514,17 @@ return {
       use_advanced_uri = true,
       app_path = "/Applications/Nix Apps/Obsidian.app",
       open_app_foreground = true,
+      disable_frontmatter = true,
+        bullets = { char = "• ", hl_group = "ObsidianBullet" },
+      note_path_func = function(spec)
+        local path = spec.dir / tostring(spec.title)
+        return path:with_suffix(".md")
+      end,
+      templates = {
+        folder = "/Users/egradman/Documents/egradman/templates",
+        date_format = "%Y-%m-%d-%a",
+        time_format = "%H:%M",
+      },
       workspaces = {
         {
           name = "egradman",
@@ -523,9 +534,22 @@ return {
           name = "red6",
           path = "~/Documents/red6",
         },
+        {
+          name = "no-vault",
+          path = function()
+            -- alternatively use the CWD:
+            -- return assert(vim.fn.getcwd())
+            return assert(vim.fs.dirname(vim.api.nvim_buf_get_name(0)))
+          end,
+          overrides = {
+            notes_subdir = vim.NIL,  -- have to use 'vim.NIL' instead of 'nil'
+            new_notes_location = "current_dir",
+            disable_frontmatter = true,
+          },
+        },
       },
       mappings = {
-        ["<cr>"] = {
+        ["<CS-l>"] = {
             action = function()
                 return require("obsidian").util.smart_action()
             end,
@@ -536,8 +560,8 @@ return {
       },
       ui = {
         checkboxes = {
-            [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-            ["x"] = { char = "", hl_group = "ObsidianDone" },
+            [" "] = { char = "󰄱 ", hl_group = "ObsidianTodo" },
+            ["x"] = { char = " ", hl_group = "ObsidianDone" },
         },
       },
     },
@@ -576,6 +600,11 @@ return {
             "<leader>od",
             "<cmd>ObsidianWorkspace red6<cr><cmd>ObsidianDailies<cr>",
             desc="obsidian today"
+        },
+        {
+            "<leader>ot",
+            "<cmd>ObsidianTemplate<cr>",
+            desc="obsidian template"
         },
         {
             "<C-S-l>",
@@ -708,7 +737,7 @@ return {
         end
       end }
     },
-    lazy = true,
+    lazy = false,
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.foldingRange = {
