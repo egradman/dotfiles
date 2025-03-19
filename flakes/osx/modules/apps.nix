@@ -87,6 +87,8 @@
       "wireshark"
       "tcpreplay"
       "whisper-cpp"
+      "squid"
+      "1password-cli"
     ];
 
     # `brew install --cask`
@@ -110,6 +112,8 @@
       "flutter"
       "slack"
       "keyboard-maestro"
+      "superwhisper"
+      "zen-browser"
      ];
   };
 }
