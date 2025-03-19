@@ -18,6 +18,10 @@ vim.api.nvim_create_user_command(
     {}
 )
 
+vim.cmd('unmap Y')
+
+vim.api.nvim_set_keymap('v', 'Y', '"+y', { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', '<M-Tab>', '<<', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Tab>', '>>', { noremap = true, silent = true })
 

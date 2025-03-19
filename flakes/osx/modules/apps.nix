@@ -114,6 +114,9 @@
       "keyboard-maestro"
       "superwhisper"
       "zen-browser"
+      "zen-browser"
+      "cleanshot"
+      "forklift"
      ];
   };
 }

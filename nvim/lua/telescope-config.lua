@@ -5,7 +5,6 @@ if not status_ok then
   return
 end
 
-
 local actions = require("telescope.actions")
 require('telescope').setup{
   defaults = {
@@ -32,7 +31,7 @@ require('telescope').setup{
         ["<Left>"] = actions.move_selection_previous,
 
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
+        ["<S-CR>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
@@ -53,7 +52,7 @@ require('telescope').setup{
       n = {
         ["<esc>"] = actions.close,
         ["<CR>"] = actions.select_default,
-        ["<C-x>"] = actions.select_horizontal,
+        ["<S-CR>"] = actions.select_horizontal,
         ["<C-v>"] = actions.select_vertical,
         ["<C-t>"] = actions.select_tab,
 
