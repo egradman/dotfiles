@@ -9,7 +9,7 @@ def _profiles():
     return Profiles(
         Profiles=[
             Profile.for_ssh("dmz", "egradman@dmz.gradman.com", COLOR_DEV, tmux=True),
-            Profile.for_ssh("proxbox", "rsadmin@192.168.2.200", COLOR_WORK_PRODUCTION, tmux=True),
+            Profile.for_ssh("proxbox", "rsadmin@10.1.20.71", COLOR_WORK_PRODUCTION, tmux=True),
             Profile.for_ssh(
                 "homeassistant", "egradman@192.168.68.63", COLOR_PERSONAL_PRODUCTION
             ),
@@ -24,6 +24,12 @@ def _profiles():
                 "rsadmi@192.168.2.1",
                 COLOR_WORK_PRODUCTION,
                 tmux=True,
+            ),
+            Profile.for_ssh(
+                "Production ACU",
+                "rsadmi@192.168.2.1",
+                COLOR_WORK_PRODUCTION_CAREFUL,
+                tmux=False,
             ),
             Profile.for_ssh(
                 "ACU through proxy",
@@ -72,7 +78,7 @@ class Profile(BaseModel):
         populate_by_name = True
 
     @classmethod
-    def for_ssh(cls, name, user_at_host, color, tmux=False, shell="zsh", extra_args=None, env=None):
+    def for_ssh(cls, name, user_at_host, color, tmux=False, shell="zsh", extra_args="", env=None):
         if not env: env = {}
         env = " ".join(["=".join((key, value)) for key, value in env.items()])
 
@@ -91,6 +97,7 @@ class Profiles(BaseModel):
 
 COLOR_DEV = "#002200"
 COLOR_WORK_PRODUCTION = "#220000"
+COLOR_WORK_PRODUCTION_CAREFUL = "#330000"
 COLOR_PERSONAL_PRODUCTION = "#000022"
 
 profiles = _profiles()
