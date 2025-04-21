@@ -1,5 +1,5 @@
 remotes:
-  cd kitty && pdm run remotes.py
+  cd kitty && uv run remotes.py
 
 ssh name:
   raycast_scripts/kitty.py {{name}}
