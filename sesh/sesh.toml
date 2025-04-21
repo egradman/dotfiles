@@ -1,0 +1,24 @@
+[default_session]
+startup_command = "~/.dotfiles/scripts/panes.sh"
+
+[[session]]
+name = "nvim_plugins"
+path = "~/.dotfiles/nvim/lua"
+startup_command = "nvim plugins.lua"
+
+[[session]]
+name = "obsidian_egradman"
+path = "~/Documents/egradman/"
+startup_command = "nvim +vsplit +ObsidianQuickSwitch"
+
+[[session]]
+name = "obsidian_red6"
+path = "~/Documents/red6/"
+startup_command = "nvim +vsplit +ObsidianQuickSwitch"
+
+[[session]]
+name = "obsidian_shared"
+path = "~/Documents/shared/"
+startup_command = "nvim +vsplit +ObsidianQuickSwitch"
+
+

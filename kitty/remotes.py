@@ -33,10 +33,11 @@ def _profiles():
                 extra_args="-J rsadmin@10.1.20.71 -L61000:localhost:61000 -L60000:localhost:60000"
             ),
             Profile.for_ssh(
-                "eyecap",
-                "rsadmi@172.16.186.128",
+                "mbp",
+                "egradman@dmz.gradman.com",
                 COLOR_WORK_PRODUCTION,
-                tmux=True,
+                tmux=False,
+                extra_args="-p 2222"
             ),
         ]
     )
@@ -108,6 +109,9 @@ import subprocess
 cmd = '''/run/current-system/sw/bin/kitten @ launch --to=unix:`ls -tr /tmp/kitty-* | tail -1` --type=tab --tab-title "{{profile.Name[1:]}}" --color background="{{profile.Background_Color}}" -- /run/current-system/sw/bin/kitten {{profile.Command}} '''
 
 subprocess.run(cmd, shell=True)
+with open("/tmp/last_terminal_cmd.sh", "w") as f:
+    f.write(cmd)
+print("/tmp/last_terminal_cmd.sh")
 """
     ).render(profile=profile)
 

@@ -35,6 +35,7 @@ vim.api.nvim_set_keymap('n', '<PageDown>', '<C-d>', { noremap = true, silent = t
 vim.api.nvim_set_keymap('n', '<PageUp>', '<C-u>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>w-', '<C-w>s', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>-', '<C-w>s', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ww', '<C-w>c', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>wo', '<C-w>o', { noremap = true, silent = true })
 

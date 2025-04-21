@@ -3,12 +3,9 @@
     ansible
     bat
     cmake
-    colima
     cocoapods
     coreutils
     direnv
-    docker
-    docker-compose
     entr
     fd
     ffmpeg
@@ -30,6 +27,7 @@
     oh-my-posh
     parallel
     ripgrep
+    sesh
     sqlite
     sshpass
     tmate
@@ -88,7 +86,10 @@
       "tcpreplay"
       "whisper-cpp"
       "squid"
-      "1password-cli"
+      "mavsdk"
+      "colima"
+      "docker"
+      "docker-compose"
     ];
 
     # `brew install --cask`

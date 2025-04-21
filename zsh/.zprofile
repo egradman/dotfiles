@@ -28,3 +28,4 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 source ~/.zprofile_local
+
