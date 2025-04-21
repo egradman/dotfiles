@@ -515,13 +515,12 @@ return {
       app_path = "/Applications/Nix Apps/Obsidian.app",
       open_app_foreground = true,
       disable_frontmatter = true,
-        bullets = { char = "• ", hl_group = "ObsidianBullet" },
       note_path_func = function(spec)
         local path = spec.dir / tostring(spec.title)
         return path:with_suffix(".md")
       end,
       templates = {
-        folder = "/Users/egradman/Documents/egradman/templates",
+        folder = "~/Documents/shared/templates",
         date_format = "%Y-%m-%d-%a",
         time_format = "%H:%M",
       },
@@ -549,7 +548,7 @@ return {
         },
       },
       mappings = {
-        ["<CS-l>"] = {
+        ["<C-S-l>"] = {
             action = function()
                 return require("obsidian").util.smart_action()
             end,
@@ -636,20 +635,20 @@ return {
     },
     cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
   }, 
-  {
-    "3rd/image.nvim",
-    opts = {
-      processor = "magick_cli", -- or "magick_cli"
-        backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
-        integrations = {}, -- do whatever you want with image.nvim's integrations
-        max_width = 100, -- tweak to preference
-        max_height = 12, -- ^
-        max_height_window_percentage = math.huge, -- this is necessary for a good experience
-        max_width_window_percentage = math.huge,
-        window_overlap_clear_enabled = true,
-        window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
-    }
-  },
+  -- {
+  --   "3rd/image.nvim",
+  --   opts = {
+  --     processor = "magick_cli", -- or "magick_cli"
+  --       backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
+  --       integrations = {}, -- do whatever you want with image.nvim's integrations
+  --       max_width = 100, -- tweak to preference
+  --       max_height = 12, -- ^
+  --       max_height_window_percentage = math.huge, -- this is necessary for a good experience
+  --       max_width_window_percentage = math.huge,
+  --       window_overlap_clear_enabled = true,
+  --       window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+  --   }
+  -- },
   {
       "benlubas/molten-nvim",
       version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
@@ -692,6 +691,23 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {
+      indent = {
+        enabled = false,
+        render_modes = false,
+        per_level = 2,
+        skip_level = 1,
+        skip_heading = false,
+        icon = '▎',
+        highlight = 'RenderMarkdownIndent',
+      },
+      anti_conceal={
+        ignore = {
+          code_background = true
+        }
+      },
+      bullet={
+        right_pad=1
+      },
     },
     ft = { 'markdown', 'quarto' },
 
