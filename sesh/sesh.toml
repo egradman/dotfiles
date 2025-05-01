@@ -9,16 +9,22 @@ startup_command = "nvim plugins.lua"
 [[session]]
 name = "obsidian_egradman"
 path = "~/Documents/egradman/"
-startup_command = "nvim +vsplit +ObsidianQuickSwitch"
+startup_command = "~/.dotfiles/scripts/obsidian_claude_split.sh"
 
 [[session]]
 name = "obsidian_red6"
 path = "~/Documents/red6/"
-startup_command = "nvim +vsplit +ObsidianQuickSwitch"
+startup_command = "~/.dotfiles/scripts/obsidian_claude_split.sh"
 
 [[session]]
 name = "obsidian_shared"
 path = "~/Documents/shared/"
-startup_command = "nvim +vsplit +ObsidianQuickSwitch"
+startup_command = "~/.dotfiles/scripts/obsidian_claude_split.sh"
 
+[[session]]
+name = "lcs"
+startup_command = '/run/current-system/sw/bin/kitten ssh -A  -t rkschaider@192.168.5.40 '
 
+[[session]]
+name = "dmz"
+startup_command = '$HOME/.dotfiles/scripts/setup_ssh_pane.sh egradman@dmz.gradman.com'

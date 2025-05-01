@@ -52,7 +52,6 @@
     discord
     spotify
     tigervnc
-    zoom-us
   ];
 
   fonts.packages = with pkgs; [

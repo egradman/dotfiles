@@ -12,6 +12,7 @@ alias pdm_shell="nix-shell -p python312Packages.virtualenv"
 alias apps="vi ~/.dotfiles/flakes/osx/modules/apps.nix"
 alias nix_personal="make -C ~/.dotfiles/flakes/osx personal"
 alias nix_red6="make -C ~/.dotfiles/flakes/osx red6"
+alias tm=task-master
 
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^X^E' edit-command-line

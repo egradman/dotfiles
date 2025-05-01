@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-    local keymap = vim.api.nvim_set_keymap
+local keymap = vim.api.nvim_set_keymap
 
 keymap("", "-", ":Ex<cr>", {})
 
@@ -19,6 +19,7 @@ vim.api.nvim_create_user_command(
 )
 
 vim.cmd('unmap Y')
+vim.cmd('unmap #')
 
 vim.api.nvim_set_keymap('v', 'Y', '"+y', { noremap = true, silent = true })
 

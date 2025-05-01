@@ -45,6 +45,13 @@ def _profiles():
                 tmux=False,
                 extra_args="-p 2222"
             ),
+            Profile.for_ssh(
+                "lcs",
+                "rkschaider@10.10.0.50",
+                COLOR_WORK_PRODUCTION,
+                tmux=False,
+                extra_args=""
+            ),
         ]
     )
 

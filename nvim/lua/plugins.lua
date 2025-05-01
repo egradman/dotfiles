@@ -498,14 +498,6 @@ return {
     version = "*",  -- recommended, use latest release instead of latest commit
     lazy = false,
     ft = "markdown",
-    -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
-    -- event = {
-    --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
-    --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
-    --   -- refer to `:h file-pattern` for more examples
-    --   "BufReadPre path/to/my-vault/*.md",
-    --   "BufNewFile path/to/my-vault/*.md",
-    -- },
     dependencies = {
       -- Required.
       "nvim-lua/plenary.nvim",
@@ -534,6 +526,10 @@ return {
           path = "~/Documents/red6",
         },
         {
+          name = "shared",
+          path = "~/Documents/shared",
+        },
+        {
           name = "no-vault",
           path = function()
             -- alternatively use the CWD:
@@ -548,7 +544,7 @@ return {
         },
       },
       mappings = {
-        ["<C-S-l>"] = {
+        ["<leader>ox"] = {
             action = function()
                 return require("obsidian").util.smart_action()
             end,
@@ -656,7 +652,7 @@ return {
       build = ":UpdateRemotePlugins",
       init = function()
           -- these are examples, not defaults. Please see the readme
-          vim.g.molten_image_provider = "image.nvim"
+          --vim.g.molten_image_provider = "image.nvim"
           vim.g.molten_output_win_max_height = 20
           vim.g.molten_auto_open_output = false
           vim.g.molten_wrap_output = true
@@ -798,7 +794,6 @@ return {
           fold_virt_text_handler = handler
       })
     end
-
   },
   {
     "folke/flash.nvim",
@@ -807,8 +802,10 @@ return {
     opts = {},
     -- stylua: ignore
     keys = {
-      { ",", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "<leader>,", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      -- { ",", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "#", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      --{ "<leader>,", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "<leader>#", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
       { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
       { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
       -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
