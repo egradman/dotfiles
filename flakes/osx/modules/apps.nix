@@ -1,6 +1,6 @@
 { pkgs, ...}: {
   environment.systemPackages = with pkgs; [
-    ansible
+    #ansible
     bat
     cmake
     cocoapods
@@ -19,13 +19,13 @@
     httpie
     imagemagick
     just
-    lnav
     luajitPackages.magick
     neovim
     ngrok
     nodejs
     oh-my-posh
     parallel
+    pandoc
     ripgrep
     sesh
     sqlite
@@ -40,6 +40,9 @@
     wget
     yazi
     zoxide
+
+    websocat
+    llm
 
     firebase-tools
 
@@ -89,12 +92,13 @@
       "colima"
       "docker"
       "docker-compose"
+      "neo4j"
     ];
 
     # `brew install --cask`
     casks = [
       "raycast"
-      "foxglove-studio"
+      #"foxglove-studio"
       "1password"
       "balenaetcher"
       "karabiner-elements"
@@ -113,10 +117,9 @@
       "slack"
       "keyboard-maestro"
       "superwhisper"
-      "zen-browser"
-      "zen-browser"
       "cleanshot"
       "forklift"
+      "iterm2"
      ];
   };
 }

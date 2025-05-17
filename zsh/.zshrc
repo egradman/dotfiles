@@ -14,6 +14,15 @@ alias nix_personal="make -C ~/.dotfiles/flakes/osx personal"
 alias nix_red6="make -C ~/.dotfiles/flakes/osx red6"
 alias tm=task-master
 
+# git aliases
+alias gs="git status --short"
+alias ga="git add"
+alias gb="git switch"
+alias gl="git log"
+alias gc="git commit"
+alias pull="git pull"
+alias push="git push"
+
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
