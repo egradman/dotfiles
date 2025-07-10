@@ -134,65 +134,41 @@ return {
     end
   },
   {
-    "dundalek/lazy-lsp.nvim",
-    dependencies = { "neovim/nvim-lspconfig" },
-    init = function()
-      local cmp_nvim_lsp = require("cmp_nvim_lsp")
-
-      require("lazy-lsp").setup {
-        excluded_servers = {
-            "ccls",                            -- prefer clangd
-            "denols",                          -- prefer eslint and ts_ls
-            "docker_compose_language_service", -- yamlls should be enough?
-            "flow",                            -- prefer eslint and ts_ls
-            "ltex",                            -- grammar tool using too much CPU
-            "quick_lint_js",                   -- prefer eslint and ts_ls
-            "scry",                            -- archived on Jun 1, 2023
-            "tailwindcss",                     -- associates with too many filetypes
-            "biome",                           -- not mature enough to be default
-          },
-          preferred_servers = {
-            markdown = {},
-            python = { "basedpyright", "ruff" },
-          },
-          default_config = {
-            flags = {
-              debounce_text_changes = 150,
-            },
-            capabilities = cmp_nvim_lsp.default_capabilities(),
-            on_attach = function(_, bufnr)
-              local opts = { buffer = _.buf, silent = true }
-              opts.buffer = bufnr
-
-              -- set keybinds
-
-              opts.desc = "Show LSP definitions"
-              vim.keymap.set("n", "<leader>ld", "<cmd>Telescope lsp_definitions<CR>", opts) -- show lsp definitions
-
-              opts.desc = "Show LSP implementations"
-              vim.keymap.set("n", "<leader>li", "<cmd>Telescope lsp_implementations<CR>", opts) -- show lsp implementations
-
-              opts.desc = "Show LSP tags in buffer"
-              vim.keymap.set("n", "<leader>lt", "<cmd>Telescope lsp_document_symbols<CR>", opts) -- show lsp doc symbols
-
-
-              opts.desc = "Restart LSP"
-              vim.keymap.set("n", "<leader>lr", ":LspRestart<CR>", opts) -- mapping to restart lsp if necessary
-            end
-          },
-      }
-    end
+  "neovim/nvim-lspconfig",
+  event = { "BufReadPre", "BufNewFile" },
+  dependencies = {
+    "hrsh7th/cmp-nvim-lsp",
+    { "antosha417/nvim-lsp-file-operations", config = true },
   },
+  config = function()
+    local lspconfig = require("lspconfig")
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-  {
-    "neovim/nvim-lspconfig",
-    event = { "BufReadPre", "BufNewFile" },
-    dependencies = {
-      "hrsh7th/cmp-nvim-lsp",
-      { "antosha417/nvim-lsp-file-operations", config = true },
-    },
-    config = function()
-    end,
+    -- Lua LSP (lua-language-server)
+    lspconfig.lua_ls.setup({
+      capabilities = capabilities,
+      settings = {
+        Lua = {
+          runtime = {
+            version = "LuaJIT",
+          },
+          diagnostics = {
+            globals = { "vim" }, -- Fix "vim is undefined"
+          },
+          workspace = {
+            library = vim.api.nvim_get_runtime_file("", true),
+            checkThirdParty = false,
+          },
+          telemetry = { enable = false },
+        },
+      },
+    })
+
+    -- Python LSP (ruff-lsp)
+    lspconfig.ruff.setup({
+      capabilities = capabilities,
+    })
+  end,
   },
   {
     "hrsh7th/nvim-cmp",
@@ -564,5 +540,6 @@ return {
       { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
       -- { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
     },
-  }
+  },
+  { "sindrets/diffview.nvim" },
 }
