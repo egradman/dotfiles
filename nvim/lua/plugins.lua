@@ -20,6 +20,7 @@ return {
 
   {
     "christoomey/vim-tmux-navigator",
+    lazy = true,
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",
@@ -48,6 +49,7 @@ return {
         contrast = ""
     },
   },
+
   {
     'samharju/yeet.nvim',
     dependencies = {
@@ -237,6 +239,73 @@ return {
       })
     end,
   },
+  -- {
+  --   "folke/trouble.nvim",
+  --   opts = {
+  --     modes = {
+  --       mydiags = {
+  --         mode = "diagnostics", -- inherit from diagnostics mode
+  --         filter = {
+  --           any = {
+  --             buf = 0, -- current buffer
+  --             {
+  --               severity = vim.diagnostic.severity.WARNING, -- errors only
+  --               -- limit to files in the current project
+  --               function(item)
+  --                 return item.filename:find((vim.loop or vim.uv).cwd(), 1, true)
+  --               end,
+  --             },
+  --           },
+  --         },
+  --       }
+  --     }
+  --   }, -- for default options, refer to the configuration section for custom setup.
+  --   cmd = "Trouble",
+  --   keys = {
+  --     {
+  --       "<leader>lx",
+  --       "<cmd>Trouble mydiags toggle<cr>",
+  --       desc = "Diagnostics (Trouble)",
+  --     },
+  --     {
+  --       "<leader>xX",
+  --       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+  --       desc = "Buffer Diagnostics (Trouble)",
+  --     },
+  --     {
+  --       "<leader>cs",
+  --       "<cmd>Trouble symbols toggle focus=false<cr>",
+  --       desc = "Symbols (Trouble)",
+  --     },
+  --     {
+  --       "<leader>cl",
+  --       "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
+  --       desc = "LSP Definitions / references / ... (Trouble)",
+  --     },
+  --     {
+  --       "<leader>xL",
+  --       "<cmd>Trouble loclist toggle<cr>",
+  --       desc = "Location List (Trouble)",
+  --     },
+  --     {
+  --       "<leader>q",
+  --       "<cmd>Trouble qflist toggle<cr>",
+  --       desc = "Quickfix List (Trouble)",
+  --     },
+  --   },
+  -- },
+  --{
+  --  "sbdchd/neoformat",
+  --  config = function()
+
+  --    vim.cmd([[
+  --      augroup fmt
+  --        autocmd!
+  --        autocmd BufWritePre *.py,*.swift undojoin | Neoformat
+  --      augroup END
+  --    ]])
+  --  end
+  --},
   {
     "norcalli/nvim-colorizer.lua",
     init = function()
@@ -260,6 +329,24 @@ return {
           indent = { enable = true },
         })
     end
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    keys = {
+      {"<leader>ta", function() require("harpoon"):list():add() end, desc="harpoon  add"},
+      {"<leader>tl", function() require("harpoon").ui:toggle_quick_menu(require("harpoon"):list()) end, desc="harpoon list"},
+
+      {"<leader>tq", function() require("harpoon"):list():select(1) end, desc="buffer 1"},
+      {"<leader>tw", function() require("harpoon"):list():select(2) end, desc="buffer 2"},
+      {"<leader>te", function() require("harpoon"):list():select(3) end, desc="buffer 3"},
+      {"<leader>tr", function() require("harpoon"):list():select(4) end, desc="buffer 4"},
+
+      {"<C-S-P>", function() require("harpoon"):list():prev() end, desc="previous"},
+      {"<C-S-N>", function() require("harpoon"):list():next() end, desc="next"},
+    }
+
   },
   {
     "windwp/nvim-ts-autotag",
@@ -302,9 +389,91 @@ return {
     },
   },
   {
-    "egradman/obsidian.nvim",
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    opts = {
+      strategies = {
+        chat = {
+          adapter = "anthropic",
+        },
+        inline = {
+          adapter = "anthropic",
+          keymaps = {
+            accept_change = {
+              modes = { n = "ga" },
+              description = "Accept the suggested change",
+            },
+            reject_change = {
+              modes = { n = "gr" },
+              description = "Reject the suggested change",
+            },
+          },
+        },
+      },
+      opts = {
+      },
+    },
+    keys = {
+        {
+            "<leader>al",
+            "<cmd>CodeCompanionActions<cr>",
+            desc="code companion actions",
+            mode={"n", "v"}
+        },
+        {
+            "<leader>ac",
+            "<cmd>CodeCompanionChat<cr>",
+            desc="code companion chat"
+        },
+        {
+            "<leader>ay",
+            "<cmd>CodeCompanionChat Add<cr>",
+            desc="code companion add",
+            mode="v"
+        },
+        {
+            "<leader>ai",
+            ":CodeCompanion /buffer ",
+            desc="code companion inline",
+            mode={"v", "n"}
+        },
+    }
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = function()
+      require("copilot").setup({})
+    end,
+    keys = {
+        {
+            "<leader>as", function() require("copilot.suggestion").toggle_auto_trigger() end, desc="toggle auto suggestion"
+        },
+    }
+  },
+  --{
+  --  "zbirenbaum/copilot-cmp",
+  --  event = "InsertEnter",
+  --  config = function () require("copilot_cmp").setup() end,
+  --  dependencies = {
+  --    "zbirenbaum/copilot.lua",
+  --    cmd = "Copilot",
+  --    config = function()
+  --      require("copilot").setup({
+  --        suggestion = { enabled = false },
+  --        panel = { enabled = false },
+  --      })
+  --    end,
+  --  },
+  --},
+  {
+    "epwalsh/obsidian.nvim",
     version = "*",  -- recommended, use latest release instead of latest commit
-    lazy = false,
+    lazy = true,
     ft = "markdown",
     dependencies = {
       -- Required.
@@ -439,10 +608,23 @@ return {
     },
     cmd = { "CsvViewEnable", "CsvViewDisable", "CsvViewToggle" },
   }, 
+  -- {
+  --   "3rd/image.nvim",
+  --   opts = {
+  --     processor = "magick_cli", -- or "magick_cli"
+  --       backend = "kitty", -- Kitty will provide the best experience, but you need a compatible terminal
+  --       integrations = {}, -- do whatever you want with image.nvim's integrations
+  --       max_width = 100, -- tweak to preference
+  --       max_height = 12, -- ^
+  --       max_height_window_percentage = math.huge, -- this is necessary for a good experience
+  --       max_width_window_percentage = math.huge,
+  --       window_overlap_clear_enabled = true,
+  --       window_overlap_clear_ft_ignore = { "cmp_menu", "cmp_docs", "" },
+  --   }
+  -- },
   {
       "benlubas/molten-nvim",
-      version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
-      dependencies = {},
+    --version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
       build = ":UpdateRemotePlugins",
       init = function()
           -- these are examples, not defaults. Please see the readme
@@ -454,7 +636,14 @@ return {
           vim.g.molten_virt_lines_off_by_1 = true
           vim.g.molten_cover_empty_lines = true
           vim.g.molten_cover_lines_starting_with = {"# %%"}
+          vim.g.molten_output_show_more = false
       end,
+  },
+  {
+      "GCBallesteros/jupytext.nvim",
+      config = true,
+      -- Depending on your nvim distro or config you may need to make the loading not lazy
+    --   -- lazy=false,
   },
   {
     "GCBallesteros/NotebookNavigator.nvim",
@@ -475,32 +664,35 @@ return {
     },
     event = "VeryLazy",
   },
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {
-      indent = {
-        enabled = false,
-        render_modes = false,
-        per_level = 2,
-        skip_level = 1,
-        skip_heading = false,
-        icon = '▎',
-        highlight = 'RenderMarkdownIndent',
-      },
-      anti_conceal={
-        ignore = {
-          code_background = true
-        }
-      },
-      bullet={
-        right_pad=1
-      },
-    },
-    ft = { 'markdown', 'quarto' },
+  --{
+  --  'MeanderingProgrammer/render-markdown.nvim',
+  --  dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+  --  ---@module 'render-markdown'
+  --  ---@type render.md.UserConfig
+  --  opts = {
+  --    indent = {
+  --      enabled = false,
+  --      render_modes = false,
+  --      per_level = 2,
+  --      skip_level = 1,
+  --      skip_heading = false,
+  --      icon = '▎',
+  --      highlight = 'RenderMarkdownIndent',
+  --    },
+  --    anti_conceal={
+  --      ignore = {
+  --        code_background = true
+  --      }
+  --    },
+  --    bullet={
+  --      right_pad=1
+  --    },
+  --  },
+  --  ft = { 'markdown', 'quarto' },
 
+  --},
+  {
+    "ixru/nvim-markdown"
   },
   { 'echasnovski/mini.comment', version = "*" },
   {
@@ -524,6 +716,70 @@ return {
       local opts = { highlighters = { cells = nn.minihipatterns_spec } }
       return opts
     end,
+  },
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = {'kevinhwang91/promise-async'},
+    keys = {
+       { "z<Right>", "zo" },
+       { "z<Left>", "zc" },
+       { "z<Down>", function() require('ufo').openAllFolds() end },
+       { "z<Up>", function() require('ufo').closeAllFolds() end },
+
+       { "zp", function()
+        local winid = require('ufo').peekFoldedLinesUnderCursor()
+        if not winid then
+            -- choose one of coc.nvim and nvim lsp
+            vim.fn.CocActionAsync('definitionHover') -- coc.nvim
+            vim.lsp.buf.hover()
+        end
+      end }
+    },
+    lazy = true,
+    config = function()
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities.textDocument.foldingRange = {
+          dynamicRegistration = false,
+          lineFoldingOnly = true
+      }
+      local language_servers = vim.lsp.get_clients() -- or list servers manually like {'gopls', 'clangd'}
+      for _, ls in ipairs(language_servers) do
+          require('lspconfig')[ls].setup({
+              capabilities = capabilities
+              -- you can add other fields for setting up lsp server in this table
+          })
+      end
+      local handler = function(virtText, lnum, endLnum, width, truncate)
+        local newVirtText = {}
+        local suffix = (' 󰁂 %d '):format(endLnum - lnum)
+        local sufWidth = vim.fn.strdisplaywidth(suffix)
+        local targetWidth = width - sufWidth
+        local curWidth = 0
+        for _, chunk in ipairs(virtText) do
+            local chunkText = chunk[1]
+            local chunkWidth = vim.fn.strdisplaywidth(chunkText)
+            if targetWidth > curWidth + chunkWidth then
+                table.insert(newVirtText, chunk)
+            else
+                chunkText = truncate(chunkText, targetWidth - curWidth)
+                local hlGroup = chunk[2]
+                table.insert(newVirtText, {chunkText, hlGroup})
+                chunkWidth = vim.fn.strdisplaywidth(chunkText)
+                -- str width returned from truncate() may less than 2nd argument, need padding
+                if curWidth + chunkWidth < targetWidth then
+                    suffix = suffix .. (' '):rep(targetWidth - curWidth - chunkWidth)
+                end
+                break
+            end
+            curWidth = curWidth + chunkWidth
+        end
+        table.insert(newVirtText, {suffix, 'MoreMsg'})
+        return newVirtText
+      end
+      require('ufo').setup({
+          fold_virt_text_handler = handler
+      })
+    end
   },
   {
     "folke/flash.nvim",
