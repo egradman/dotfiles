@@ -20,6 +20,7 @@ return {
 
   {
     "christoomey/vim-tmux-navigator",
+    lazy = true,
     cmd = {
       "TmuxNavigateLeft",
       "TmuxNavigateDown",
@@ -494,9 +495,9 @@ return {
   --  },
   --},
   {
-    "egradman/obsidian.nvim",
+    "epwalsh/obsidian.nvim",
     version = "*",  -- recommended, use latest release instead of latest commit
-    lazy = false,
+    lazy = true,
     ft = "markdown",
     dependencies = {
       -- Required.
@@ -647,8 +648,7 @@ return {
   -- },
   {
       "benlubas/molten-nvim",
-      version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
-      dependencies = { "3rd/image.nvim" },
+    --version = "^1.0.0", -- use version <2.0.0 to avoid breaking changes
       build = ":UpdateRemotePlugins",
       init = function()
           -- these are examples, not defaults. Please see the readme
@@ -660,7 +660,14 @@ return {
           vim.g.molten_virt_lines_off_by_1 = true
           vim.g.molten_cover_empty_lines = true
           vim.g.molten_cover_lines_starting_with = {"# %%"}
+          vim.g.molten_output_show_more = false
       end,
+  },
+  {
+      "GCBallesteros/jupytext.nvim",
+      config = true,
+      -- Depending on your nvim distro or config you may need to make the loading not lazy
+    --   -- lazy=false,
   },
   {
     "GCBallesteros/NotebookNavigator.nvim",
@@ -681,32 +688,35 @@ return {
     },
     event = "VeryLazy",
   },
-  {
-    'MeanderingProgrammer/render-markdown.nvim',
-    dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-    ---@module 'render-markdown'
-    ---@type render.md.UserConfig
-    opts = {
-      indent = {
-        enabled = false,
-        render_modes = false,
-        per_level = 2,
-        skip_level = 1,
-        skip_heading = false,
-        icon = '▎',
-        highlight = 'RenderMarkdownIndent',
-      },
-      anti_conceal={
-        ignore = {
-          code_background = true
-        }
-      },
-      bullet={
-        right_pad=1
-      },
-    },
-    ft = { 'markdown', 'quarto' },
+  --{
+  --  'MeanderingProgrammer/render-markdown.nvim',
+  --  dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
+  --  ---@module 'render-markdown'
+  --  ---@type render.md.UserConfig
+  --  opts = {
+  --    indent = {
+  --      enabled = false,
+  --      render_modes = false,
+  --      per_level = 2,
+  --      skip_level = 1,
+  --      skip_heading = false,
+  --      icon = '▎',
+  --      highlight = 'RenderMarkdownIndent',
+  --    },
+  --    anti_conceal={
+  --      ignore = {
+  --        code_background = true
+  --      }
+  --    },
+  --    bullet={
+  --      right_pad=1
+  --    },
+  --  },
+  --  ft = { 'markdown', 'quarto' },
 
+  --},
+  {
+    "ixru/nvim-markdown"
   },
   { 'echasnovski/mini.comment', version = "*" },
   {
@@ -749,7 +759,7 @@ return {
         end
       end }
     },
-    lazy = false,
+    lazy = true,
     config = function()
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities.textDocument.foldingRange = {
