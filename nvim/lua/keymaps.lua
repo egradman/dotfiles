@@ -10,14 +10,6 @@ keymap("", "-", ":Ex<cr>", {})
 vim.cmd(":nnoremap <C-s> :split<cr>")
 --vim.cmd(":nnoremap <C-o> :only<cr>")
 
-vim.api.nvim_create_user_command(
-    'Plugins',
-    function (opts)
-      vim.api.nvim_command('edit ' .. '~/.dotfiles/nvim/lua/plugins.lua')
-    end,
-    {}
-)
-
 vim.cmd('unmap Y')
 vim.cmd('unmap #')
 
@@ -39,5 +31,11 @@ vim.api.nvim_set_keymap('n', '<leader>w-', '<C-w>s', { noremap = true, silent = 
 vim.api.nvim_set_keymap('n', '<leader>-', '<C-w>s', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>ww', '<C-w>c', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>wo', '<C-w>o', { noremap = true, silent = true })
+
+vim.keymap.set('n', '<leader>a', function()
+  local path = vim.fn.expand('%')
+  vim.fn.setreg('+', path)  -- Copies to system clipboard
+  print('Copied relative path: ' .. path)
+end, { desc = 'Copy relative file path to clipboard' })
 
 
