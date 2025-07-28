@@ -12,9 +12,7 @@ export SAVEHIST=500000
 
 export EDITOR=nvim
 
-if [ -e /home/rsadmi/.nix-profile/etc/profile.d/nix.sh ]; then . /home/rsadmi/.nix-profile/etc/profile.d/nix.sh; fi
-
-export PATH=/run/current-system/sw/bin:~/.nix-profile/bin:~/.eric_tools/bin:~/.dotfiles/bin:~/.dotfiles/scripts:~/.npm-global/bin:~/.local/bin:~/.claude/local:/run/current-system/sw/bin:/bin:~/.claude/local/claude:$PATH
+export PATH=~/.eric_tools/bin:~/.dotfiles/bin:~/.dotfiles/scripts:~/.npm-global/bin:~/.local/bin:~/.claude/local:/run/current-system/sw/bin:/bin:~/.claude/local/claude:$PATH:/usr/sbin:/sbin:/bin
 
 
 export PS1='%m:%~$ '

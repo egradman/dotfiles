@@ -1,0 +1,5 @@
+cask "cleanshot"
+cask "forklift"
+cask "fantastical"
+cask "qlab"
+cask "slack"

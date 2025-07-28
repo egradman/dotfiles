@@ -28,3 +28,7 @@ startup_command = '/run/current-system/sw/bin/kitten ssh -A  -t rkschaider@192.1
 [[session]]
 name = "dmz"
 startup_command = '$HOME/.dotfiles/scripts/setup_ssh_pane.sh egradman@dmz.gradman.com'
+
+[[session]]
+name = "smo_aib"
+startup_command = '$HOME/.dotfiles/scripts/setup_ssh_pane.sh rsadmi@10.1.11.74'
