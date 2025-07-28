@@ -6,3 +6,5 @@
   compression = 9
 
 
+[pull]
+	rebase = false
