@@ -1,2 +1,0 @@
-#!/bin/sh
-kitten @launch --type os-window --title htop htop

@@ -1,10 +1,22 @@
 [default_session]
 startup_command = "~/.dotfiles/scripts/panes.sh"
+disable_startup_command = true
+
+
+[[session]]
+name = "dotfiles"
+path = "~/.dotfiles"
+startup_command = "~/.dotfiles/scripts/split.sh 'nvim .' 'claude'"
+
+[[session]]
+name = "brew"
+path = "~/.dotfiles"
+startup_command = "~/.dotfiles/scripts/split.sh 'nvim brew/Brewfile.common' 'zsh'"
 
 [[session]]
 name = "nvim_plugins"
 path = "~/.dotfiles/nvim/lua"
-startup_command = "nvim plugins.lua"
+startup_command = "~/.dotfiles/scripts/split.sh 'nvim plugins.lua' 'claude'"
 
 [[session]]
 name = "obsidian_egradman"
@@ -22,9 +34,9 @@ path = "~/Documents/shared/"
 startup_command = "~/.dotfiles/scripts/obsidian_claude_split.sh"
 
 [[session]]
-name = "lcs"
-startup_command = '/run/current-system/sw/bin/kitten ssh -A  -t rkschaider@192.168.5.40 '
-
-[[session]]
 name = "dmz"
 startup_command = '$HOME/.dotfiles/scripts/setup_ssh_pane.sh egradman@dmz.gradman.com'
+
+[[session]]
+name = "mcp"
+startup_command = 'vi /Users/egradman/Library/Application\ Support/Claude/claude_desktop_config.json'

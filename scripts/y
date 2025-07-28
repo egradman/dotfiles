@@ -1,2 +1,0 @@
-#!/bin/sh
-kitten @launch --to unix:$(ls /tmp/kitty-* | head -1) --type tab --title yazi yazi $(pwd)

@@ -2,7 +2,7 @@ zsh/.zhistory
 neovim
 nvim/lazy-lock.json
 bin/nvim
-zsh/.zcompdump
+zsh/.zcompdump*
 zsh/.zsh_history
 zsh/.zsh_sessions
 
@@ -18,3 +18,6 @@ tmux/plugins
 
 __pycache__
 nushell/history.txt
+
+lnav/
+claude

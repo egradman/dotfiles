@@ -3,4 +3,4 @@
 tmux split-window -h
 tmux send-keys "claude" Enter
 tmux select-pane -t 1
-tmux send-keys "nvim +ObsidianQuickSwitch" Enter
+tmux send-keys "nvim ." Enter
