@@ -2,23 +2,32 @@ setopt appendhistory
 setopt APPEND_HISTORY  
 setopt SHARE_HISTORY
 
-export PATH=/run/current-system/sw/bin:~/.nix-profile/bin:~/.eric_tools/bin:~/.dotfiles/bin:~/.dotfiles/scripts:~/.npm-global/bin:~/.local/bin:$PATH:/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=\
+/bin:\
+~/.eric_tools/bin:\
+~/.dotfiles/bin:\
+~/.dotfiles/scripts:\
+~/.npm-global/bin:\
+~/.claude/local:\
+~/.local/bin:\
+/bin:\
+/sbin:\
+/usr/bin:\
+/usr/sbin:\
+$PATH
 
 eval "$(/opt/homebrew/bin/brew shellenv)" || true
 
 alias vim=nvim
 alias vi=nvim
-alias pdm_shell="nix-shell -p python312Packages.virtualenv"
-alias apps="vi ~/.dotfiles/flakes/osx/modules/apps.nix"
-alias nix_personal="make -C ~/.dotfiles/flakes/osx personal"
-alias nix_red6="make -C ~/.dotfiles/flakes/osx red6"
-alias tm=task-master
 
 # git aliases
 alias gs="git status --short"
 alias ga="git add"
 alias gb="git switch"
 alias gl="git log"
+alias gg="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'"
+
 alias gc="git commit"
 alias pull="git pull"
 alias push="git push"
@@ -28,6 +37,7 @@ update_brew() {
 }
 
 autoload edit-command-line; zle -N edit-command-line
+bindkey -e
 bindkey '^X^E' edit-command-line
 
 source <(fzf --zsh)

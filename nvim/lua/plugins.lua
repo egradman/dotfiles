@@ -39,7 +39,7 @@ return {
 
   {
   'stevearc/dressing.nvim',
-  opts = {},
+    opts = {},
   },
 
   {
@@ -531,6 +531,7 @@ return {
 
       },
       ui = {
+        enable = false,
         checkboxes = {
             [" "] = { char = "󰄱 ", hl_group = "ObsidianTodo" },
             ["x"] = { char = " ", hl_group = "ObsidianDone" },
@@ -592,6 +593,9 @@ return {
     ---@type CsvView.Options
     opts = {
       parser = { comments = { "#", "//" } },
+      view = {
+        display_mode = "border",
+      },
       keymaps = {
         -- Text objects for selecting fields
         textobject_field_inner = { "if", mode = { "o", "x" } },
@@ -664,35 +668,12 @@ return {
     },
     event = "VeryLazy",
   },
-  --{
-  --  'MeanderingProgrammer/render-markdown.nvim',
-  --  dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
-  --  ---@module 'render-markdown'
-  --  ---@type render.md.UserConfig
-  --  opts = {
-  --    indent = {
-  --      enabled = false,
-  --      render_modes = false,
-  --      per_level = 2,
-  --      skip_level = 1,
-  --      skip_heading = false,
-  --      icon = '▎',
-  --      highlight = 'RenderMarkdownIndent',
-  --    },
-  --    anti_conceal={
-  --      ignore = {
-  --        code_background = true
-  --      }
-  --    },
-  --    bullet={
-  --      right_pad=1
-  --    },
-  --  },
-  --  ft = { 'markdown', 'quarto' },
-
-  --},
   {
-    "ixru/nvim-markdown"
+    "ixru/nvim-markdown",
+    config = function()
+      vim.g.vim_markdown_conceal = 0
+      vim.g.vim_markdown_toc_autofit = 0
+    end
   },
   { 'echasnovski/mini.comment', version = "*" },
   {
