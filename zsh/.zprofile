@@ -28,5 +28,5 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 source ~/.dotfiles/zsh/.zshrc
-source ~/.zprofile_local
+[[ -f ~/.zprofile_local ]] && source ~/.zprofile_local
 

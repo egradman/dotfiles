@@ -71,6 +71,7 @@ cask "superwhisper"
 cask "iterm2"
 cask "lm-studio"
 cask "scroll-reverser"
+cask "ollama-app"
 
 cask "ngrok"
 cask "ghostty"

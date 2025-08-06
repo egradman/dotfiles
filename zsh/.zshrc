@@ -16,7 +16,7 @@ export PATH=\
 /usr/sbin:\
 $PATH
 
-eval "$(/opt/homebrew/bin/brew shellenv)" || true
+[[ -x /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 alias vim=nvim
 alias vi=nvim
@@ -89,3 +89,5 @@ zstyle ':fzf-tab:*' use-fzf-default-opts yes
 # switch group using `<` and `>`
 zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
+
+[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local

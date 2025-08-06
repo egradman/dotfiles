@@ -25,7 +25,7 @@ startup_command = "~/.dotfiles/scripts/obsidian_claude_split.sh"
 
 [[session]]
 name = "obsidian_red6"
-path = "~/Documents/red6/"
+path = "~/OneDrive - Red Six, Inc/red6/"
 startup_command = "~/.dotfiles/scripts/obsidian_claude_split.sh"
 
 [[session]]
