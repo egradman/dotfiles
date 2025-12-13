@@ -32,9 +32,20 @@ keymap('n', '<leader>-', '<C-w>s', { noremap = true, silent = true })
 keymap('n', '<leader>ww', '<C-w>c', { noremap = true, silent = true })
 keymap('n', '<leader>wo', '<C-w>o', { noremap = true, silent = true })
 
-vim.keymap.set('n', '<leader>a', function()
+-- NORMAL mode: move current line up/down
+keymap("n", "<S-Up>", ":m .-2<CR>==", { desc = "Move line up" })
+keymap("n", "<S-Down>", ":m .+1<CR>==", { desc = "Move line down" })
+
+-- VISUAL mode: move selected block up/down
+keymap("v", "<S-Up>", ":m '<-2<CR>gv=gv", { desc = "Move block up" })
+keymap("v", "<S-Down>", ":m '>+1<CR>gv=gv", { desc = "Move block down" })
+
+
+vim.keymap.set('n', '<leader>p', function()
   local path = vim.fn.expand('%')
   vim.fn.setreg('+', path)  -- Copies to system clipboard
   print('Copied relative path: ' .. path)
 end, { desc = 'Copy relative file path to clipboard' })
+
+vim.keymap.set('n', '<leader>a', ":Minuet virtualtext toggle<cr>")
 

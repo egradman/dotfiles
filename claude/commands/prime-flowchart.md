@@ -1,0 +1,1 @@
+read https://mermaid.js.org/syntax/flowchart.html

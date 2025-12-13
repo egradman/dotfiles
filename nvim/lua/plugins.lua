@@ -228,6 +228,7 @@ return {
           { name = "luasnip" }, -- snippets
           { name = "buffer" }, -- text within current buffer
           { name = "path" }, -- file system paths
+
         }),
         -- configure lspkind for vs-code like pictograms in completion menu
         formatting = {
@@ -779,4 +780,40 @@ return {
     },
   },
   { "sindrets/diffview.nvim" },
+  {
+      'milanglacier/minuet-ai.nvim',
+      config = function()
+          require('minuet').setup {
+            --provider = 'openai_fim_compatible',
+            provider = 'claude',
+            provider_options = {
+              openai_fim_compatible = {
+                model = 'qwen3-coder-30b-a3b-instruct-mlx',
+                stream = true,
+                end_point = 'http://localhost:1234/v1/completions',
+                api_key = 'OPENAI_API_KEY',
+                name = 'LMStudio',
+              },
+            },
+            virtualtext = {
+              auto_trigger_ft = {},
+              keymap = {
+                  -- accept whole completion
+                  accept = '<A-A>',
+                  -- accept one line
+                  accept_line = '<A-a>',
+                  -- accept n lines (prompts for number)
+                  -- e.g. "A-z 2 CR" will accept 2 lines
+                  accept_n_lines = '<A-z>',
+                  -- Cycle to prev completion item, or manually invoke completion
+                  prev = '<A-[>',
+                  -- Cycle to next completion item, or manually invoke completion
+                  next = '<A-]>',
+                  dismiss = '<A-e>',
+              },
+            },
+          }
+      end,
+  },
 }
+

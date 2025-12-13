@@ -38,4 +38,3 @@
 # resize-overlay-duration = 4s 200ms
 
 macos-titlebar-style = hidden
-keybind = shift+enter=text:\x1b\r

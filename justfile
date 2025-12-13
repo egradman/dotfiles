@@ -4,8 +4,11 @@ remotes:
 ssh name:
   raycast_scripts/kitty.py {{name}}
 
-brew:
-  brew bundle install --file brew/Brewfile.common
+brew_red6:
+  brew bundle install --file brew/Brewfile.common --file brew/Brewfile.red6 --
+
+brew_personal:
+  brew bundle install --file brew/Brewfile.common --file brew/Brewfile.personal --
 
 sync_dotfiles host:
     rsync -avz \

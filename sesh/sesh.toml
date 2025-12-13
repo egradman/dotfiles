@@ -38,6 +38,10 @@ name = "dmz"
 startup_command = '$HOME/.dotfiles/scripts/setup_ssh_pane.sh egradman@dmz.gradman.com'
 
 [[session]]
+name = "br"
+startup_command = '$HOME/.dotfiles/scripts/setup_ssh_pane.sh bigred.red6ar.com'
+
+[[session]]
 name = "smo_aib"
 startup_command = '$HOME/.dotfiles/scripts/setup_ssh_pane.sh rsadmi@10.1.11.74'
 
