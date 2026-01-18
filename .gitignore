@@ -20,7 +20,8 @@ nushell/history.txt
 
 lnav/
 
-# Claude runtime files (only track .claude/ with CLAUDE.md and commands)
+# Claude runtime files (only track .claude/ with CLAUDE.md, commands, skills)
 claude/*
+!claude/.claude/
 !claude/.stow-local-ignore
 

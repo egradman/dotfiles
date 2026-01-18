@@ -14,6 +14,8 @@ Detect the operating system (macOS, Ubuntu, RHEL/CentOS/Fedora) and install esse
 - bat (batcat)
 - ripgrep
 - zsh
+- entr
+- nvm (node version manager) and then a modern node
 - zoxide (manual installation from source)
 - tmux
 - neovim (use read https://github.com/neovim/neovim/blob/master/INSTALL.md and use a static download, not a package manager version. except on RHEL 8.9 we have to install from source because glibc is too old)

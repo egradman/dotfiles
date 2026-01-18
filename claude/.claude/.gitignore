@@ -1,0 +1,9 @@
+# Ignore everything except tracked files
+*
+!.gitignore
+!CLAUDE.md
+!commands/
+!commands/*.md
+!skills/
+!skills/**
+!settings.json
