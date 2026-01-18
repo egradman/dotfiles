@@ -39,3 +39,4 @@
 
 macos-titlebar-style = hidden
 keybind = shift+enter=text:\x1b\r
+term = xterm-256color
