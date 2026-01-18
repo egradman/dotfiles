@@ -1,0 +1,2 @@
+- When generating PDFs, always run `open <pdf_path>` when finished
+- when you've created a plan in a file and you're running on a Mac with (/Applications/Typora.app) installed, open the plan with typora
