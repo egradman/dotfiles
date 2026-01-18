@@ -25,4 +25,8 @@ op/
 claude/*
 !claude/.claude/
 !claude/.stow-local-ignore
+claude/.claude/settings.json
+
+# Tmux plugins (managed by tpm)
+tmux/.config/tmux/plugins/*
 
