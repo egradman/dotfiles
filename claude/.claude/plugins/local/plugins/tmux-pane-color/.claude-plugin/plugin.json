@@ -1,0 +1,6 @@
+{
+  "name": "tmux-pane-color",
+  "description": "Changes tmux pane background color based on Claude Code state",
+  "version": "1.0.0",
+  "author": { "name": "egradman" }
+}
