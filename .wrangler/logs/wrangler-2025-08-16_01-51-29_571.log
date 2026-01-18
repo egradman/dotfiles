@@ -1,0 +1,528 @@
+
+--- 2025-08-16T01:51:29.650Z debug
+🪵  Writing logs to "/Users/egradman/.dotfiles/.wrangler/logs/wrangler-2025-08-16_01-51-29_571.log"
+---
+
+--- 2025-08-16T01:51:29.650Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command started","timestamp":1755309089650,"properties":{"amplitude_session_id":1755309089648,"amplitude_event_id":0,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler deploy","args":{"xJsonConfig":true,"j":true,"noBundle":false,"latest":false,"keepVars":false,"xAutoCreate":true}}}
+---
+
+--- 2025-08-16T01:51:29.664Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-16T01:51:29.664Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-16T01:51:30.883Z log
+
+ ⛅️ wrangler 4.28.1 (update available 4.30.0)
+─────────────────────────────────────────────
+---
+
+--- 2025-08-16T01:51:30.929Z debug
+Checking if domain has Access enabled: dash.cloudflare.com
+---
+
+--- 2025-08-16T01:51:30.929Z debug
+Access switch not cached for: dash.cloudflare.com
+---
+
+--- 2025-08-16T01:51:31.191Z debug
+Caching access switch for: dash.cloudflare.com
+---
+
+--- 2025-08-16T01:51:31.427Z debug
+Starting verifyWorkerMatchesCITag() with tag: undefined, name: glowmark
+---
+
+--- 2025-08-16T01:51:31.427Z debug
+No WRANGLER_CI_MATCH_TAG variable provided, aborting verifyWorkerMatchesCITag()
+---
+
+--- 2025-08-16T01:51:31.429Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/services/glowmark
+---
+
+--- 2025-08-16T01:51:31.429Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:31.429Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:31.429Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:31.429Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:31.964Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:31.964Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:31.964Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:31.964Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:31.965Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/glowmark/deployments
+---
+
+--- 2025-08-16T01:51:31.965Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:31.965Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:31.965Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:31.965Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:32.144Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:32.144Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:32.144Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:32.144Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:32.413Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts
+---
+
+--- 2025-08-16T01:51:32.413Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:32.413Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:32.413Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:32.413Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:33.094Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:33.094Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:33.094Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:33.094Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:33.179Z log
+Total Upload: 3323.88 KiB / gzip: 623.00 KiB
+---
+
+--- 2025-08-16T01:51:33.189Z debug
+-- START CF API REQUEST: POST https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/glowmark/versions
+---
+
+--- 2025-08-16T01:51:33.189Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:33.189Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:33.189Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:33.193Z debug
+BODY: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:33.193Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:37.075Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:37.075Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.075Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.075Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:37.076Z debug
+-- START CF API REQUEST: POST https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/glowmark/deployments
+---
+
+--- 2025-08-16T01:51:37.076Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.076Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.076Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.076Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+-- START CF API REQUEST: PATCH https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/glowmark/script-settings
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:37.720Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:38.361Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:38.361Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.361Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.361Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:38.362Z log
+Worker Startup Time: 71 ms
+---
+
+--- 2025-08-16T01:51:38.364Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2025-08-16T01:51:38.364Z log
+Binding                            Resource            
+---
+
+--- 2025-08-16T01:51:38.364Z log
+env.MCP_OBJECT (MyMCP)             Durable Object      
+---
+
+--- 2025-08-16T01:51:38.364Z log
+env.SESSION_BUCKET (glowmark)      R2 Bucket           
+---
+
+--- 2025-08-16T01:51:38.364Z log
+env.BROWSER                        Browser             
+---
+
+--- 2025-08-16T01:51:38.364Z log
+
+---
+
+--- 2025-08-16T01:51:38.366Z log
+Uploaded glowmark (6.40 sec)
+---
+
+--- 2025-08-16T01:51:38.366Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/glowmark/subdomain
+---
+
+--- 2025-08-16T01:51:38.366Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.366Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.366Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.366Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:38.662Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:38.662Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.662Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.662Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:38.665Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/zones
+---
+
+--- 2025-08-16T01:51:38.665Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.665Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.665Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.665Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:38.894Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:38.895Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.895Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.895Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:38.895Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/zones
+---
+
+--- 2025-08-16T01:51:38.895Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.895Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.895Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:38.895Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:39.241Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:39.242Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.242Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.242Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:39.242Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/zones/d96fd6bd30e3e58fde13825470a62991/workers/routes
+---
+
+--- 2025-08-16T01:51:39.242Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.242Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.242Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.242Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:39.595Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:39.595Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.595Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.595Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:39.596Z debug
+-- START CF API REQUEST: PUT https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/glowmark/domains/records
+---
+
+--- 2025-08-16T01:51:39.596Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.596Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.596Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:39.596Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-16T01:51:40.410Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-16T01:51:40.410Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:40.410Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-16T01:51:40.410Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-16T01:51:40.410Z log
+Deployed glowmark triggers (1.75 sec)
+---
+
+--- 2025-08-16T01:51:40.411Z log
+  glowmark.unlikelylabs.ai (custom domain)
+---
+
+--- 2025-08-16T01:51:40.411Z log
+Current Version ID: 4244ed8d-a1af-4371-831a-45ebc81f1fc0
+---
+
+--- 2025-08-16T01:51:40.412Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"deploy worker script","timestamp":1755309100412,"properties":{"category":"Workers","wranglerVersion":"4.28.1","os":"darwin:arm64","usesTypeScript":true,"durationMs":8984}}
+---
+
+--- 2025-08-16T01:51:40.413Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command completed","timestamp":1755309100413,"properties":{"amplitude_session_id":1755309089648,"amplitude_event_id":1,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler deploy","args":{"xJsonConfig":true,"j":true,"noBundle":false,"latest":false,"keepVars":false,"xAutoCreate":true},"durationMs":10775,"durationSeconds":10.775,"durationMinutes":0.17958333333333334}}
+---

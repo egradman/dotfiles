@@ -1,0 +1,408 @@
+
+--- 2025-08-11T23:52:49.447Z debug
+🪵  Writing logs to "/Users/egradman/.dotfiles/.wrangler/logs/wrangler-2025-08-11_23-52-49_375.log"
+---
+
+--- 2025-08-11T23:52:49.447Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command started","timestamp":1754956369446,"properties":{"amplitude_session_id":1754956369445,"amplitude_event_id":0,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler deploy","args":{"xJsonConfig":true,"j":true,"noBundle":false,"latest":false,"keepVars":false,"xAutoCreate":true}}}
+---
+
+--- 2025-08-11T23:52:49.459Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-11T23:52:49.460Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-11T23:52:49.474Z log
+
+ ⛅️ wrangler 4.28.1
+───────────────────
+---
+
+--- 2025-08-11T23:52:49.513Z debug
+Starting verifyWorkerMatchesCITag() with tag: undefined, name: my-mcp-server
+---
+
+--- 2025-08-11T23:52:49.513Z debug
+No WRANGLER_CI_MATCH_TAG variable provided, aborting verifyWorkerMatchesCITag()
+---
+
+--- 2025-08-11T23:52:49.514Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/services/my-mcp-server
+---
+
+--- 2025-08-11T23:52:49.514Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:49.514Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:49.514Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:49.514Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T23:52:50.796Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-11T23:52:50.796Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:50.796Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:50.796Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-11T23:52:50.798Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/my-mcp-server/deployments
+---
+
+--- 2025-08-11T23:52:50.798Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:50.798Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:50.798Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:50.798Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T23:52:51.141Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-11T23:52:51.141Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:51.141Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:51.141Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-11T23:52:51.359Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts
+---
+
+--- 2025-08-11T23:52:51.359Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:51.359Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:51.359Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:51.359Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T23:52:52.023Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-11T23:52:52.023Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:52.023Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:52.023Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-11T23:52:52.106Z log
+Total Upload: 3305.52 KiB / gzip: 619.42 KiB
+---
+
+--- 2025-08-11T23:52:52.115Z debug
+-- START CF API REQUEST: POST https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/my-mcp-server/versions
+---
+
+--- 2025-08-11T23:52:52.115Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:52.115Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:52.115Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:52.120Z debug
+BODY: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:52:52.120Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T23:53:41.871Z debug
+-- START CF API RESPONSE: Bad Gateway 502
+---
+
+--- 2025-08-11T23:53:41.871Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:41.871Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:41.871Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-11T23:53:41.872Z info
+Retrying API call after error...
+---
+
+--- 2025-08-11T23:53:41.872Z debug
+APIError: Received a malformed response from the API
+    at fetchInternal (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49522:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async fetchResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49674:16)
+    at async retryOnAPIFailure (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:71585:12)
+    at async deploy (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:158125:33)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:86148:66)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82982:7) {
+  telemetryMessage: undefined,
+  text: 'Received a malformed response from the API',
+  notes: [
+    {
+      text: '<html>\r\n' +
+        '<head><title>502 Bad Gateway</title></head>\r\n' +
+        '<body>\r\n' +
+        '<center><h1>502 Bad Gateway</h1></cente... (length = 155)'
+    },
+    {
+      text: 'POST /accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/my-mcp-server/versions -> 502 Bad Gateway'
+    }
+  ],
+  location: undefined,
+  kind: 'error',
+  code: undefined,
+  accountTag: undefined
+}
+---
+
+--- 2025-08-11T23:53:41.875Z debug
+-- START CF API REQUEST: POST https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/my-mcp-server/versions
+---
+
+--- 2025-08-11T23:53:41.875Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:41.875Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:41.875Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:41.881Z debug
+BODY: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:41.881Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T23:53:52.370Z info
+Retrying API call after error...
+---
+
+--- 2025-08-11T23:53:52.371Z debug
+TypeError: fetch failed
+    at fetch (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:23176:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async performApiFetch (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49484:10)
+    at async fetchInternal (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49496:20)
+    at async fetchResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49674:16)
+    at async retryOnAPIFailure (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:71585:12)
+    at async deploy (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:158125:33)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:86148:66)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82982:7) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted addresses: 2606:4700:300a::6813:c01d:443, 104.19.192.174:443, 2606:4700:300a::6813:c11d:443, 104.19.192.176:443, timeout: 10000ms)
+      at onConnectTimeout (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:3241:23)
+      at Immediate._onImmediate (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:3222:11)
+      at process.processImmediate (node:internal/timers:505:21) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+---
+
+--- 2025-08-11T23:53:52.372Z debug
+-- START CF API REQUEST: POST https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/my-mcp-server/versions
+---
+
+--- 2025-08-11T23:53:52.372Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:52.372Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:52.372Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:52.382Z debug
+BODY: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T23:53:52.382Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T23:54:02.888Z info
+Retrying API call after error...
+---
+
+--- 2025-08-11T23:54:02.889Z debug
+TypeError: fetch failed
+    at fetch (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:23176:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async performApiFetch (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49484:10)
+    at async fetchInternal (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49496:20)
+    at async fetchResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49674:16)
+    at async retryOnAPIFailure (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:71585:12)
+    at async deploy (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:158125:33)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:86148:66)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82982:7) {
+  [cause]: ConnectTimeoutError: Connect Timeout Error (attempted addresses: 2606:4700:300a::6813:c01d:443, 104.19.192.174:443, 2606:4700:300a::6813:c11d:443, 104.19.192.177:443, 2606:4700:300a::6813:c0af:443, 104.19.192.175:443, 2606:4700:300a::6813:c0b1:443, 104.19.193.29:443, 2606:4700:300a::6813:c0b0:443, 104.19.192.29:443, 2606:4700:300a::6813:c0ae:443, 104.19.192.176:443, timeout: 10000ms)
+      at onConnectTimeout (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:3241:23)
+      at Immediate._onImmediate (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:3222:11)
+      at process.processImmediate (node:internal/timers:505:21) {
+    code: 'UND_ERR_CONNECT_TIMEOUT'
+  }
+}
+---
+
+--- 2025-08-11T23:54:02.891Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2025-08-11T23:54:02.892Z log
+Binding                                 Resource            
+---
+
+--- 2025-08-11T23:54:02.892Z log
+env.MCP_OBJECT (MyMCP)                  Durable Object      
+---
+
+--- 2025-08-11T23:54:02.892Z log
+env.SESSION_BUCKET (md-to-pdf-dev)      R2 Bucket           
+---
+
+--- 2025-08-11T23:54:02.892Z log
+env.BROWSER                             Browser             
+---
+
+--- 2025-08-11T23:54:02.892Z log
+
+---
+
+--- 2025-08-11T23:54:02.894Z log
+
+---
+
+--- 2025-08-11T23:54:02.936Z error
+✘ [ERROR] fetch failed
+
+
+---
+
+--- 2025-08-11T23:54:02.936Z debug
+TypeError: fetch failed
+    at fetch (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:23176:17)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async performApiFetch (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49484:10)
+    at async fetchInternal (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49496:20)
+    at async fetchResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:49674:16)
+    at async retryOnAPIFailure (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:71585:12)
+    at async deploy (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:158125:33)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:86148:66)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82982:7)
+---
+
+--- 2025-08-11T23:54:02.936Z log
+If you think this is a bug then please create an issue at https://github.com/cloudflare/workers-sdk/issues/new/choose
+---
+
+--- 2025-08-11T23:54:02.936Z log
+? Would you like to report this error to Cloudflare? Wrangler's output and the error details will be shared with the Wrangler team to help us diagnose and fix the issue.
+---
+
+--- 2025-08-11T23:54:02.936Z log
+🤖 Using fallback value in non-interactive context: no
+---
+
+--- 2025-08-11T23:54:02.936Z debug
+Sentry: Reporting disabled - would have sent TypeError: fetch failed.
+---
+
+--- 2025-08-11T23:54:02.936Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command errored","timestamp":1754956442936,"properties":{"amplitude_session_id":1754956369445,"amplitude_event_id":1,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler deploy","args":{"xJsonConfig":true,"j":true,"noBundle":false,"latest":false,"keepVars":false,"xAutoCreate":true},"durationMs":73500,"durationSeconds":73.5,"durationMinutes":1.225,"errorType":"TypeError"}}
+---

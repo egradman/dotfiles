@@ -1,0 +1,145 @@
+
+--- 2025-08-09T15:41:56.301Z debug
+🪵  Writing logs to "/Users/egradman/.dotfiles/.wrangler/logs/wrangler-2025-08-09_15-41-56_233.log"
+---
+
+--- 2025-08-09T15:41:56.301Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command started","timestamp":1754754116301,"properties":{"amplitude_session_id":1754754116299,"amplitude_event_id":0,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler types","args":{"xJsonConfig":true,"j":true,"envInterface":"<REDACTED>","includeRuntime":true,"includeEnv":true,"strictVars":true,"path":"worker-configuration.d.ts"}}}
+---
+
+--- 2025-08-09T15:41:56.313Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-09T15:41:56.314Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-09T15:42:02.414Z log
+
+ ⛅️ wrangler 4.28.1
+───────────────────
+---
+
+--- 2025-08-09T15:42:02.427Z log
+Generating project types...
+
+---
+
+--- 2025-08-09T15:42:02.428Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-09T15:42:02.428Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147915:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82982:7) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-09T15:42:02.428Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147915:49)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82982:7) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-09T15:42:02.429Z log
+declare namespace Cloudflare {
+	interface Env {
+		MCP_OBJECT: DurableObjectNamespace<import("./src/index").MyMCP>;
+		SESSION_BUCKET: R2Bucket;
+	}
+}
+interface Env extends Cloudflare.Env {}
+
+---
+
+--- 2025-08-09T15:42:02.429Z log
+Generating runtime types...
+
+---
+
+--- 2025-08-09T15:42:02.430Z debug
+Using cached runtime types:  // Runtime types generated with workerd@1.20250803.0 2025-03-10 nodejs_compat
+---
+
+--- 2025-08-09T15:42:02.431Z log
+Runtime types generated.
+
+---
+
+--- 2025-08-09T15:42:02.431Z log
+────────────────────────────────────────────────────────────
+---
+
+--- 2025-08-09T15:42:02.432Z log
+✨ Types written to worker-configuration.d.ts
+
+---
+
+--- 2025-08-09T15:42:02.432Z log
+📖 Read about runtime types
+https://developers.cloudflare.com/workers/languages/typescript/#generate-types
+---
+
+--- 2025-08-09T15:42:02.432Z log
+📣 Remember to rerun 'wrangler types' after you change your wrangler.json file.
+
+---
+
+--- 2025-08-09T15:42:02.433Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command completed","timestamp":1754754122433,"properties":{"amplitude_session_id":1754754116299,"amplitude_event_id":1,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler types","args":{"xJsonConfig":true,"j":true,"envInterface":"<REDACTED>","includeRuntime":true,"includeEnv":true,"strictVars":true,"path":"worker-configuration.d.ts"},"durationMs":6141,"durationSeconds":6.141,"durationMinutes":0.10235}}
+---

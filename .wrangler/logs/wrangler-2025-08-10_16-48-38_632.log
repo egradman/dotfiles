@@ -1,0 +1,22 @@
+
+--- 2025-08-10T16:48:38.703Z debug
+🪵  Writing logs to "/Users/egradman/.dotfiles/.wrangler/logs/wrangler-2025-08-10_16-48-38_632.log"
+---
+
+--- 2025-08-10T16:48:38.703Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command started","timestamp":1754844518703,"properties":{"amplitude_session_id":1754844518702,"amplitude_event_id":0,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":["j"],"argsCombination":"j","command":"wrangler r2 object list md-to-pdf-dev","args":{"xJsonConfig":true,"j":true}}}
+---
+
+--- 2025-08-10T16:48:38.707Z log
+
+---
+
+--- 2025-08-10T16:48:38.741Z error
+✘ [ERROR] Unknown arguments: list, md-to-pdf-dev
+
+
+---
+
+--- 2025-08-10T16:48:38.757Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command errored","timestamp":1754844518757,"properties":{"amplitude_session_id":1754844518702,"amplitude_event_id":1,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":["j"],"argsCombination":"j","command":"wrangler r2 object list md-to-pdf-dev","args":{"xJsonConfig":true,"j":true},"durationMs":63,"durationSeconds":0.063,"durationMinutes":0.00105,"errorType":"CommandLineArgsError","errorMessage":"yargs validation error"}}
+---

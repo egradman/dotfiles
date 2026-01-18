@@ -1,0 +1,3 @@
+Host dmz
+  HostName dmz.unlikelylabs.ai
+  User ubuntu

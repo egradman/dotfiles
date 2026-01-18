@@ -1,0 +1,135 @@
+
+--- 2025-08-10T16:52:43.435Z debug
+🪵  Writing logs to "/Users/egradman/.dotfiles/.wrangler/logs/wrangler-2025-08-10_16-52-43_363.log"
+---
+
+--- 2025-08-10T16:52:43.435Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command started","timestamp":1754844763434,"properties":{"amplitude_session_id":1754844763433,"amplitude_event_id":0,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":["r","remote"],"argsCombination":"r, remote","command":"wrangler dev","args":{"remote":true,"r":true,"xJsonConfig":true,"j":true,"latest":true,"noBundle":false,"testScheduled":false,"xVectorizeBindToProd":false,"xImagesLocalMode":false}}}
+---
+
+--- 2025-08-10T16:52:43.447Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-10T16:52:43.447Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-10T16:52:43.462Z log
+
+ ⛅️ wrangler 4.28.1
+───────────────────
+---
+
+--- 2025-08-10T16:52:43.463Z log
+Support for remote bindings in `wrangler dev` is now available in public beta as a replacement for `wrangler dev --remote`. Try it out now by running `wrangler dev --x-remote-bindings` with the `experimental_remote` option enabled on your resources and let us know how it goes!
+This gives you access to remote resources in development while retaining all the usual benefits of local dev: fast iteration speed, breakpoint debugging, and more.
+
+Refer to https://developers.cloudflare.com/workers/development-testing/#remote-bindings for more information.
+---
+
+--- 2025-08-10T16:52:43.476Z debug
+DevEnv teardown beginning...
+---
+
+--- 2025-08-10T16:52:43.476Z debug
+ConfigController teardown beginning...
+---
+
+--- 2025-08-10T16:52:43.476Z debug
+BundlerController teardown beginning...
+---
+
+--- 2025-08-10T16:52:43.476Z debug
+LocalRuntimeController teardown beginning...
+---
+
+--- 2025-08-10T16:52:43.476Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2025-08-10T16:52:43.476Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2025-08-10T16:52:43.476Z debug
+ProxyController teardown beginning...
+---
+
+--- 2025-08-10T16:52:43.476Z debug
+ConfigController teardown complete
+---
+
+--- 2025-08-10T16:52:43.477Z debug
+BundlerController teardown complete
+---
+
+--- 2025-08-10T16:52:43.477Z debug
+LocalRuntimeController teardown complete
+---
+
+--- 2025-08-10T16:52:43.477Z debug
+ProxyController teardown complete
+---
+
+--- 2025-08-10T16:52:43.477Z debug
+DevEnv teardown complete
+---
+
+--- 2025-08-10T16:52:43.477Z log
+
+---
+
+--- 2025-08-10T16:52:43.501Z error
+✘ [ERROR] In development, you should use a separate r2 bucket than the one you'd use in production. Please create a new r2 bucket with "wrangler r2 bucket create <name>" and add its name as preview_bucket_name to the r2_buckets "SESSION_BUCKET" in your wrangler.json file
+
+
+---
+
+--- 2025-08-10T16:52:43.501Z debug
+Error: In development, you should use a separate r2 bucket than the one you'd use in production. Please create a new r2 bucket with "wrangler r2 bucket create <name>" and add its name as preview_bucket_name to the r2_buckets "SESSION_BUCKET" in your wrangler.json file
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183500:15
+    at Array.map (<anonymous>)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183491:44)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34)
+    at async setupDevEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183131:3)
+    at async startDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183356:7)
+    at async Object.handler (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183906:29)
+---
+
+--- 2025-08-10T16:52:43.502Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command errored","timestamp":1754844763502,"properties":{"amplitude_session_id":1754844763433,"amplitude_event_id":1,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":["r","remote"],"argsCombination":"r, remote","command":"wrangler dev","args":{"remote":true,"r":true,"xJsonConfig":true,"j":true,"latest":true,"noBundle":false,"testScheduled":false,"xVectorizeBindToProd":false,"xImagesLocalMode":false},"durationMs":77,"durationSeconds":0.077,"durationMinutes":0.0012833333333333334,"errorType":"UserError","errorMessage":"no preview r2 bucket configured in remote dev"}}
+---

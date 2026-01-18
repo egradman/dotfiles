@@ -1,0 +1,3308 @@
+
+--- 2025-08-11T16:30:40.795Z debug
+🪵  Writing logs to "/Users/egradman/.dotfiles/.wrangler/logs/wrangler-2025-08-11_16-30-40_697.log"
+---
+
+--- 2025-08-11T16:30:40.795Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command started","timestamp":1754929840795,"properties":{"amplitude_session_id":1754929840793,"amplitude_event_id":0,"wranglerVersion":"4.28.1","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":false,"hasAssets":false,"argsUsed":["xRemoteBindings"],"argsCombination":"xRemoteBindings","command":"wrangler dev","args":{"xRemoteBindings":true,"xJsonConfig":true,"j":true,"latest":true,"noBundle":false,"remote":false,"r":false,"testScheduled":false,"xVectorizeBindToProd":false,"xImagesLocalMode":false}}}
+---
+
+--- 2025-08-11T16:30:40.812Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-11T16:30:40.812Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:156017:19
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77847:20
+    at maybeAsyncResult (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:76020:44)
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:77846:18
+    at /Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:75942:22
+    at Array.reduce (<anonymous>) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-11T16:30:44.302Z log
+
+ ⛅️ wrangler 4.28.1
+───────────────────
+---
+
+--- 2025-08-11T16:30:44.358Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-11T16:30:44.358Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183566:10)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-11T16:30:44.358Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183566:10)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-11T16:30:44.359Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2025-08-11T16:30:44.359Z log
+Binding                                 Resource            Mode
+---
+
+--- 2025-08-11T16:30:44.359Z log
+env.MCP_OBJECT (MyMCP)                  Durable Object      local
+---
+
+--- 2025-08-11T16:30:44.359Z log
+env.SESSION_BUCKET (md-to-pdf-dev)      R2 Bucket           remote
+---
+
+--- 2025-08-11T16:30:44.359Z log
+env.BROWSER                             Browser             local
+---
+
+--- 2025-08-11T16:30:44.359Z log
+
+---
+
+--- 2025-08-11T16:30:44.366Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-11T16:30:44.366Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at checkTypesDiff (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159081:37)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159403:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-11T16:30:44.366Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at checkTypesDiff (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159081:37)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159403:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-11T16:30:44.367Z log
+❓ Your types might be out of date. Re-run `wrangler types` to ensure your types are correct.
+---
+
+--- 2025-08-11T16:30:44.760Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2025-08-11T16:30:44.761Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2025-08-11T16:30:44.762Z debug
+Checking if domain has Access enabled: dash.cloudflare.com
+---
+
+--- 2025-08-11T16:30:44.762Z debug
+Access switch not cached for: dash.cloudflare.com
+---
+
+--- 2025-08-11T16:30:44.767Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadStart"}
+---
+
+--- 2025-08-11T16:30:50.630Z debug
+local dev variables file not found at "node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-11T16:30:50.631Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183566:10)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env'
+}
+---
+
+--- 2025-08-11T16:30:50.631Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183566:10)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local'
+}
+---
+
+--- 2025-08-11T16:30:50.631Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2025-08-11T16:30:50.631Z log
+Binding                                 Resource       
+---
+
+--- 2025-08-11T16:30:50.631Z log
+env.SESSION_BUCKET (md-to-pdf-dev)      R2 Bucket      
+---
+
+--- 2025-08-11T16:30:50.631Z log
+
+---
+
+--- 2025-08-11T16:30:50.633Z debug
+local dev variables file not found at "node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-11T16:30:50.633Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at checkTypesDiff (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159081:37)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159403:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env'
+}
+---
+
+--- 2025-08-11T16:30:50.633Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at checkTypesDiff (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159081:37)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159403:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local'
+}
+---
+
+--- 2025-08-11T16:30:50.633Z log
+❓ Your types might be out of date. Re-run `wrangler types` to ensure your types are correct.
+---
+
+--- 2025-08-11T16:30:50.647Z debug
+LocalRuntimeController teardown beginning...
+---
+
+--- 2025-08-11T16:30:50.647Z log
+⎔ Starting remote preview...
+---
+
+--- 2025-08-11T16:30:50.647Z debug
+LocalRuntimeController teardown complete
+---
+
+--- 2025-08-11T16:30:50.647Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/subdomain/edge-preview
+---
+
+--- 2025-08-11T16:30:50.647Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:50.647Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:50.647Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:50.647Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T16:30:50.720Z warn
+▲ [WARNING] Browser bindings do not support local development, and so parts of your Worker may not work correctly. You may be able to set `experimental_remote: true` for the binding definition in your configuration file to access a remote version of the resource.
+
+
+---
+
+--- 2025-08-11T16:30:50.720Z log
+⎔ Starting local server...
+---
+
+--- 2025-08-11T16:30:50.926Z debug
+[InspectorProxyWorker] reconnectRuntimeWebSocket
+---
+
+--- 2025-08-11T16:30:50.926Z debug
+[InspectorProxyWorker] NEW RUNTIME WEBSOCKET http://127.0.0.1:57523/core:user:my-mcp-server
+---
+
+--- 2025-08-11T16:30:50.927Z debug
+[InspectorProxyWorker] SEND TO DEVTOOLS {"method":"Runtime.executionContextsCleared"}
+---
+
+--- 2025-08-11T16:30:50.927Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadComplete","proxyData":{"userWorkerUrl":{"protocol":"http:","hostname":"127.0.0.1","port":"58759"},"userWorkerInspectorUrl":{"protocol":"ws:","hostname":"127.0.0.1","port":"57523","pathname":"/core:user:my-mcp-server"},"userWorkerInnerUrlOverrides":{"protocol":"http:"},"headers":{"MF-Proxy-Shared-Secret":"33aad613-47b4-4b02-8df8-de5744e7355b"},"liveReload":false,"proxyLogsToController":false,"internalDurableObjects":[{"type":"durable_object_namespace","class_name":"MyMCP","name":"MCP_OBJECT"}],"entrypointAddresses":{"MyMCP":{"host":"127.0.0.1","port":58762},"default":{"host":"127.0.0.1","port":58763}}}}
+---
+
+--- 2025-08-11T16:30:50.929Z debug
+[InspectorProxyWorker] RUNTIME WEBSOCKET OPENED
+---
+
+--- 2025-08-11T16:30:50.929Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.enable","id":100000001}
+---
+
+--- 2025-08-11T16:30:50.930Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Debugger.enable","id":100000002}
+---
+
+--- 2025-08-11T16:30:50.930Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Network.enable","id":100000003}
+---
+
+--- 2025-08-11T16:30:51.038Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.executionContextCreated',
+  params: {
+    context: {
+      id: 12504129,
+      origin: '',
+      name: 'Worker',
+      uniqueId: '8138399043934508226.2886496226323555432'
+    }
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.038Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000001, result: {} }
+---
+
+--- 2025-08-11T16:30:51.039Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '3',
+    url: 'file:///Users/egradman/dev/my-mcp-server/.wrangler/tmp/dev-lEc5tb/index.js',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 88741,
+    endColumn: 88,
+    executionContextId: 12504129,
+    hash: '9785ae9b5c028c3b1ccd9108ea71b5bddb44918b77ad201d313f2e495de4ecb9',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: 'index.js.map',
+    hasSourceURL: true,
+    isModule: true,
+    length: 3410346,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'index.js'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.039Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '4',
+    url: 'node:stream',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 77,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '2077e02a9b7ac882d90c83459078e5695527026ea4e597c4e94c9b2ebc00ac6e',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2074,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:stream'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.039Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '5',
+    url: 'node:events',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 6,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'a65a3cd6cc39ee3536ce5eb0ad88d6947a2c69b7b96ed288248a2d28cc5de598',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 257,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:events'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.039Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '6',
+    url: 'node:path',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 9,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '3b9dc3fa72b13b1acc080da3057b60e6ce21dae20d7e9e8f5c7b966b554d87f4',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 662,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:path'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.040Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '7',
+    url: 'node:buffer',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 25,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '6536a7c81220ba2ce84423177b513e7620715abbee083145f88118af7e31fc6b',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 885,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:buffer'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.040Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '8',
+    url: 'cloudflare:workers',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 71,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'e4b82ae194df4b88aaeaeadfd8fe2365156625c53666ca613d6d6a6225e1475d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2459,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'cloudflare:workers'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.041Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '13',
+    url: 'node-internal:streams_legacy',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 111,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '5bd0f45271102ab261eed3f1f6fc70288e60dcf52c68bea30ed873db52509c9d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 3878,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_legacy'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.042Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '21',
+    url: 'node-internal:validators',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 264,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '1d1ec32fb699dc740faf4554e6177fac0a9fa095f801e54fa2f3e3cb9410a405',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 10302,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:validators'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.043Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '27',
+    url: 'node-internal:crypto_util',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 95,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'e782db88b566a35b9be61cd3053e043056ef86b913c3f51274d1ab12b1d9c5b0',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 3973,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_util'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.044Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '30',
+    url: 'node-internal:internal_stringdecoder',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 128,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '37a9e6c3a32fe257422cfc8c94dc4a5ac3180eb81c740806b00e8772ffc1839c',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 4707,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_stringdecoder'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.045Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '35',
+    url: 'node-internal:constants',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 67,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'a22da1cc662fb38547e2e8635384ad8497ebc0b7703340dd0f67cbbd526098d9',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 3241,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:constants'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.047Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '41',
+    url: 'node-internal:crypto_random',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 292,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '50cb82d104ff7833c8a39699873d6ca70495edd51a3f649171353d002d75bebb',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 11061,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_random'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.049Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '11',
+    url: 'node-internal:streams_util',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 1145,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '517361e26d5ec5bc46fa8cdc2f1b3884bbde165caf77e00436f7d29ad3ce28ef',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 30934,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_util'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.049Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '10',
+    url: 'node-internal:streams_pipeline',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 433,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'f08fd1b231501eaadd5242ea9b56fa70307d8f13b913ea24564d900f98b1aef8',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 11764,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_pipeline'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.049Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '12',
+    url: 'node-internal:streams_compose',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 189,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '5977d5ed2050ff41ea7a314b3c9e0a9574024384ded762430d165b23e89aa109',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 5083,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_compose'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.049Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '14',
+    url: 'node-internal:streams_writable',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 877,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '4dcd46cc009132da321f2d2e76d6c058f8928530428361bc197090f5019d21c4',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 25785,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_writable'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.050Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '15',
+    url: 'node-internal:streams_readable',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 1856,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '8f7d668b45a61ee211aebe53c6b324dfbe2197ae0b0f237a7394d50032f00f6f',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 54265,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_readable'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.050Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '16',
+    url: 'node-internal:streams_duplex',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 654,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'ef3d4f2b1efab5d193caf942d430f4d68e3bcdc233dfa22f2c4b324533f2997e',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 16330,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_duplex'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.050Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '17',
+    url: 'node-internal:streams_transform',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 211,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'ae5291e2e4e5abe061433e467741c8c80c18335db2f6125c9756d8dc9788b846',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 7660,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_transform'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.050Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '18',
+    url: 'node-internal:streams_promises',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 67,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'a3fa68d2502078230498ae31cf8aef82ec60e7e037149b055e3b5e3079f97a46',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2134,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_promises'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.051Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '19',
+    url: 'node-internal:internal_process',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 250,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'd7188316da12a687add31348b7a359e4baa9e2ee37e1ca4edc4dc90c904dbb84',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 12077,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_process'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.051Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '20',
+    url: 'node-internal:internal_errors',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 726,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'e0756df8c30481442c61d22d259d61be942a9bda089d36842c8b9e75a4160f03',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 24978,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_errors'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.051Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '22',
+    url: 'node-internal:events',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 780,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '6862050030844728e171be7c17264bfcd300a1ff0ee0e00cd456a72cff18be1a',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 28229,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:events'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.051Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '23',
+    url: 'node-internal:internal_buffer',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 1802,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '592cb26c49fa065830299af5535a911d47dc7c93be002dbdc2a00bbbf0bb6bae',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 62940,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_buffer'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.051Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '24',
+    url: 'node-internal:internal_utils',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 328,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '8cad89c88f5de314f899989330780c50119237eb02066a22964507d4c66f9fd0',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 12493,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_utils'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.051Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '25',
+    url: 'node-internal:internal_inspect',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 2475,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '5da4bbb38f98fe06d6bfca446e383f5e59009469ef9aa1e8d228972e6864bb98',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 94471,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_inspect'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.052Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '26',
+    url: 'node-internal:internal_types',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 118,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '65cc7262d944441d3188f24d27e046aa7b782eac144463a59ba551a76f3ce4c4',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 5251,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_types'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.052Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '28',
+    url: 'node-internal:internal_assert',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 671,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'a0c18e778b5996d1fdfce702491cceb519898328051cfa4631d88321bd1a28e3',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 21960,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_assert'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.052Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '29',
+    url: 'node-internal:streams_adapters',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 775,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'e91db46cd37b4801accdcb457c0cdafe7ae342c1e8339cf950361214cc5d76d8',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 20973,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_adapters'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.052Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '31',
+    url: 'node-internal:internal_assertionerror',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 467,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'c8ec9bae7e8a61e4a461ddd579e6d28e1b56a9814b54f85111d9929eb21d7fb1',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 20078,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_assertionerror'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.052Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '32',
+    url: 'node-internal:internal_diffs',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 316,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '7776d45746451492cb0e50d7c92b2fa6f0d2c95fc181797c5691918f003b05da',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 10984,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_diffs'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.052Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '33',
+    url: 'node-internal:internal_comparisons',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 522,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '28c414eba5fc3dc275b952cdf56dde62c57058db4e4d345bc2549e7d8c24ccc3',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 19181,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_comparisons'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.053Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '34',
+    url: 'node-internal:internal_path',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 1376,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '76ab275e6ac821ce74ab3aa45002fc62bace47a460181a1ea1dd554bf6707ae5',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 53039,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_path'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.053Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '36',
+    url: 'file:///Users/egradman/dev/my-mcp-server/node_modules/miniflare/dist/src/workers/email/email.worker.js',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 23,
+    endColumn: 116,
+    executionContextId: 12504129,
+    hash: '178575090c857760c212d300a808c9a450e1e34f93bc431dc5759dadc1e3818d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: 'email.worker.js.map',
+    hasSourceURL: true,
+    isModule: true,
+    length: 655,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'cloudflare-internal:email'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.053Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '37',
+    url: 'node-internal:legacy_process',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 26,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '07654154e7bffa2a8849b49dbfe0459166ebea63c51233ee7bd70c4f6f45e466',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 901,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:legacy_process'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.053Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '38',
+    url: 'node:async_hooks',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 53,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'cada46be506bedf1eaca988c291e16bc60d2f7dea0a3f4209975ed5615f4251d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 1803,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:async_hooks'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.054Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '39',
+    url: 'node:crypto',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 560,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '4ea79a4361312b8b004c6c547569a448e166d5d0e73e48bcdbf892d46061a0b7',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 16884,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:crypto'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.054Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '40',
+    url: 'node-internal:crypto_dh',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 284,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'ae0c4bf0a4bdf7c6921690fe3f576a35624c25b16ed8531c7eea3e01da6c1f61',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 11917,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_dh'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.054Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '42',
+    url: 'node-internal:crypto_hash',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 191,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'd1d665bce0a0b210efebb77b40301f83207114832ef1c29aad73658724928577',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 7457,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_hash'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.054Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '43',
+    url: 'node-internal:crypto_sign',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 250,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'c311732afe0cdbf1a4c2293c814f77ccf27344c37a8e4bb5275fe66b6bd8ad50',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 9777,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_sign'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.054Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '44',
+    url: 'node-internal:crypto_cipher',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 399,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'fe9d1f33d0b72a9d8e531d999a30256296e71013b0f81a7c2e06b8d6e95928af',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 16257,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_cipher'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.055Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '45',
+    url: 'node-internal:crypto_hkdf',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 85,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '6cdaf71774ff7ca347c237a841d23c2a2af6266a11be465c6838cd14052d5251',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 3442,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_hkdf'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.055Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '46',
+    url: 'node-internal:crypto_pbkdf2',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 59,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '895a4f1301b91e9fac60e89f1243b8ff58e6cec9d33dba3bd3c411373013c280',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2993,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_pbkdf2'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.055Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '47',
+    url: 'node-internal:crypto_scrypt',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 137,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '1d355f0911a677981d95f0d0c769feb751d13551632020d6f454a4ca87b3a3df',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 5019,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_scrypt'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.055Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '48',
+    url: 'node-internal:crypto_keys',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 604,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '328c79e393cd71d6942b89d907b195f8e19eccbe016c84459dd6199cd4eff17a',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 24475,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_keys'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.055Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '49',
+    url: 'node-internal:crypto_spkac',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 52,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: 'afdae82a0289fa5e9e1ed9aed51570b09a610ee94f0daffac8646dff3591de3d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2531,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_spkac'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.056Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '50',
+    url: 'node-internal:crypto_x509',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 317,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '27d3779a91b300c4d228c5765dd8af6c26f3d12096e1ae40d00b77d3b363b7fc',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 12178,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_x509'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.056Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  id: 100000002,
+  result: { debuggerId: '2873449684012741529.6689873207786876850' }
+}
+---
+
+--- 2025-08-11T16:30:51.056Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000003, method: 'Network.enable', result: {} }
+---
+
+--- 2025-08-11T16:30:51.056Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '9',
+    url: 'cloudflare:email',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 6,
+    endColumn: 0,
+    executionContextId: 12504129,
+    hash: '12eeb320f99c88c20957c3a491a93393be31f724484ac8408b13896d7aa866ca',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 320,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'cloudflare:email'
+  }
+}
+---
+
+--- 2025-08-11T16:30:51.950Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-11T16:30:51.950Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:51.950Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:51.950Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-11T16:30:51.950Z debug
+-- START EXCHANGE API REQUEST: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:51.950Z debug
+-- END EXCHANGE API REQUEST
+---
+
+--- 2025-08-11T16:30:54.215Z debug
+-- START EXCHANGE API RESPONSE: OK 200
+---
+
+--- 2025-08-11T16:30:54.215Z debug
+HEADERS: {}
+---
+
+--- 2025-08-11T16:30:54.215Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:54.215Z debug
+-- END EXCHANGE API RESPONSE
+---
+
+--- 2025-08-11T16:30:54.218Z log
+Total Upload: 6.17 KiB / gzip: 1.82 KiB
+---
+
+--- 2025-08-11T16:30:54.218Z debug
+-- START CF API REQUEST: POST https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/my-mcp-server/edge-preview
+---
+
+--- 2025-08-11T16:30:54.218Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:54.218Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:54.218Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:54.219Z debug
+BODY: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:54.219Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T16:30:55.761Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-11T16:30:55.761Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:55.761Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:30:55.761Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-11T16:30:55.762Z debug
+Checking if domain has Access enabled: 4d9a41f4831044e0bf48ea9475627f90.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:30:55.762Z debug
+Access switch not cached for: 4d9a41f4831044e0bf48ea9475627f90.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:30:56.367Z debug
+Caching access switch for: 4d9a41f4831044e0bf48ea9475627f90.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:30:56.368Z debug
+Checking if domain has Access enabled: my-mcp-server.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:30:56.368Z debug
+Access switch not cached for: my-mcp-server.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:30:57.024Z debug
+Caching access switch for: my-mcp-server.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:31:00.930Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.getIsolateId","id":100000004}
+---
+
+--- 2025-08-11T16:31:00.931Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000004, result: { id: 'c3c95f4bd6990daf' } }
+---
+
+--- 2025-08-11T16:31:10.095Z debug
+wrangler.jsonc changed...
+---
+
+--- 2025-08-11T16:31:10.102Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-11T16:31:10.102Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183566:10)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-11T16:31:10.102Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183566:10)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-11T16:31:10.102Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2025-08-11T16:31:10.102Z log
+Binding                                 Resource            Mode
+---
+
+--- 2025-08-11T16:31:10.102Z log
+env.MCP_OBJECT (MyMCP)                  Durable Object      local
+---
+
+--- 2025-08-11T16:31:10.102Z log
+env.SESSION_BUCKET (md-to-pdf-dev)      R2 Bucket           remote
+---
+
+--- 2025-08-11T16:31:10.102Z log
+env.BROWSER                             Browser             remote
+---
+
+--- 2025-08-11T16:31:10.102Z log
+
+---
+
+--- 2025-08-11T16:31:10.104Z debug
+local dev variables file not found at ".dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-11T16:31:10.105Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at checkTypesDiff (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159081:37)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159403:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env'
+}
+---
+
+--- 2025-08-11T16:31:10.105Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at checkTypesDiff (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159081:37)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159403:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/.env.local'
+}
+---
+
+--- 2025-08-11T16:31:10.105Z log
+❓ Your types might be out of date. Re-run `wrangler types` to ensure your types are correct.
+---
+
+--- 2025-08-11T16:31:10.413Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2025-08-11T16:31:10.413Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2025-08-11T16:31:10.415Z debug
+DevEnv teardown beginning...
+---
+
+--- 2025-08-11T16:31:10.415Z debug
+ConfigController teardown beginning...
+---
+
+--- 2025-08-11T16:31:10.415Z debug
+BundlerController teardown beginning...
+---
+
+--- 2025-08-11T16:31:10.416Z debug
+LocalRuntimeController teardown beginning...
+---
+
+--- 2025-08-11T16:31:10.416Z log
+⎔ Shutting down remote preview...
+---
+
+--- 2025-08-11T16:31:10.416Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2025-08-11T16:31:10.416Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2025-08-11T16:31:10.416Z debug
+ProxyController teardown beginning...
+---
+
+--- 2025-08-11T16:31:10.416Z debug
+ConfigController teardown complete
+---
+
+--- 2025-08-11T16:31:10.416Z debug
+LocalRuntimeController teardown complete
+---
+
+--- 2025-08-11T16:31:10.421Z debug
+BundlerController teardown complete
+---
+
+--- 2025-08-11T16:31:10.422Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadStart"}
+---
+
+--- 2025-08-11T16:31:10.423Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.discardConsoleEntries","id":100000005}
+---
+
+--- 2025-08-11T16:31:10.423Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000005, result: {} }
+---
+
+--- 2025-08-11T16:31:10.424Z debug
+ProxyController teardown complete
+---
+
+--- 2025-08-11T16:31:10.424Z debug
+DevEnv teardown complete
+---
+
+--- 2025-08-11T16:31:10.428Z debug
+local dev variables file not found at "node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-11T16:31:10.428Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183566:10)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env'
+}
+---
+
+--- 2025-08-11T16:31:10.428Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at getBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:183566:10)
+    at resolveBindings (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159202:20)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159303:38)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local'
+}
+---
+
+--- 2025-08-11T16:31:10.428Z log
+Your Worker has access to the following bindings:
+---
+
+--- 2025-08-11T16:31:10.428Z log
+Binding                                 Resource       
+---
+
+--- 2025-08-11T16:31:10.428Z log
+env.SESSION_BUCKET (md-to-pdf-dev)      R2 Bucket      
+---
+
+--- 2025-08-11T16:31:10.428Z log
+
+---
+
+--- 2025-08-11T16:31:10.430Z debug
+local dev variables file not found at "node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.dev.vars". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-11T16:31:10.430Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at checkTypesDiff (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159081:37)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159403:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env'
+}
+---
+
+--- 2025-08-11T16:31:10.430Z debug
+Failed to load .env file "/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local": Error: ENOENT: no such file or directory, open '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local'
+    at Object.readFileSync (node:fs:435:20)
+    at Object.configDotenv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82637:48)
+    at Object.config (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82655:29)
+    at loadDotEnv (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:82824:61)
+    at getVarsForDev (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147126:24)
+    at generateEnvTypes (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:147372:19)
+    at checkTypesDiff (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159081:37)
+    at resolveConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159403:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async #updateConfig (/Users/egradman/dev/my-mcp-server/node_modules/wrangler/wrangler-dist/cli.js:159517:34) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/Users/egradman/dev/my-mcp-server/node_modules/wrangler/templates/remoteBindings/proxyServerWorker/.env.local'
+}
+---
+
+--- 2025-08-11T16:31:10.430Z log
+❓ Your types might be out of date. Re-run `wrangler types` to ensure your types are correct.
+---
+
+--- 2025-08-11T16:31:10.469Z debug
+LocalRuntimeController teardown beginning...
+---
+
+--- 2025-08-11T16:31:10.469Z log
+⎔ Starting remote preview...
+---
+
+--- 2025-08-11T16:31:10.469Z debug
+LocalRuntimeController teardown complete
+---
+
+--- 2025-08-11T16:31:10.469Z debug
+-- START CF API REQUEST: GET https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/subdomain/edge-preview
+---
+
+--- 2025-08-11T16:31:10.469Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:10.469Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:10.469Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:10.469Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T16:31:10.496Z log
+⎔ Reloading local server...
+---
+
+--- 2025-08-11T16:31:10.540Z debug
+[InspectorProxyWorker] RUNTIME WEBSOCKET CLOSED 1006 WebSocket disconnected without sending Close frame.
+---
+
+--- 2025-08-11T16:31:10.670Z debug
+[InspectorProxyWorker] reconnectRuntimeWebSocket
+---
+
+--- 2025-08-11T16:31:10.671Z debug
+[InspectorProxyWorker] NEW RUNTIME WEBSOCKET http://127.0.0.1:57523/core:user:my-mcp-server
+---
+
+--- 2025-08-11T16:31:10.671Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadComplete","proxyData":{"userWorkerUrl":{"protocol":"http:","hostname":"127.0.0.1","port":"58385"},"userWorkerInspectorUrl":{"protocol":"ws:","hostname":"127.0.0.1","port":"57523","pathname":"/core:user:my-mcp-server"},"userWorkerInnerUrlOverrides":{"protocol":"http:"},"headers":{"MF-Proxy-Shared-Secret":"33aad613-47b4-4b02-8df8-de5744e7355b"},"liveReload":false,"proxyLogsToController":false,"internalDurableObjects":[{"type":"durable_object_namespace","class_name":"MyMCP","name":"MCP_OBJECT"}],"entrypointAddresses":{"MyMCP":{"host":"127.0.0.1","port":58762},"default":{"host":"127.0.0.1","port":58763}}}}
+---
+
+--- 2025-08-11T16:31:10.671Z debug
+[InspectorProxyWorker] SEND TO DEVTOOLS {"method":"Runtime.executionContextsCleared"}
+---
+
+--- 2025-08-11T16:31:10.672Z debug
+[InspectorProxyWorker] RUNTIME WEBSOCKET OPENED
+---
+
+--- 2025-08-11T16:31:10.672Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Runtime.enable","id":100000006}
+---
+
+--- 2025-08-11T16:31:10.672Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Runtime.executionContextCreated',
+  params: {
+    context: {
+      id: 196168577,
+      origin: '',
+      name: 'Worker',
+      uniqueId: '4239852476086693691.6550525625595754973'
+    }
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.672Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000006, result: {} }
+---
+
+--- 2025-08-11T16:31:10.673Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Debugger.enable","id":100000007}
+---
+
+--- 2025-08-11T16:31:10.673Z debug
+[InspectorProxyWorker] SEND TO RUNTIME {"method":"Network.enable","id":100000008}
+---
+
+--- 2025-08-11T16:31:10.783Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '3',
+    url: 'file:///Users/egradman/dev/my-mcp-server/.wrangler/tmp/dev-Ql81eV/index.js',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 88741,
+    endColumn: 88,
+    executionContextId: 196168577,
+    hash: 'cff0615b34178005554d06efe366a6d28e47c40f20426acf9d0860678dccc178',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: 'index.js.map',
+    hasSourceURL: true,
+    isModule: true,
+    length: 3410346,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'index.js'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.784Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '4',
+    url: 'node:stream',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 77,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '2077e02a9b7ac882d90c83459078e5695527026ea4e597c4e94c9b2ebc00ac6e',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2074,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:stream'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.784Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '5',
+    url: 'node:events',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 6,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'a65a3cd6cc39ee3536ce5eb0ad88d6947a2c69b7b96ed288248a2d28cc5de598',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 257,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:events'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.784Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '6',
+    url: 'node:path',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 9,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '3b9dc3fa72b13b1acc080da3057b60e6ce21dae20d7e9e8f5c7b966b554d87f4',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 662,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:path'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.784Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '7',
+    url: 'node:buffer',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 25,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '6536a7c81220ba2ce84423177b513e7620715abbee083145f88118af7e31fc6b',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 885,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:buffer'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.784Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '8',
+    url: 'cloudflare:workers',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 71,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'e4b82ae194df4b88aaeaeadfd8fe2365156625c53666ca613d6d6a6225e1475d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2459,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'cloudflare:workers'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.785Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '9',
+    url: 'cloudflare:email',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 6,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '12eeb320f99c88c20957c3a491a93393be31f724484ac8408b13896d7aa866ca',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 320,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'cloudflare:email'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.785Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '10',
+    url: 'node-internal:streams_pipeline',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 433,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'f08fd1b231501eaadd5242ea9b56fa70307d8f13b913ea24564d900f98b1aef8',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 11764,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_pipeline'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.792Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '49',
+    url: 'node-internal:crypto_spkac',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 52,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'afdae82a0289fa5e9e1ed9aed51570b09a610ee94f0daffac8646dff3591de3d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2531,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_spkac'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.792Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '44',
+    url: 'node-internal:crypto_cipher',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 399,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'fe9d1f33d0b72a9d8e531d999a30256296e71013b0f81a7c2e06b8d6e95928af',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 16257,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_cipher'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.793Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '11',
+    url: 'node-internal:streams_util',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 1145,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '517361e26d5ec5bc46fa8cdc2f1b3884bbde165caf77e00436f7d29ad3ce28ef',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 30934,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_util'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.793Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '12',
+    url: 'node-internal:streams_compose',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 189,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '5977d5ed2050ff41ea7a314b3c9e0a9574024384ded762430d165b23e89aa109',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 5083,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_compose'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.793Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '13',
+    url: 'node-internal:streams_legacy',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 111,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '5bd0f45271102ab261eed3f1f6fc70288e60dcf52c68bea30ed873db52509c9d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 3878,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_legacy'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.794Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '14',
+    url: 'node-internal:streams_writable',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 877,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '4dcd46cc009132da321f2d2e76d6c058f8928530428361bc197090f5019d21c4',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 25785,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_writable'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.794Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '15',
+    url: 'node-internal:streams_readable',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 1856,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '8f7d668b45a61ee211aebe53c6b324dfbe2197ae0b0f237a7394d50032f00f6f',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 54265,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_readable'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.794Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '16',
+    url: 'node-internal:streams_duplex',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 654,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'ef3d4f2b1efab5d193caf942d430f4d68e3bcdc233dfa22f2c4b324533f2997e',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 16330,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_duplex'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.794Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '17',
+    url: 'node-internal:streams_transform',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 211,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'ae5291e2e4e5abe061433e467741c8c80c18335db2f6125c9756d8dc9788b846',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 7660,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_transform'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.794Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '18',
+    url: 'node-internal:streams_promises',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 67,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'a3fa68d2502078230498ae31cf8aef82ec60e7e037149b055e3b5e3079f97a46',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2134,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_promises'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.795Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '19',
+    url: 'node-internal:internal_process',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 250,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'd7188316da12a687add31348b7a359e4baa9e2ee37e1ca4edc4dc90c904dbb84',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 12077,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_process'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.795Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '20',
+    url: 'node-internal:internal_errors',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 726,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'e0756df8c30481442c61d22d259d61be942a9bda089d36842c8b9e75a4160f03',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 24978,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_errors'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.795Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '21',
+    url: 'node-internal:validators',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 264,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '1d1ec32fb699dc740faf4554e6177fac0a9fa095f801e54fa2f3e3cb9410a405',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 10302,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:validators'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.795Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '22',
+    url: 'node-internal:events',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 780,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '6862050030844728e171be7c17264bfcd300a1ff0ee0e00cd456a72cff18be1a',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 28229,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:events'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.795Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '23',
+    url: 'node-internal:internal_buffer',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 1802,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '592cb26c49fa065830299af5535a911d47dc7c93be002dbdc2a00bbbf0bb6bae',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 62940,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_buffer'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.796Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '24',
+    url: 'node-internal:internal_utils',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 328,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '8cad89c88f5de314f899989330780c50119237eb02066a22964507d4c66f9fd0',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 12493,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_utils'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.796Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '25',
+    url: 'node-internal:internal_inspect',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 2475,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '5da4bbb38f98fe06d6bfca446e383f5e59009469ef9aa1e8d228972e6864bb98',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 94471,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_inspect'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.796Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '26',
+    url: 'node-internal:internal_types',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 118,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '65cc7262d944441d3188f24d27e046aa7b782eac144463a59ba551a76f3ce4c4',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 5251,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_types'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.796Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '27',
+    url: 'node-internal:crypto_util',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 95,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'e782db88b566a35b9be61cd3053e043056ef86b913c3f51274d1ab12b1d9c5b0',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 3973,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_util'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.796Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '28',
+    url: 'node-internal:internal_assert',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 671,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'a0c18e778b5996d1fdfce702491cceb519898328051cfa4631d88321bd1a28e3',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 21960,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_assert'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.797Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '29',
+    url: 'node-internal:streams_adapters',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 775,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'e91db46cd37b4801accdcb457c0cdafe7ae342c1e8339cf950361214cc5d76d8',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 20973,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:streams_adapters'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.797Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '30',
+    url: 'node-internal:internal_stringdecoder',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 128,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '37a9e6c3a32fe257422cfc8c94dc4a5ac3180eb81c740806b00e8772ffc1839c',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 4707,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_stringdecoder'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.797Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '31',
+    url: 'node-internal:internal_assertionerror',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 467,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'c8ec9bae7e8a61e4a461ddd579e6d28e1b56a9814b54f85111d9929eb21d7fb1',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 20078,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_assertionerror'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.797Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '32',
+    url: 'node-internal:internal_diffs',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 316,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '7776d45746451492cb0e50d7c92b2fa6f0d2c95fc181797c5691918f003b05da',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 10984,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_diffs'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.797Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '33',
+    url: 'node-internal:internal_comparisons',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 522,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '28c414eba5fc3dc275b952cdf56dde62c57058db4e4d345bc2549e7d8c24ccc3',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 19181,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_comparisons'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.797Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '34',
+    url: 'node-internal:internal_path',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 1376,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '76ab275e6ac821ce74ab3aa45002fc62bace47a460181a1ea1dd554bf6707ae5',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 53039,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:internal_path'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.797Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '35',
+    url: 'node-internal:constants',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 67,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'a22da1cc662fb38547e2e8635384ad8497ebc0b7703340dd0f67cbbd526098d9',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 3241,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:constants'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.798Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '36',
+    url: 'file:///Users/egradman/dev/my-mcp-server/node_modules/miniflare/dist/src/workers/email/email.worker.js',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 23,
+    endColumn: 116,
+    executionContextId: 196168577,
+    hash: '178575090c857760c212d300a808c9a450e1e34f93bc431dc5759dadc1e3818d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: 'email.worker.js.map',
+    hasSourceURL: true,
+    isModule: true,
+    length: 655,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'cloudflare-internal:email'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.798Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '37',
+    url: 'node-internal:legacy_process',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 26,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '07654154e7bffa2a8849b49dbfe0459166ebea63c51233ee7bd70c4f6f45e466',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 901,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:legacy_process'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.798Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '38',
+    url: 'node:async_hooks',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 53,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'cada46be506bedf1eaca988c291e16bc60d2f7dea0a3f4209975ed5615f4251d',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 1803,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:async_hooks'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.798Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '39',
+    url: 'node:crypto',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 560,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '4ea79a4361312b8b004c6c547569a448e166d5d0e73e48bcdbf892d46061a0b7',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 16884,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node:crypto'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.799Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '40',
+    url: 'node-internal:crypto_dh',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 284,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'ae0c4bf0a4bdf7c6921690fe3f576a35624c25b16ed8531c7eea3e01da6c1f61',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 11917,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_dh'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.799Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '41',
+    url: 'node-internal:crypto_random',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 292,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '50cb82d104ff7833c8a39699873d6ca70495edd51a3f649171353d002d75bebb',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 11061,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_random'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.799Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '42',
+    url: 'node-internal:crypto_hash',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 191,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'd1d665bce0a0b210efebb77b40301f83207114832ef1c29aad73658724928577',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 7457,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_hash'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.799Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '43',
+    url: 'node-internal:crypto_sign',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 250,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: 'c311732afe0cdbf1a4c2293c814f77ccf27344c37a8e4bb5275fe66b6bd8ad50',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 9777,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_sign'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.799Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '45',
+    url: 'node-internal:crypto_hkdf',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 85,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '6cdaf71774ff7ca347c237a841d23c2a2af6266a11be465c6838cd14052d5251',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 3442,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_hkdf'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.799Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '46',
+    url: 'node-internal:crypto_pbkdf2',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 59,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '895a4f1301b91e9fac60e89f1243b8ff58e6cec9d33dba3bd3c411373013c280',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 2993,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_pbkdf2'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.799Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '47',
+    url: 'node-internal:crypto_scrypt',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 137,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '1d355f0911a677981d95f0d0c769feb751d13551632020d6f454a4ca87b3a3df',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 5019,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_scrypt'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.800Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '48',
+    url: 'node-internal:crypto_keys',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 604,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '328c79e393cd71d6942b89d907b195f8e19eccbe016c84459dd6199cd4eff17a',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 24475,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_keys'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.800Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  method: 'Debugger.scriptParsed',
+  params: {
+    scriptId: '50',
+    url: 'node-internal:crypto_x509',
+    startLine: 0,
+    startColumn: 0,
+    endLine: 317,
+    endColumn: 0,
+    executionContextId: 196168577,
+    hash: '27d3779a91b300c4d228c5765dd8af6c26f3d12096e1ae40d00b77d3b363b7fc',
+    buildId: '',
+    isLiveEdit: false,
+    sourceMapURL: '',
+    hasSourceURL: false,
+    isModule: true,
+    length: 12178,
+    scriptLanguage: 'JavaScript',
+    embedderName: 'node-internal:crypto_x509'
+  }
+}
+---
+
+--- 2025-08-11T16:31:10.800Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE {
+  id: 100000007,
+  result: { debuggerId: '-5310083547865127690.8181818611241861800' }
+}
+---
+
+--- 2025-08-11T16:31:10.801Z debug
+[InspectorProxyWorker] RUNTIME INCOMING MESSAGE { id: 100000008, method: 'Network.enable', result: {} }
+---
+
+--- 2025-08-11T16:31:11.125Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-11T16:31:11.125Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:11.125Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:11.125Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-11T16:31:11.126Z debug
+-- START EXCHANGE API REQUEST: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:11.126Z debug
+-- END EXCHANGE API REQUEST
+---
+
+--- 2025-08-11T16:31:12.261Z debug
+-- START EXCHANGE API RESPONSE: OK 200
+---
+
+--- 2025-08-11T16:31:12.261Z debug
+HEADERS: {}
+---
+
+--- 2025-08-11T16:31:12.261Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:12.261Z debug
+-- END EXCHANGE API RESPONSE
+---
+
+--- 2025-08-11T16:31:12.262Z log
+Total Upload: 6.17 KiB / gzip: 1.82 KiB
+---
+
+--- 2025-08-11T16:31:12.262Z debug
+-- START CF API REQUEST: POST https://api.cloudflare.com/client/v4/accounts/227f408d15e85dc79a87c754a2e2f7e6/workers/scripts/my-mcp-server/edge-preview
+---
+
+--- 2025-08-11T16:31:12.262Z debug
+QUERY STRING: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:12.262Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:12.262Z debug
+INIT: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:12.262Z debug
+BODY: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:12.262Z debug
+-- END CF API REQUEST
+---
+
+--- 2025-08-11T16:31:13.771Z debug
+-- START CF API RESPONSE: OK 200
+---
+
+--- 2025-08-11T16:31:13.771Z debug
+HEADERS: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:13.771Z debug
+RESPONSE: omitted; set WRANGLER_LOG_SANITIZE=false to include sanitized data
+---
+
+--- 2025-08-11T16:31:13.771Z debug
+-- END CF API RESPONSE
+---
+
+--- 2025-08-11T16:31:13.771Z debug
+Checking if domain has Access enabled: 66b087d272e64e4290176cddcf80cc54.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:31:13.771Z debug
+Access switch not cached for: 66b087d272e64e4290176cddcf80cc54.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:31:13.945Z debug
+Caching access switch for: 66b087d272e64e4290176cddcf80cc54.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:31:13.945Z debug
+Checking if domain has Access enabled: my-mcp-server.eric-gradman.workers.dev
+---
+
+--- 2025-08-11T16:31:13.945Z debug
+Using cached Access switch for: my-mcp-server.eric-gradman.workers.dev false
+---

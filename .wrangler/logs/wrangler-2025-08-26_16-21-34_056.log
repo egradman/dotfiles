@@ -1,0 +1,155 @@
+
+--- 2025-08-26T16:21:34.127Z debug
+🪵  Writing logs to "/Users/egradman/.dotfiles/.wrangler/logs/wrangler-2025-08-26_16-21-34_056.log"
+---
+
+--- 2025-08-26T16:21:34.127Z log
+[90m[39m
+[90mCloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md[39m
+---
+
+--- 2025-08-26T16:21:34.130Z debug
+Metrics dispatcher: Posting data {"deviceId":"6dc08ab7-a4c1-48ec-88ae-3d8e342f2979","event":"wrangler command started","timestamp":1756225294130,"properties":{"amplitude_session_id":1756225294126,"amplitude_event_id":0,"wranglerVersion":"4.15.2","osPlatform":"Mac OS","osVersion":"Darwin Kernel Version 24.3.0: Thu Jan  2 20:24:06 PST 2025; root:xnu-11215.81.4~3/RELEASE_ARM64_T8103","nodeVersion":24,"packageManager":"npm","isFirstUsage":false,"configFileType":"jsonc","isCI":false,"isPagesCI":false,"isWorkersCI":false,"isInteractive":true,"hasAssets":false,"argsUsed":[],"argsCombination":"","command":"wrangler dev","args":{"xJsonConfig":true,"j":true,"latest":true,"noBundle":false,"remote":false,"r":false,"testScheduled":false,"xVectorizeBindToProd":false,"xImagesLocalMode":false}}}
+---
+
+--- 2025-08-26T16:21:34.134Z debug
+.env file not found at ".env". Continuing... For more details, refer to https://developers.cloudflare.com/workers/wrangler/system-environment-variables/
+---
+
+--- 2025-08-26T16:21:34.151Z log
+
+ ⛅️ wrangler 4.15.2 (update available [32m4.33.0[39m)
+[38;2;255;136;0m-------------------------------------------------------[39m
+
+---
+
+--- 2025-08-26T16:21:34.194Z log
+Using vars defined in .dev.vars
+---
+
+--- 2025-08-26T16:21:34.194Z log
+Your Worker and resources are simulated locally via Miniflare. For more information, see: https://developers.cloudflare.com/workers/testing/local-development.
+
+---
+
+--- 2025-08-26T16:21:34.194Z log
+Your Worker has access to the following bindings:
+- Durable Objects:
+  - MCP_OBJECT: BoilerplateMCP
+- KV Namespaces:
+  - OAUTH_KV: 588b073bffd444dd853bdd75ef1ca8ac [simulated locally]
+- Vars:
+  - GITHUB_CLIENT_ID: "(hidden)"
+  - GITHUB_CLIENT_SECRET: "(hidden)"
+  - GOOGLE_CLIENT_ID: "(hidden)"
+  - GOOGLE_CLIENT_SECRET: "(hidden)"
+  - HOSTED_DOMAIN: "(hidden)"
+  - COOKIE_ENCRYPTION_KEY: "(hidden)"
+  - STRIPE_PUBLISHABLE_KEY: "(hidden)"
+  - STRIPE_SECRET_KEY: "(hidden)"
+  - STRIPE_WEBHOOK_SECRET: "(hidden)"
+  - STRIPE_ONE_TIME_PRICE_ID: "(hidden)"
+  - STRIPE_SUBSCRIPTION_PRICE_ID: "(hidden)"
+  - STRIPE_METERED_PRICE_ID: "(hidden)"
+  - BASE_URL: "(hidden)"
+---
+
+--- 2025-08-26T16:21:34.351Z debug
+Writing additional module to output /Users/egradman/dev/mcp-boilerplate/.wrangler/tmp/dev-pF9CE4/4ea1e6f3552b2fe35b7124b2ae7b76b3d2a479b1-index.html
+---
+
+--- 2025-08-26T16:21:34.351Z debug
+Writing additional module to output /Users/egradman/dev/mcp-boilerplate/.wrangler/tmp/dev-pF9CE4/08049ec96c40ee0de5367b5e2f3fa76342e74f97-payment-success.html
+---
+
+--- 2025-08-26T16:21:34.353Z debug
+RemoteRuntimeController teardown beginning...
+---
+
+--- 2025-08-26T16:21:34.353Z debug
+RemoteRuntimeController teardown complete
+---
+
+--- 2025-08-26T16:21:34.354Z log
+[2m⎔ Starting local server...[22m
+---
+
+--- 2025-08-26T16:21:34.530Z debug
+[InspectorProxyWorker] handleProxyControllerIncomingMessage {"type":"reloadStart"}
+---
+
+--- 2025-08-26T16:21:34.650Z error
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mservice core:user:mcp-boilerplate: Uncaught ReferenceError: GithubHandler is not defined[0m
+
+    at null.<anonymous> (index.js:38567:19)
+
+
+---
+
+--- 2025-08-26T16:21:34.651Z debug
+Error in LocalRuntimeController: Error reloading local server
+ MiniflareCoreError [ERR_RUNTIME_FAILURE]: The Workers runtime failed to start. There is likely additional logging output above.
+    at #assembleAndUpdateConfig (/Users/egradman/dev/mcp-boilerplate/node_modules/miniflare/dist/src/index.js:16231:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Mutex.runWith (/Users/egradman/dev/mcp-boilerplate/node_modules/miniflare/dist/src/index.js:1671:48)
+    at async #waitForReady (/Users/egradman/dev/mcp-boilerplate/node_modules/miniflare/dist/src/index.js:16304:5)
+    at async #onBundleComplete (/Users/egradman/dev/mcp-boilerplate/node_modules/wrangler/wrangler-dist/cli.js:95415:29)
+    at async Mutex.runWith (/Users/egradman/dev/mcp-boilerplate/node_modules/miniflare/dist/src/index.js:1671:48) {
+  code: 'ERR_RUNTIME_FAILURE',
+  cause: undefined
+}
+---
+
+--- 2025-08-26T16:21:34.651Z debug
+=> Error contextual data: undefined
+---
+
+--- 2025-08-26T16:21:34.652Z log
+
+---
+
+--- 2025-08-26T16:21:34.652Z error
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mThe Workers runtime failed to start. There is likely additional logging output above.[0m
+
+
+---
+
+--- 2025-08-26T16:21:34.652Z debug
+MiniflareCoreError [ERR_RUNTIME_FAILURE]: The Workers runtime failed to start. There is likely additional logging output above.
+    at #assembleAndUpdateConfig (/Users/egradman/dev/mcp-boilerplate/node_modules/miniflare/dist/src/index.js:16231:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Mutex.runWith (/Users/egradman/dev/mcp-boilerplate/node_modules/miniflare/dist/src/index.js:1671:48)
+    at async #waitForReady (/Users/egradman/dev/mcp-boilerplate/node_modules/miniflare/dist/src/index.js:16304:5)
+    at async #onBundleComplete (/Users/egradman/dev/mcp-boilerplate/node_modules/wrangler/wrangler-dist/cli.js:95415:29)
+    at async Mutex.runWith (/Users/egradman/dev/mcp-boilerplate/node_modules/miniflare/dist/src/index.js:1671:48)
+---
+
+--- 2025-08-26T16:21:34.652Z log
+[32mIf you think this is a bug then please create an issue at https://github.com/cloudflare/workers-sdk/issues/new/choose[0m
+---
+
+--- 2025-08-26T16:21:34.652Z log
+Note that there is a newer version of Wrangler available (4.33.0). Consider checking whether upgrading resolves this error.
+---
+
+--- 2025-08-26T16:21:51.237Z error
+[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mBuild failed with 1 error:[0m
+
+  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mNo matching export in
+  "src/auth/github-handler.ts" for import "GithubHandler"[0m
+  
+      src/index.ts:3:9:
+  [37m      3 │ import { [32mGithubHandler[37m } from "./auth/github-handler";
+          │          [32m~~~~~~~~~~~~~[37m
+          ╵          [32mGitHubHandler[0m
+  
+    Did you mean to import "GitHubHandler" instead?
+  
+      src/auth/github-handler.ts:109:16:
+  [37m      109 │ export { app as [32mGitHubHandler[37m }
+            ╵                 [32m~~~~~~~~~~~~~[0m
+  
+  
+
+
+---

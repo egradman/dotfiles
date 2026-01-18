@@ -1,0 +1,21 @@
+[project]
+name = "dotfiles"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "egradman", email = "eric@gradman.com"},
+]
+dependencies = ["pydantic>=2.10.6"]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.uv.workspace]
+members = [
+    "nvim_venv",
+ "fifteen",
+]
