@@ -19,6 +19,7 @@ __pycache__
 nushell/history.txt
 
 lnav/
+op/
 
 # Claude runtime files (only track .claude/ with CLAUDE.md, commands, skills)
 claude/*
