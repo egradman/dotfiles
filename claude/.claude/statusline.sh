@@ -16,14 +16,25 @@ if git rev-parse --git-dir > /dev/null 2>&1; then
     fi
 fi
 
-# Format context bar
+# Format context bar with color coding
 CONTEXT_BAR=""
 if [ "$CONTEXT_USED" != "null" ]; then
     PERCENT=$(printf "%.0f" "$CONTEXT_USED")
     SEGMENTS=$((PERCENT / 10))
     BAR=$(printf '%0.s█' $(seq 1 $SEGMENTS))
     EMPTY=$(printf '%0.s░' $(seq 1 $((10 - SEGMENTS))))
-    CONTEXT_BAR=" | ctx:${BAR}${EMPTY} ${PERCENT}%"
+
+    # Color based on usage: green <40%, yellow <80%, red >=80%
+    if [ "$PERCENT" -lt 40 ]; then
+        COLOR="\033[38;2;0;220;0m"  # saturated green
+    elif [ "$PERCENT" -lt 80 ]; then
+        COLOR="\033[33m"  # yellow
+    else
+        COLOR="\033[31m"  # red
+    fi
+    RESET="\033[0m"
+
+    CONTEXT_BAR=" | ctx:${COLOR}${BAR}${EMPTY} ${PERCENT}%${RESET}"
 fi
 
-echo "[$MODEL]$CONTEXT_BAR$GIT_BRANCH"
+echo -e "[$MODEL]$CONTEXT_BAR$GIT_BRANCH"
