@@ -48,7 +48,7 @@ eval "$(oh-my-posh init zsh --config ~/.dotfiles/oh-my-posh/config.yaml)"
 export LS_COLORS="$(vivid generate gruvbox-dark-hard)"
 alias ls="ls --color"
 
-ZINIT_HOME="${XDG_CONFIG_HOME}/zinit/zinit.git"
+ZINIT_HOME="${HOME}/.local/share/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 

@@ -1,6 +1,0 @@
-summary: testing
-display_name: testing
-extra_perms:
-  u/admin: true
-owners:
-  - u/admin

@@ -1,3 +1,2 @@
-export XDG_CONFIG_HOME=~/.dotfiles
-export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+# Stow-based dotfiles - no XDG_CONFIG_HOME hack needed
 

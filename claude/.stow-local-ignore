@@ -1,0 +1,21 @@
+# Only stow .claude directory with CLAUDE.md and commands
+# Ignore all runtime files
+\.claude\.json.*
+cache
+debug
+history\.jsonl
+plans
+projects
+shell-snapshots
+todos
+session-env
+file-history
+statsig
+telemetry
+settings\.json
+stats-cache\.json
+paste-cache
+plugins
+skills
+local
+chrome

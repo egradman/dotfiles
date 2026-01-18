@@ -5,12 +5,12 @@ fi
 
 export SHELL=$(which zsh)
 
-export HISTFILE=$ZDOTDIR/.zhistory
+export HISTFILE=~/.zsh_history
 
 export HISTSIZE=500000
 export SAVEHIST=500000
 
-export CLAUDE_CONFIG_DIR=~/.dotfiles/claude
+# Claude uses default ~/.claude location (managed by stow)
 
 export EDITOR=nvim
 

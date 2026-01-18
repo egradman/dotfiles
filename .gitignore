@@ -12,7 +12,6 @@ raycast_scripts/hosts
 
 
 bin/fzf
-tmux/plugins
 
 .DS_Store
 
@@ -20,4 +19,9 @@ __pycache__
 nushell/history.txt
 
 lnav/
-claude
+
+# Claude runtime files (only track .claude/ with CLAUDE.md and commands)
+claude/*
+!claude/.claude
+!claude/.stow-local-ignore
+

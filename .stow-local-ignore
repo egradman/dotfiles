@@ -1,0 +1,50 @@
+# VCS
+\.git
+\.gitignore
+\.gitattributes
+\.gitmodules
+\.git-crypt
+
+# Dotbot (to be removed)
+^install$
+^install\.conf\.yaml$
+^install_dnf\.sh$
+
+# Not stowed directories
+^gnome$
+^bin$
+^scripts$
+^oh-my-posh$
+
+# Root-level files
+.*\.json$
+.*\.rayconfig$
+^packages$
+^justfile$
+^plugins\.lua$
+
+# Runtime/cache files (not to be stowed)
+\.zcompdump.*
+\.zsh_history
+\.zsh_sessions
+
+# Claude runtime files (inside claude package)
+^claude/\.claude\.json.*
+^claude/cache$
+^claude/debug$
+^claude/history\.jsonl$
+^claude/plans$
+^claude/projects$
+^claude/shell-snapshots$
+^claude/todos$
+^claude/session-env$
+^claude/file-history$
+^claude/statsig$
+^claude/telemetry$
+^claude/settings\.json$
+^claude/stats-cache\.json$
+^claude/paste-cache$
+^claude/plugins$
+^claude/skills$
+^claude/local$
+^claude/chrome$
