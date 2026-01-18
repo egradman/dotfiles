@@ -22,6 +22,5 @@ lnav/
 
 # Claude runtime files (only track .claude/ with CLAUDE.md and commands)
 claude/*
-!claude/.claude
 !claude/.stow-local-ignore
 
