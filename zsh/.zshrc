@@ -91,3 +91,4 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 zstyle ':fzf-tab:*' fzf-command ftb-tmux-popup
 
 [[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
+export PATH="$HOME/.cargo/bin:$PATH"

@@ -21,11 +21,10 @@ nushell/history.txt
 lnav/
 op/
 
-# Claude runtime files (only track .claude/ with CLAUDE.md, commands, skills)
+# Claude: only track .claude/ config (runtime files live in real ~/.claude)
 claude/*
 !claude/.claude/
 !claude/.stow-local-ignore
-claude/.claude/settings.json
 
 # Tmux plugins (managed by tpm)
 tmux/.config/tmux/plugins/*
