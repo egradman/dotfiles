@@ -1,1 +1,0 @@
-read $ARGUMENTS and create beads.  create dependencies among the beads such that tests are created and run to exert backpressure on the development.  Determine a good tag name for this collection of beads and tag them with it.

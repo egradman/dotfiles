@@ -5,7 +5,6 @@ cd "$(dirname "$0")"
 
 # Packages to stow (directories that contain dotfiles)
 packages=(
-    claude
     direnv
     gh
     ghostty

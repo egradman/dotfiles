@@ -1,6 +1,0 @@
-# Don't stow the repo gitignore into ~/.claude
-\.gitignore
-
-# Managed externally (npx installs, plugin marketplace)
-\.claude/plugins
-\.claude/skills
