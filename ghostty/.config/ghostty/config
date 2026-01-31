@@ -37,6 +37,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-macos-titlebar-style = hidden
+macos-titlebar-style = tabs
 keybind = shift+enter=text:\x1b\r
 term = xterm-256color
+keybind = cmd+t=new_tab
